@@ -14,8 +14,6 @@ class home_Controller extends Controller
     // login page
     public function login(Request $res)
     {
-        try{
-
             if (isset($res->login)) 
             {
                 $username = $res->username;   
@@ -36,9 +34,7 @@ class home_Controller extends Controller
     
             }
             return view('Admin.login');
-        }catch (\Exception $e){
-            return $e;
-        }
+        
     }
     // dahsboard page
     public function dashboard(Request $res)
