@@ -68,7 +68,7 @@
                         <input id="lastname" class="form-control" name="description4" type="text" placeholder="Description" value="{{$dt->description4}}">
                         </div>
                     </div>
-                    <input class="btn btn-primary" type="submit" name="edit" value="Submit">
+                    <input class="btn btn-primary" type="submit" name="edit" value="Update">
                 </fieldset>
                 </form>
             @endforeach

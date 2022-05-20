@@ -13,6 +13,8 @@ use App\Http\Controllers\Admin\home_Controller;
 use App\Http\Controllers\Admin\development_Controller;
 use App\Http\Controllers\Admin\about_Controller;
 use App\Http\Controllers\Admin\stages_work;
+use App\Http\Controllers\Admin\counter_panel;
+use App\Http\Controllers\Admin\our_clients;
 
 
 /*
@@ -59,3 +61,21 @@ Route::any('/add-stages-of-work-data',[stages_work::class, 'create'])->name('sta
 Route::any('/view-stages-of-work-data',[stages_work::class, 'show'])->name('stages.view');
 Route::any('/edit-stages-of-work-data/{id}',[stages_work::class, 'edit'])->name('stages.edit');
 Route::any('/delete-stages-of-work-data/{id}',[stages_work::class, 'destroy'])->name('stages.delete');
+
+// stages of work
+// Route::any('/add-counter-data',[counter_panel::class, 'create'])->name('counter.create');
+Route::any('/view-counter-data',[counter_panel::class, 'show'])->name('counter.view');
+Route::any('/edit-counter-data/{id}',[counter_panel::class, 'edit'])->name('counter.edit');
+// Route::any('/delete-counter-data/{id}',[counter_panel::class, 'destroy'])->name('counter.delete');
+
+// out clients
+Route::any('/add-our-clients-of-work-data',[our_clients::class, 'create'])->name('clients.create');
+Route::any('/view-our-clients-of-work-data',[our_clients::class, 'show'])->name('clients.view');
+Route::any('/edit-our-clients-of-work-data/{id}',[our_clients::class, 'edit'])->name('clients.edit');
+Route::any('/delete-our-clients-of-work-data/{id}',[our_clients::class, 'destroy'])->name('clients.delete');
+
+// contact
+// Route::any('/add-our-contact-of-work-data',[contact::class, 'create'])->name('contact.create');
+// Route::any('/view-our-contact-of-work-data',[contact::class, 'show'])->name('contact.view');
+// Route::any('/edit-our-contact-of-work-data/{id}',[contact::class, 'edit'])->name('contact.edit');
+// Route::any('/delete-our-contact-of-work-data/{id}',[contact::class, 'destroy'])->name('contact.delete');

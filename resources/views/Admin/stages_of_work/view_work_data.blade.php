@@ -1,89 +1,107 @@
 @include('Admin/header')
+
+{{-- start --}}
+
+{{-- home slider page form validation page --}}
+<!-- partial -->
 <div class="main-panel">
-    <div class="content-wrapper">
-        <div class="page-header">
-            <h3 class="page-title"> Data table </h3>
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Tables</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Data table</li>
-                </ol>
-                <ol class="breadcrumb">
-                    <a href="{{ route('stages.create') }}">
-                        <button type="button" class="btn btn-outline-info btn-fw">Add stages Data</button>
-                    </a>
-                </ol>
-            </nav>
-        </div>
+  <div class="content-wrapper">
+    <div class="page-header">
+      <h3 class="page-title"> Stages Of Work data view </h3>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Forms</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Validation</li>
+        </ol>
+      </nav>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
         <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">Data table</h4>
+          <div class="card-body">
+            <h4 class="card-title">view data</h4>
+            @foreach ($stages_data as $dt)
+            <form class="cmxform" id="signupForm" method="GET" >
+              
+              <fieldset>
+                <div class="form-group col-1 ">
+                  <label for="firstname">Id</label>
+                  <input id="firstname" class="form-control" type="text" placeholder="Title" readonly value="{{$dt->id}}">
+                </div>
+                <div class="form-group col-2 ">
+                  <label for="firstname">Title</label>
+                  <input id="firstname" class="form-control"  type="text" placeholder="Title" readonly value="{{$dt->title}}" >
+                </div>
+                <div class="form-group col-sm-4 ">
+                  <label for="firstname">Sub Title</label>
+                  <input id="firstname" class="form-control"  type="text" placeholder="Sub Title" readonly value="{{$dt->sub_title}}">
+                </div>
+                
+                  <div class="row">
+                      <div class="form-group col-3 ">
+                          <label for="firstname">Stages Title 1</label>
+                          <input id="firstname" class="form-control"  type="text" placeholder="stages Title" readonly value="{{$dt->stages1}}">
+                      </div>
+                      <div class="form-group col-3 ">
+                          <label for="firstname">Stages Title 2</label>
+                          <input id="firstname" class="form-control"  type="text" placeholder="stages Title" readonly value="{{$dt->stages2}}">
+                      </div>
+                      <div class="form-group col-3 ">
+                          <label for="firstname">Stages Title 3</label>
+                          <input id="firstname" class="form-control" type="text" placeholder="stages Title" readonly value="{{$dt->stages3}}">
+                      </div>
+                      <div class="form-group col-3 ">
+                          <label for="firstname">Stages Title 4</label>
+                          <input id="firstname" class="form-control"  type="text" placeholder="stages Title" readonly value="{{$dt->stages4}}">
+                      </div>
+                  </div>
+                
                 <div class="row">
-                    <div class="col-12">
-                        <div class="table-responsive">
-                            <table id="order-listing" class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Id</th>
-                                        <th>Title</th>
-                                        <th>Stages1</th>
-                                        <th>Description1</th>
-                                        <th>Stages2</th>
-                                        <th>Description2</th>
-                                        <th>Stages3</th>
-                                        <th>Description3</th>
-                                        <th>Stages4</th>
-                                        <th>Description4</th>
-                                        <th>Status</th>
-                                        <th>Edit</th>
-                                        <th>Delete</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($stages_data as $dt)
-                                        <tr>
-                                            <td>{{ $dt->id }}</td>
-                                            <td>{{ $dt->title }}</td>
-                                            <td>{{ $dt->stages1 }}</td>
-                                            <td>{{ $dt->description1 }}</td>
-                                            <td>{{ $dt->stages2 }}</td>
-                                            <td>{{ $dt->description2 }}</td>
-                                            <td>{{ $dt->stages3 }}</td>
-                                            <td>{{ $dt->description3 }}</td>
-                                            <td>{{ $dt->stages4 }}</td>
-                                            <td>{{ $dt->description4 }}</td>
-                                            {{-- <td>
-                                                <img height="200px" width="200px" src="{{ asset('upload/' . $dt->image) }}"
-                                                    alt="">
-                                            </td> --}}
-                                            <td>
-                                                <label class="badge badge-info">On hold</label>
-                                            </td>
-                                            <td>
-                                                {{-- edit link --}}
-                                                <a href="{{ url('/edit-stages-of-work-data/' . $dt->id) }}">
-                                                    <button class="btn btn-outline-primary">
-                                                        <i class="fa-solid fa-pen-to-square"></i>
-                                                    </button>
-                                                </a>
-                                            </td>
-                                            <td>
-                                                {{-- delete link --}}
-                                                <a href="{{ url('/delete-stages-of-work-data/'. $dt->id) }}">
-                                                    <button class="btn btn-outline-danger">
-                                                        <i class="fa-solid fa-trash"></i>
-                                                    </button>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
+                    <div class="form-group col-3">
+                       <label for="lastname">Description 1</label>
+                       <input id="lastname" class="form-control" type="text" placeholder="Description" readonly value="{{$dt->description1}}">
+                    </div>
+                    <div class="form-group col-3">
+                       <label for="lastname">Description 2</label>
+                       <input id="lastname" class="form-control" type="text" placeholder="Description" readonly value="{{$dt->description2}}">
+                    </div>
+                    <div class="form-group col-3">
+                       <label for="lastname">Description 3</label>
+                       <input id="lastname" class="form-control"  type="text" placeholder="Description" readonly value="{{$dt->description3}}">
+                    </div>
+                    <div class="form-group col-3">
+                       <label for="lastname">Description 4</label>
+                       <input id="lastname" class="form-control"  type="text" placeholder="Description" readonly value="{{$dt->description4}}">
                     </div>
                 </div>
-            </div>
+                <div class="row">
+                    <div class="form-group col-1 ">
+                        {{-- <a href="{{ route('stages.edit' , [ $dt->id]) }}" target="."> --}}
+                        <a href="{{ url('/edit-stages-of-work-data/'. $dt->id) }}">
+                            <button type="button" class="btn btn-outline-primary">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </button>
+                        </a>
+                        
+                    </div>
+                    {{-- <div class="form-group col-1 ">
+                        <a href="{{ url('/delete-stages-of-work-data/'. $dt->id) }}">
+                            <button type="button" class="btn btn-outline-danger">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </a>
+                    </div> --}}
+                </div>
+              </fieldset>
+            </form>
+            @endforeach
+          </div>
         </div>
+      </div>
     </div>
-    <!-- content-wrapper ends -->
+  </div>
+
+  
+{{-- end --}}
+
     @include('Admin/footer')

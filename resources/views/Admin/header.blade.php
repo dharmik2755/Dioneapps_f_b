@@ -200,11 +200,20 @@
                         <a class="nav-link" href="{{ route('development.view') }}">Development</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('stages.view') }}">Stages Of Work</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('about.view') }}">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('stages.view') }}">Stages Of Work</a>
+                        <a class="nav-link" href="{{ route('counter.view') }}">Counter Panel</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('clients.view') }}">Our Clients Info</a>
+                    </li>
+                    {{-- <li class="nav-item">
+                        <a class="nav-link" href="{{ route('contact.create') }}">Contact Us</a>
+                    </li> --}}
                 </ul>
             </div>
         </li>

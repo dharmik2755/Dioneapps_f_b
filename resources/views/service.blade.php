@@ -190,7 +190,7 @@
                         </a>
                     </div>
                     <div class="brif_img_media" data-aos="fade-left" data-aos-delay="500">
-                        <img src="asset/images/service-right.png" alt="">
+                        <img src="asset/images/service-right-old.png" alt="">
                     </div>
                 </div>
             </div>

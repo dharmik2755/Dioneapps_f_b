@@ -356,7 +356,7 @@
                             <input type="text" name="email" class="form_inp-mail" placeholder="Email">
                             <textarea name="message" class="form_inp-text" placeholder="Message"></textarea>
                             <div class="footer_btn-wrpper">
-                                <button class="footer_btn btn" id="form-footer" type="submit">
+                                <button class="footer_btn btn" id="form-footer" type="submit" name="send_us">
                                     Send Us
                                 </button>
                             </div>
