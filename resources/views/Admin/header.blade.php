@@ -200,10 +200,10 @@
                         <a class="nav-link" href="{{ route('development.view') }}">Development</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('about.create') }}">About</a>
+                        <a class="nav-link" href="{{ route('about.view') }}">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('stages.create') }}">Stages Of Work</a>
+                        <a class="nav-link" href="{{ route('stages.view') }}">Stages Of Work</a>
                     </li>
                 </ul>
             </div>
