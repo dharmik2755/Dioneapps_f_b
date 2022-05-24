@@ -68,7 +68,12 @@
                         <input id="lastname" class="form-control" name="description4" type="text" placeholder="Description" value="{{$dt->description4}}">
                         </div>
                     </div>
+                    <div class="text-start">
                     <input class="btn btn-primary" type="submit" name="edit" value="Update">
+                      <a href="{{ route('stages.view') }}">
+                          <button type="button" class="btn btn-inverse-dark btn-fw">Cancel </button>
+                      </a>
+                  </div>
                 </fieldset>
                 </form>
             @endforeach

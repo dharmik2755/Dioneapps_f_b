@@ -12,5 +12,5 @@ class home_slider extends Model
     protected $primaryKey = 'id';
     public $incrementing = true;
     public $timestamps = true;
-    protected $fillable = ['title' , 'description' , 'image'];
+    protected $fillable = ['title' , 'description' , 'image' , 'status'];
 }

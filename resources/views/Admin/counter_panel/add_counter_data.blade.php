@@ -23,19 +23,19 @@
                   <fieldset>
                     <div class="form-group ">
                       <label for="firstname">Clients</label>
-                      <input id="firstname" class="form-control" name="clients" type="text" placeholder="clients" >
+                      <input id="clients" class="form-control" name="clients" type="text" placeholder="clients" >
                     </div>
                     <div class="form-group ">
                       <label for="firstname">Projects</label>
-                      <input id="firstname" class="form-control" name="projects" type="text"     placeholder=" Projects" >
+                      <input id="projects" class="form-control" name="projects" type="text"     placeholder=" Projects" >
                     </div>
                     <div class="form-group">
                       <label for="lastname">Employees</label>
-                      <input id="lastname" class="form-control" name="employees" type="text" placeholder="employees" >
+                      <input id="employees" class="form-control" name="employees" type="text" placeholder="employees" >
                     </div>
                     <div class="form-group">
                       <label for="lastname">Branches</label>
-                      <input id="lastname" class="form-control" name="branches" type="text" placeholder="branches" >
+                      <input id="branches" class="form-control" name="branches" type="text" placeholder="branches" >
                     </div>
                     
                     <input class="btn btn-primary" type="submit" name="add" value="Submit">
@@ -49,3 +49,47 @@
     
       {{-- end of the page --}}
     @include('Admin/footer')
+    <script>
+      jQuery('#frm').validate({
+                rules: {
+                    clients: {
+                        required: true,
+                        maxlength: 50
+                    },
+                    projects: {
+                      required: true,
+                      maxlength:1000
+                    },
+                    employees: {
+                        required: true,
+                        maxlength: 100
+                    },
+                    branches: {
+                        required: true,
+                        maxlength: 100
+                    },
+                    
+                },
+                messages: {
+                    clients: {
+                        required: "Please enter Title",
+                        maxlength: "Title must be 50 char long"
+                    },
+                    projects: {
+                      required: "please Enter Description",
+                      maxlength: "Description must be 1000 char long"
+                    },
+                    employees: {
+                        required: "please enter Sub Title 1",
+                        maxlength: "Sub Title must be 100 char long"
+                    },
+                    branches: {
+                        required: "please enter Sub Title 2",
+                        maxlength: "Sub Title must be 100 char long"
+                    },
+                },
+                submitHandler: function(form) {
+                    form.submit();
+                }
+            });
+    </script>

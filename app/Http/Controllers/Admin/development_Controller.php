@@ -12,9 +12,11 @@ class development_Controller extends Controller
      // add
      public function create(Request $res)
      {
+       
+
          if (isset($res->save)) 
          {
-             
+            // dd($res->all());
              $title = $res->title;
              $description = $res->description;
              $image = $res->file('image');
@@ -29,12 +31,12 @@ class development_Controller extends Controller
          return view('Admin.development.add_development_data');
      }
  
-     // show
+     // show data
      public function show(Request $id)
      {
          $show_data = mobile::get();
          $data['mobile'] = $show_data;
- 
+
          return view('Admin.development.view_development_data',$data);
      }
  
@@ -74,4 +76,14 @@ class development_Controller extends Controller
          mobile::where('id',$id)->delete();
          return redirect()->route('development.view');
      }
+
+    //  status insert in sata base
+    public function active_and_deactive(Request $res)
+    {
+        $home = mobile::find($res->id);
+        $home->status = $res->status;
+        $home->save();
+
+        return response()->json(['success'=>'Status change successfully.']);
+    }
 }

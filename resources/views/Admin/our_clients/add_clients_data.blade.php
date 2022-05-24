@@ -18,32 +18,38 @@
         <div class="card">
           <div class="card-body">
             <h4 class="card-title">Add data</h4>
-            <form class="cmxform" id="signupForm" method="POST" enctype="multipart/form-data">
+            <form class="cmxform" id="frm" method="POST" enctype="multipart/form-data">
               @csrf
               <fieldset>
                 <div class="form-group ">
                   <label for="firstname">Client Name</label>
-                  <input id="firstname" class="form-control" name="name" type="text" placeholder="Name">
+                  <input id="name" class="form-control" name="name" type="text" placeholder="Name">
                 </div>
                 <div class="form-group">
                   <label for="lastname">Clients Profession</label>
-                  <input id="lastname" class="form-control" name="profession" type="text" placeholder="Profession">
+                  <input id="profession" class="form-control" name="profession" type="text" placeholder="Profession">
                 </div>
                 <div class="form-group">
                   <label for="lastname">Information About Client</label>
-                  <input id="lastname" class="form-control" name="information" type="text" placeholder="info">
+                  <input id="information" class="form-control" name="information" type="text" placeholder="info">
                 </div>
                 <div class="form-group">
                   <label for="lastname">Description</label>
-                  <input id="lastname" class="form-control" name="description" type="text" placeholder="Description">
+                  <input id="description" class="form-control" name="description" type="text" placeholder="Description">
                 </div>
                 <div class="form-group">
                   <label>File upload</label>
                   <div class="input-group col-xs-12">
-                    <input type="file"  name="image" class="form-control file-upload-info"  placeholder="Upload Image">
+                    <input type="file" id="image"   name="image" class="form-control file-upload-info"  placeholder="Upload Image" style="width: 100%;">
                   </div>
                 </div>
-                <input class="btn btn-primary" type="submit" name="add" value="Submit">
+
+                <div class="text-start">
+                  <input class="btn btn-primary" type="submit" name="add" value="Submit">
+                    <a href="{{ route('clients.view') }}">
+                      <button type="button" class="btn btn-inverse-dark btn-fw">Cancel </button>
+                    </a>
+                </div>
               </fieldset>
             </form>
           </div>
@@ -53,3 +59,50 @@
   </div>
 
 @include('Admin/footer')
+<script>
+  jQuery('#frm').validate({
+            rules: {
+                name: {
+                    required: true,
+                    maxlength: 50
+                },
+                profession: {
+                    required: true,
+                    maxlength: 50
+                },
+                information: {
+                    required: true,
+                    maxlength: 50
+                },
+                description: {
+                  required: true,
+                  maxlength:500
+                },
+                image: 'required',
+               
+            },
+            messages: {
+                name: {
+                    required: "Please enter Title",
+                    maxlength: "Title must be 50 char long"
+                },
+                profession: {
+                  required: "please Enter profession",
+                  maxlength: "profession must be 50 char long"
+                },
+                information: {
+                  required: "please Enter information",
+                  maxlength: "information must be 50 char long"
+                },
+                description: {
+                  required: "please Enter Description",
+                  maxlength: "Description must be 500 char long"
+                },
+                image: "please enter image",
+                    
+            },
+            submitHandler: function(form) {
+                form.submit();
+            }
+        });
+</script>

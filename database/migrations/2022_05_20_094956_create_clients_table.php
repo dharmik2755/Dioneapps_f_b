@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('information',50);
             $table->string('description',1000);
             $table->string('image',300);
+            $table->tinyInteger('status')->default('1');
             $table->timestamps();
         });
     }

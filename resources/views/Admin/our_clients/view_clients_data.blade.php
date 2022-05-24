@@ -8,15 +8,15 @@
                     <li class="breadcrumb-item"><a href="#">Tables</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Data table</li>
                 </ol>
-                <ol class="breadcrumb">
-                    <a href="{{ route('clients.create') }}">
-                        <button type="button" class="btn btn-outline-info btn-fw">Add Clients Data</button>
-                    </a>
-                </ol>
             </nav>
         </div>
         <div class="card">
             <div class="card-body">
+                <div class="text-end">
+                    <a href="{{ route('clients.create') }}">
+                        <button type="button" class="btn btn-outline-info btn-fw">Add </button>
+                    </a>
+                </div>
                 <h4 class="card-title">Data table</h4>
                 <div class="row">
                     <div class="col-12">
@@ -48,7 +48,7 @@
                                                     alt="">
                                             </td>
                                             <td>
-                                                <label class="badge badge-info">On hold</label>
+                                                <input data-id="{{$dt->id}}"  class="toggle-class"  type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" {{$dt->status ? 'checked' : '' }}>
                                             </td>
                                             <td>
                                                 {{-- edit link --}}
@@ -78,3 +78,25 @@
     </div>
     <!-- content-wrapper ends -->
     @include('Admin/footer')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" ></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<script>
+    $(function() {
+      $('.toggle-class').change(function() {
+        //   alert();
+          var status = $(this).prop('checked') == true ? 1 : 0; 
+          var id = $(this).data('id'); 
+           console.log(status);
+          $.ajax({
+                  type: "GET",
+                  dataType: "json",
+                  url: '/stutus-our-clients-of-work-data',
+                  data: {'status': status, 'id': id},
+                      success: function(data)
+                      {
+                        console.log(data.success)
+                      }
+                });
+      })
+    })
+  </script>

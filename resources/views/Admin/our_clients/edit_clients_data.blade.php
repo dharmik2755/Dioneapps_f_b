@@ -48,7 +48,12 @@
                     <input type="file"  name="image" class="form-control file-upload-info"  placeholder="Upload Image">
                   </div>
                 </div>
-                <input class="btn btn-primary" type="submit" name="update" value="Update">
+                <div class="text-start">
+                  <input class="btn btn-primary" type="submit" name="update" value="Update">
+                    <a href="{{ route('clients.view') }}">
+                        <button type="button" class="btn btn-inverse-dark btn-fw">Cancel </button>
+                    </a>
+                </div>
               </fieldset>
             </form>
             @endforeach

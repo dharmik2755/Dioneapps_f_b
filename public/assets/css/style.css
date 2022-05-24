@@ -30782,3 +30782,8 @@ div.tagsinput span.tag a {
     line-height: 1.5;
     color: white;
 }
+/* for error  */
+.error{
+    color: red;
+    margin-top: 5px;
+}

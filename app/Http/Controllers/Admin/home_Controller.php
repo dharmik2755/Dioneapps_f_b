@@ -107,4 +107,15 @@ class home_Controller extends Controller
         home_slider::where('id',$id)->delete();
         return redirect('/view-home-slider');
     }
+
+    //active and deactive button
+    public function active_and_deactive(Request $res)
+    {
+        $user = home_slider::find($res->id);
+        $user->status = $res->status;
+        $user->save();
+
+        return response()->json(['success'=>'Status change successfully.']);
+    }
+
 }

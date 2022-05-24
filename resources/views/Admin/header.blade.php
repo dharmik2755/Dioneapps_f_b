@@ -28,7 +28,11 @@
     <link rel="shortcut icon" href="{{ asset('assets/images/logo.png') }}" />
 
     {{-- font Awesome --}}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"  />
+    
+    <!-- for active and deactive button css cdn file -->
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"  />  --}}
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -209,27 +213,33 @@
                         <a class="nav-link" href="{{ route('counter.view') }}">Counter Panel</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('clients.view') }}">Our Clients Info</a>
+                        <a class="nav-link" href="{{ route('clients.view') }}">Clients Info</a>
                     </li>
-                    {{-- <li class="nav-item">
-                        <a class="nav-link" href="{{ route('contact.create') }}">Contact Us</a>
-                    </li> --}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('contact.view') }}">Contact Us</a>
+                    </li>
                 </ul>
             </div>
         </li>
 
         {{-- -------------------------------- About page Data----------------------------------- --}}
-        <li class="nav-item nav-category"><span class="nav-link">About Page</span></li>
+        <li class="nav-item nav-category"><span class="nav-link">About </span></li>
         <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false"
                 aria-controls="ui-basic">
-                <span class="menu-title">About Page</span>
+                <span class="menu-title">About Us</span>
                 <i class="icon-layers menu-icon"></i>
             </a>
             <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('about-page') }}">About Page</a>
+                        <a class="nav-link" href="{{ route('about.expert.view') }}">About expert</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('renowned.view') }}">About Renowned</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('project.contact.create') }}">Project Contact</a>
                     </li>
                 </ul>
             </div>

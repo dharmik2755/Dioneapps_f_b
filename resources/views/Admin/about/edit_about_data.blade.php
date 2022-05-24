@@ -48,7 +48,12 @@
                                           placeholder="Upload Image">
                                   </div>
                               </div>
+                              <div class="text-start">
                               <input class="btn btn-primary" type="submit" name="edit" value="Submit">
+                                <a href="{{ route('about.view') }}">
+                                    <button type="button" class="btn btn-inverse-dark btn-fw">Cancel </button>
+                                </a>
+                            </div>
                           </fieldset>
                       </form>
                       @endforeach

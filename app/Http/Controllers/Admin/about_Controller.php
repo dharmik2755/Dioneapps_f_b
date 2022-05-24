@@ -73,4 +73,14 @@ class about_Controller extends Controller
         about::where('id',$id)->delete();
          return redirect()->route('about.view');
     }
+    
+    //active and deactive button
+    public function active_and_deactive(Request $res)
+    {
+        $user = about::find($res->id);
+        $user->status = $res->status;
+        $user->save();
+
+        return response()->json(['success'=>'Status change successfully.']);
+    }
 }

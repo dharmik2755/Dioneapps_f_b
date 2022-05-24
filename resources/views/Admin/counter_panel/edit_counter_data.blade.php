@@ -42,7 +42,12 @@
                           </div>
                     </div>
                     
-                    <input class="btn btn-primary text-end" type="submit" name="update" value="Update">
+                    <div class="text-start">
+                        <input class="btn btn-primary text-end" type="submit" name="update" value="Update">
+                          <a href="{{ route('counter.view') }}">
+                              <button type="button" class="btn btn-inverse-dark btn-fw">Cancel </button>
+                          </a>
+                      </div>
                   </fieldset>
                 </form>
                 @endforeach

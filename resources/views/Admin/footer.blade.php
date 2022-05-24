@@ -34,7 +34,12 @@
 <!-- Custom js for this page -->
 <script src="{{ asset('assets/js/alerts.js')}}"></script>
 <script src="{{ asset('assets/js/avgrund.js')}}"></script>
-<!-- End custom js for this page -->
+
+
+{{-- jqury --}}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
+<!-- End custom jqery for this page -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" ></script>
+
 </body>
 </html>
