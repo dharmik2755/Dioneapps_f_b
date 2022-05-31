@@ -25,7 +25,7 @@
                     <ul class="bottom-item_list">
                         <li>
                             <a class="footer_text" href="#/development/internet_magazin">Mobile application
-                                development </a>
+                                Development </a>
                         </li>
                         <li>
                             <a class="footer_text" href="#/development/corporate_website">Web and Backend
@@ -89,22 +89,28 @@
                             Info@dioneapps.com
                         </a>
                     </div>
+                    <div class="bottom-item_email">
+                        <a href="#" class="item_email-adr footer_text">
+                            support.dioneapps
+                        </a>
+                    </div>
+                    
                     <div class="bottom-item_messan">
                         <div class="item_messan-title footer_title">
                             Social media:
                         </div>
                         <div class="item_messan-wrpper">
                             <a href="#" class="item_messan-link">
-                                <img src="asset/images/fa.svg" width="18" height="25" alt="">
+                                <img src="{{ asset('asset/images/fa.svg')}}" width="18" height="25" alt="">
                             </a>
                             <a href="#" class="item_messan-link">
-                                <img src="asset/images/tw.svg" width="15" height="17" alt="">
+                                <img src="{{ asset('asset/images/tw.svg')}}" width="15" height="17" alt="">
                             </a>
                             <a href="#" class="item_messan-link">
-                                <img src="asset/images/in.svg" width="15" height="17" alt="">
+                                <img src="{{ asset('asset/images/in.svg')}}" width="15" height="17" alt="">
                             </a>
                             <a href="#" class="item_messan-link">
-                                <img src="asset/images/insta.svg" width="15" height="17" alt="">
+                                <img src="{{ asset('asset/images/insta.svg')}}" width="15" height="17" alt="">
                             </a>
                         </div>
                     </div>
@@ -125,6 +131,10 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script type="text/javascript" src="https://smav.com.ua/js/libs.min.js"></script>
 <script type="text/javascript" src="https://smav.com.ua/js/main.js"></script>
+
+{{-- for jquery validation --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" ></script>
+
 </body>
 
 </html>

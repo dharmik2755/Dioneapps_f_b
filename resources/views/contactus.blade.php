@@ -18,39 +18,19 @@
     <div class="container">
         
         <div class="support_wrapper">
-            <div class="support_item_contact">
-                <div class="support_item-icon fa-lg" >
-                    <i class="fa-solid fa-phone"></i>
+            @foreach ($contact_media_info as $cmi)    
+                <div class="support_item_contact">
+                    <div class="support_item-icon fa-lg" >
+                        <i class="{{$cmi->code}}"></i>
+                    </div>
+                    <a href="{{$cmi->title_link}}" class="support_item-title">
+                        {{$cmi->title}}
+                    </a>
+                    <div class="support_item-text">
+                        {{$cmi->description}}
+                    </div>
                 </div>
-                <a href="tel:+380973596510" class="support_item-title">
-                    +91 7211140033
-                </a>
-                <div class="support_item-text">
-                    Assistance hours: Monday – Friday, 9 am to 5 pm
-                </div>
-            </div>
-            <div class="support_item_contact">
-                <div class="support_item-icon fa-lg" >
-                    <i class="fa-solid fa-envelope"></i>
-                </div>
-                <a href="https://web.telegram.org/@smav01" class="support_item-title">
-                    info@dioneapps.com
-                </a>
-                <div class="support_item-text">
-                    Our support team will get back to in 24-h during standard business hours.
-                </div>
-            </div>
-            <div class="support_item_contact">
-                <div class="support_item-icon fa-lg" >
-                    <i class="fa-brands fa-skype"></i>
-                </div>
-                <a href="mailto:support@host.com" class="support_item-title">
-                    support.dioneapps
-                </a>
-                <div class="support_item-text">
-                    We Are Online: Monday – Friday, 9 am to 5 pm
-                </div>
-            </div>
+            @endforeach
             <div class="support_item_contact">
                 <div class="item_messan-wrpper">
                     <a href="#" class="item_messan-link-media">
@@ -72,39 +52,41 @@
 </section>
 <!-- end contact detail -->
 
-<!-- start Contact Us -->
-  <div class="contacts">
+ <!-- start Contact Us -->
+ <div class="contacts">
     <div id="contacts" class="contacts_scroll"></div>
     <div class="container">
         <div class="contacts_wrapper">
+            @foreach ($contact as $cnt)
+            
             <div class="contacts_title title">
-                Contact Us
+                {{ $cnt->title }}
             </div>
             <div class="contacts_text text">
-                Planning a project? Please send your requirements and we’ll get back to you at the earliest.
+                {{ $cnt->description }}
             </div>
+            @endforeach
             <div class="form-wrapper">
                 <div class="form_mail" data-aos="fade-up-right">
                     <a href="#" class="form_mail-link">
-                        <img src="asset/images/contactus.png" alt="" >
+                        <img src="{{ asset('upload/' . $cnt->image) }}" alt="">
                     </a>
                 </div>
 
-                <form class="form_bottom" id="ajax_form" data-aos="fade-up-left">
-
+                <form class="form_bottom" id="contactForm" method="POST" data-aos="fade-up-left">
+                    @CSRF
                     <div class="footer-form_title">
                         GET IN TOUCH
                     </div>
-                    <div id="result_form_success" style="display: none">form success</div>
-                    <div id="result_form_error" style="display: none">form error</div>
+                        
                     <div class="inp_cont-wrapper">
-                        <input type="text" name="name" class="form_inp-cont" placeholder="name">
-                        <input type="text" name="telephone" class="form_inp-cont" placeholder="Phone No">
+                        <input type="text" id="name" name="name" class="form_inp-cont" placeholder="name" >
+                        <input type="text" id="phone_number" name="phone_number" class="form_inp-cont" placeholder="Phone No" >
                     </div>
-                    <input type="text" name="email" class="form_inp-mail" placeholder="Email">
-                    <textarea name="message" class="form_inp-text" placeholder="Message"></textarea>
+                        <input type="text" id="email" name="email" class="form_inp-mail" placeholder="Email" >
+                        <textarea name="message" id="message" class="form_inp-text" placeholder="Message" ></textarea>
                     <div class="footer_btn-wrpper">
-                        <button class="footer_btn btn" id="form-footer" type="submit">
+                        <button class="footer_btn btn"  type="submit" name="send_us">
                             Send Us
                         </button>
                     </div>
@@ -116,3 +98,76 @@
 <!-- End Contact Us-->
 
 @include('user_footer')
+<script>
+    jQuery('#contactForm').validate({
+            rules: {
+                name: {
+                    required: true,
+                    number: false,
+                    maxlength: 50
+                },
+                phone_number: {
+                  required: true,
+                  number:true,
+                  maxlength: 10,
+                  minlength: 10
+                },
+                email: {
+                    required: true,
+                    email: true,
+                    maxlength: 2000
+                },
+                message: {
+                    required: true,
+                    maxlength: 2000
+                },
+                
+            },
+            messages: {
+                name: {
+                    required: "Please enter Name",
+                    number: "Do not enter Number ",
+                    maxlength: "Title must be 50 char long"
+                },
+                phone_number: {
+                  required: "please Enter Phone Number",
+                  number:"Enter Only Number",
+                  maxlength: "Phone Number must be 10 char long",
+                  minlength: "Enter valid Numer length" 
+                },
+                email: {
+                    required: "please enter Email ",
+                    email: "Emter vlid Email ",
+                    maxlength: "Sub Title must be 2000 char long"
+                },
+                message: {
+                    required: "please enter Message ",
+                    maxlength: "Sub Title must be 2000 char long"
+                },
+                
+            },
+            submitHandler: function(form) {
+                form.submit();
+            }
+        });
+    $('#contactForm').on('submit', function(event) {
+        event.preventDefault();
+        // Get Alll Text Box Id's
+        name = $('#name').val();
+        phone_number = $('#phone_number').val();
+        email = $('#email').val();
+        message = $('#message').val();
+
+        $.ajax({
+            url: "/add-user-contact-data", //Define Post URL
+            type: "POST",
+            data: { "_token": "{{ csrf_token() }}", name: name, phone_number: phone_number, email: email, message: message, },
+            
+            //Display Response Success Message
+            success: function(data) {
+                console.log(data.success)
+                document.getElementById("contactForm").reset();
+            },
+        });
+    });
+</script>

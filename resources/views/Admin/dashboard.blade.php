@@ -1,9 +1,9 @@
-@include('Admin/header')
+@include('Admin.header')
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
-            <div class="row">
-              <div class="col-md-8 grid-margin stretch-card">
+            {{-- <div class="row">
+              <div class="col-md-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body performane-indicator-card">
                     <div class="d-sm-flex">
@@ -62,7 +62,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> --}}
             <!-- Quick Action Toolbar Starts-->
             <div class="row quick-action-toolbar">
               <div class="col-md-12 grid-margin">
@@ -89,7 +89,7 @@
               </div>
             </div>
             <!-- Quick Action Toolbar Ends-->
-            <div class="row">
+            {{-- <div class="row">
               <div class="col-md-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
@@ -177,9 +177,9 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> --}}
             <div class="row">
-              <div class="col-xl-8 grid-margin stretch-card">
+              <div class="col-xl-12 grid-margin stretch-card">
                 <div class="card sales-report-country">
                   <div class="card-body">
                     <div class="d-md-flex">
@@ -223,7 +223,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-4 grid-margin stretch-card">
+              {{-- <div class="col-xl-4 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
                     <div class="d-sm-flex align-items-center">
@@ -272,9 +272,9 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> --}}
             </div>
-            <div class="row">
+            {{-- <div class="row">
               <div class="col-md-12 grid-margin">
                 <div class="card">
                   <div class="card-body">
@@ -307,7 +307,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> --}}
             <div class="row">
               <div class="col-md-4 grid-margin stretch-card">
                 <div class="card social-card card-colored twitter-card">
@@ -1101,4 +1101,4 @@
             </div>
           </div> --}}
           <!-- content-wrapper ends -->
-@include('Admin/footer')
+@include('Admin.footer')

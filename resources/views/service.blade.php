@@ -1,34 +1,33 @@
 @include('user_header')
 
-    <!-- start about us title -->
-    <section class="wrapper_form">
-        <div class="container">
-            <form class="form" id="ajax_form_project" data-aos="fade-down">
-                <div class="form_title_custom" id="">
-                    Service
-                </div>            
-            </form>
-        </div>
-    </section>
-    <!-- about us title End -->
+<!-- start about us title -->
+<section class="wrapper_form">
+    <div class="container">
+        <form class="form" id="ajax_form_project" data-aos="fade-down">
+            <div class="form_title_custom" id="">
+                Service
+            </div>
+        </form>
+    </div>
+</section>
+<!-- about us title End -->
 
 <!-- start service title -->
 <section class="page_top" data-aos="fade-right">
     <div class="container">
         <div class="page_top-wrapper">
-            <div class="page_top-left">
-                <div class="page_top-title">
-                    Unfolding The Ideas And Expertise To Transform The Impossible Into The Possible
+            @foreach ($service_page as $sp)
+                <div class="page_top-left">
+                    <div class="page_top-title">
+                        {{ $sp->title }}
+                    </div>
                 </div>
-            </div>
-            <div class="page_top-right">
-                <div class="page_top-text">
-                    Our experienced professionals and skilled web developers create high quality digital solutions parallel to all your individual or business level needs. Our creative developers are experts when it comes to building or improving the presence of your business and its brand value. We deploy each project with create engaging methods and careful analysis to help improve your online presence. As a leading web development company in India, we strive to make your presence remarkable on the web by providing responsive web design services. We have our own digital development ethics and it keeps us ahead, in the bracket of the top web development companies in India.
+                <div class="page_top-right">
+                    <div class="page_top-text">
+                        {{ $sp->description }}
+                    </div>
                 </div>
-                <!-- <div class="page_top-text">
-                    Dione Apps, reputed IT Company in India, has successfully carved its niche within a few time of its inception. With a strong team of qualified and experienced professionals, we strive to develop top-notch mobile applications and websites subjective to the needs of our clients. Over such a short span of time, we have undertaken over __ projects and we have a pool of over __ satisfied clients.
-                </div> -->
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -44,61 +43,42 @@
         <p class="advantages_text text" data-aos="fade-right">
         </p>
         <div class="advantages_wrapper" data-aos="fade-right">
-            <div class=" advantages_item">
-                <div class="advantages_item-main">
-                    <img src="asset/images/premium-quality-white.png" alt="">
-                    <div class="advantages_item-title">
-                        Mobile application development
+            <?php
+            $i = 1;
+            ?>
+            @foreach ($our_services as $item)
+                <?php  
+
+                if(3 / $i != 1 || 6 / $i != 2 )
+                { ?>
+                    <div class=" advantages_item ">
+                        <div class="advantages_item-main">
+                            <img src="{{('upload/'.$item->image)}}" alt="">
+                            <div class="advantages_item-title">
+                                {{ $item->title }}
+                            </div>
+                        </div>
+                        <div class="advantages_item-text">
+                            {{ $item->description }}a
+                        </div>
                     </div>
-                </div>
-                <div class="advantages_item-text">
-                    Dione Apps is a top-tier mobile app development company in Surat helping businesses to sustain in the highly competitive app market.
-                </div>
-            </div>
-            <div class="advantages_item">
-                <div class="advantages_item-main">
-                    <img src="asset/images/comet-white.png" alt="">
-                    <div class="advantages_item-title">
-                        Web  Development
+          <?php }else
+                { ?>
+                    <div class="advantages_item advantages_item-tree">
+                        <div class="advantages_item-main">
+                            <img src="{{('upload/'.$item->image)}}" alt="">
+                            <div class="advantages_item-title">
+                                {{ $item->title }}
+                            </div>
+                        </div>
+                        <div class="advantages_item-text">
+                            {{ $item->description }}
+                        </div>
                     </div>
-                </div>
-                <div class="advantages_item-text">
-                    From static business websites to dynamic and responsive e-commerce online portals, we offer valuable strategic and strategic web development services in India.
-                </div>
-            </div>
-            <div class="advantages_item advantages_item-tree">
-                <div class="advantages_item-main">
-                    <img src="asset/images/location-white.png" alt="">
-                    <div class="advantages_item-title">
-                        UI/UX Designing
-                    </div>
-                </div>
-                <div class="advantages_item-text">
-                    UI/UX designing at Dione Apps is a perfect jam of creativity, skills and professionalism.
-                </div>
-            </div>
-            <div class="advantages_item">
-                <div class="advantages_item-main">
-                    <img src="asset/images/shield-white.png" alt="">
-                    <div class="advantages_item-title">
-                        Logo Designing
-                    </div>
-                </div>
-                <div class="advantages_item-text">
-                    With a team of professionals, we make creative logos and build brand identity for your firm that stay into the close connection with your ideas.
-                </div>
-            </div>
-            <div class="advantages_item">
-                <div class="advantages_item-main">
-                    <img src="asset/images/bank-white.png" alt="">
-                    <div class="advantages_item-title">
-                        Content Writing	
-                    </div>
-                </div>
-                <div class="advantages_item-text">
-                    Our team of professional content writers can help you with the best quality, relevant.
-                </div>
-            </div>
+        <?php   }
+            $i = $i + 1; ?>
+
+            @endforeach
             <div class="advantages_item advantages_item-tree">
                 <div class="advantages_item-main">
                     <img src="asset/images/contact-icon-white.png" alt="">
@@ -107,68 +87,50 @@
                     </div>
                 </div>
                 <div class="advantages_item-text">
-                    <a href="contactus.html" class="header_main-btn btn-header-service ">
+                    <a href="{{ route('contact.page') }}" class="header_main-btn btn-header-service ">
                         Contact Us
                     </a>
                 </div>
             </div>
         </div>
     </div>
-    <section >
+    <section>
 
-<!-- our services end -->
+        <!-- our services end -->
 
-<!-- start About Us -->
+        <!-- start About Us -->
         <section class="brif">
             <div class="container">
                 <div class="brif_wrapp">
                     <div class="brif_content" data-aos="fade-right">
+                        @foreach ($services_offer as $item3)
+                            
                         <div class="brif_title_media title_media">
-                            Here’s What Dione Apps Can Offer To Your Online Business Venture
+                            {{-- Here’s What Dione Apps Can Offer To Your Online Business Venture --}}
+                            {{$item3->title}}
                         </div>
                         <div class="brif_text text">
-                            Finding a web development company you can count on and build a relationship with for the long term service is a difficult task. Here are few reasons why you have made the best decision for your brand by choosing us.
+                            {{-- Finding a web development company you can count on and build a relationship with for the
+                            long term service is a difficult task. Here are few reasons why you have made the best
+                            decision for your brand by choosing us. --}}
+                            {{$item3->description}}
                         </div>
                         <div class="support_wrapper_media">
-                            <div class="support_item_media">
-                                <div class="support_item-text_media mg-media">
-                                    Requirement Analysis
-                                </div>
-                            </div>
-                            <div class="support_item_media">
-                                <div class="support_item-text_media mg-media">
-                                    Thorough study of client’s business
-                                </div>
-                            </div>
-                            <div class="support_item_media">
-                                <div class="support_item-text_media mg-media">
-                                    Onboard dedicated team.
-                                </div>
-                            </div>
-                            <div class="support_item_media">
-                                <div class="support_item-text_media mg-media">
-                                    Transparent Communication.
-                                </div>
-                            </div>
-                            <div class="support_item_media">
-                                <div class="support_item-text_media mg-media">
-                                    Quality & Security audit.
-                                </div>
-                            </div>
-                            <div class="support_item_media">
-                                <div class="support_item-text_media mg-media">
-                                    User Acceptance Testing
-                                </div>
-                            </div>
-                            <div class="support_item_media">
-                                <div class="support_item-text_media mg-media">
-                                    Delivering last mile support.
-                                </div>
-                            </div>
+                            <?php
+                            $array_of_sub_title = explode('|||',$item3->sub_title);
+                            for ($i=0; $i<count($array_of_sub_title) ; $i++) 
+                            {?> 
+                                <div class="support_item_media">
+                                        <div class="support_item-text_media mg-media">
+                                            
+                                            {{$array_of_sub_title[$i]}}
+                                        </div>
+                                    </div>
+                            <?php } ?>
                         </div>
                         <div class="brif_info">
                             <div class="brif_info-text text">
-                                Our variegated experience has offered larger benefits to a variety of clients from different geographies and business verticals. We offer dynamic solutions using unique developmental methodologies and the latest technologies. Our designed and developed mobile applications and web solutions have marked a significant presence in different industries and marketplaces. Focusing on outcomes, we use our technical skill and industry insight to help you meet your digital goals.
+                               {{$item3->sub_description}}
                             </div>
                         </div>
                         <div class="item_messan-wrpper">
@@ -188,6 +150,8 @@
                         <a href="/ru/brief" class="brif_btn btn">
                             Follow Us
                         </a>
+
+                    @endforeach
                     </div>
                     <div class="brif_img_media" data-aos="fade-left" data-aos-delay="500">
                         <img src="asset/images/service-01-01.png" alt="">
@@ -195,50 +159,125 @@
                 </div>
             </div>
         </section>
-<!-- End About Us -->
+        <!-- End About Us -->
 
 
-<!-- start Contact Us -->
-  <div class="contacts">
-    <div id="contacts" class="contacts_scroll"></div>
-    <div class="container">
-        <div class="contacts_wrapper">
-            <div class="contacts_title title">
-                Contact Us
-            </div>
-            <div class="contacts_text text">
-                Planning a project? Please send your requirements and we’ll get back to you at the earliest.
-            </div>
-            <div class="form-wrapper">
-                <div class="form_mail" data-aos="fade-up-right">
-                    <a href="#" class="form_mail-link">
-                        <img src="asset/images/contactus.png" alt="" >
-                    </a>
+        <!-- start Contact Us -->
+        <div class="contacts">
+            <div id="contacts" class="contacts_scroll"></div>
+            <div class="container">
+                <div class="contacts_wrapper">
+                    @foreach ($contact as $cnt)
+                    
+                    <div class="contacts_title title">
+                        {{ $cnt->title }}
+                    </div>
+                    <div class="contacts_text text">
+                        {{ $cnt->description }}
+                    </div>
+                    @endforeach
+                    <div class="form-wrapper">
+                        <div class="form_mail" data-aos="fade-up-right">
+                            <a href="#" class="form_mail-link">
+                                <img src="{{ asset('upload/' . $cnt->image) }}" alt="">
+                            </a>
+                        </div>
+        
+                        <form class="form_bottom" id="contactForm" method="POST" data-aos="fade-up-left">
+                            @CSRF
+                            <div class="footer-form_title">
+                                GET IN TOUCH
+                            </div>
+                                
+                            <div class="inp_cont-wrapper">
+                                <input type="text" id="name" name="name" class="form_inp-cont" placeholder="name" >
+                                <input type="text" id="phone_number" name="phone_number" class="form_inp-cont" placeholder="Phone No" >
+                            </div>
+                                <input type="text" id="email" name="email" class="form_inp-mail" placeholder="Email" >
+                                <textarea name="message" id="message" class="form_inp-text" placeholder="Message" ></textarea>
+                            <div class="footer_btn-wrpper">
+                                <button class="footer_btn btn"  type="submit" name="send_us">
+                                    Send Us
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-
-                <form class="form_bottom" id="ajax_form" data-aos="fade-up-left">
-
-                    <div class="footer-form_title">
-                        GET IN TOUCH
-                    </div>
-                    <div id="result_form_success" style="display: none">form success</div>
-                    <div id="result_form_error" style="display: none">form error</div>
-                    <div class="inp_cont-wrapper">
-                        <input type="text" name="name" class="form_inp-cont" placeholder="name">
-                        <input type="text" name="telephone" class="form_inp-cont" placeholder="Phone No">
-                    </div>
-                    <input type="text" name="email" class="form_inp-mail" placeholder="Email">
-                    <textarea name="message" class="form_inp-text" placeholder="Message"></textarea>
-                    <div class="footer_btn-wrpper">
-                        <button class="footer_btn btn" id="form-footer" type="submit">
-                            Send Us
-                        </button>
-                    </div>
-                </form>
             </div>
         </div>
-    </div>
-</div>
-<!-- End Contact Us-->
+        <!-- End Contact Us-->
 
-@include('user_footer')
+        @include('user_footer')
+        <script>
+            jQuery('#contactForm').validate({
+                    rules: {
+                        name: {
+                            required: true,
+                            number: false,
+                            maxlength: 50
+                        },
+                        phone_number: {
+                          required: true,
+                          number:true,
+                          maxlength: 10,
+                          minlength: 10
+                        },
+                        email: {
+                            required: true,
+                            email: true,
+                            maxlength: 2000
+                        },
+                        message: {
+                            required: true,
+                            maxlength: 2000
+                        },
+                        
+                    },
+                    messages: {
+                        name: {
+                            required: "Please enter Name",
+                            number: "Do not enter Number ",
+                            maxlength: "Title must be 50 char long"
+                        },
+                        phone_number: {
+                          required: "please Enter Phone Number",
+                          number:"Enter Only Number",
+                          maxlength: "Phone Number must be 10 char long",
+                          minlength: "Enter valid Numer length" 
+                        },
+                        email: {
+                            required: "please enter Email ",
+                            email: "Emter vlid Email ",
+                            maxlength: "Sub Title must be 2000 char long"
+                        },
+                        message: {
+                            required: "please enter Message ",
+                            maxlength: "Sub Title must be 2000 char long"
+                        },
+                        
+                    },
+                    submitHandler: function(form) {
+                        form.submit();
+                    }
+                });
+            $('#contactForm').on('submit', function(event) {
+                event.preventDefault();
+                // Get Alll Text Box Id's
+                name = $('#name').val();
+                phone_number = $('#phone_number').val();
+                email = $('#email').val();
+                message = $('#message').val();
+        
+                $.ajax({
+                    url: "/add-user-contact-data", //Define Post URL
+                    type: "POST",
+                    data: { "_token": "{{ csrf_token() }}", name: name, phone_number: phone_number, email: email, message: message, },
+                    
+                    //Display Response Success Message
+                    success: function(data) {
+                        console.log(data.success)
+                        document.getElementById("contactForm").reset();
+                    },
+                });
+            });
+        </script>

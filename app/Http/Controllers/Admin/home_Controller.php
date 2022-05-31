@@ -41,7 +41,15 @@ class home_Controller extends Controller
     {  
         return view('Admin.dashboard');
     }
-    // Home slider page insert data
+
+    public function logout(Request $res)
+    {
+        $res->Session()->forget('user_id');
+
+        return redirect('/Admin-side');
+    }
+
+    // Home slider page insert data -------------------------------------------------
     public function add_home_slider(Request $res)
     {
         if (isset($res->save)) 
@@ -67,9 +75,9 @@ class home_Controller extends Controller
     // Home slider page view data
     public function view_home_slider(Request $res)
     {
-        $show_data = home_slider::get();
-        $data['home_slider'] = $show_data;
-        return view('Admin.home.view_home_slider',$data);
+        $home_slider = home_slider::get();
+        // $data['home_slider'] = $show_data;
+        return view('Admin.home.view_home_slider', compact('home_slider'));
     }
     // Home slider page update data
     public function edit_home_slider(Request $res,$id)

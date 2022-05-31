@@ -51,7 +51,7 @@
   </div>
 
   {{-- end of the page --}}
-@include('Admin/footer')
+@include('Admin.footer')
 <script>
   jQuery('#frm').validate({
             rules: {
@@ -63,22 +63,11 @@
                   required: true,
                   maxlength:1000
                 },
-                sub_title1: {
+                'sub_title[]': {
                     required: true,
-                    maxlength: 100
+                    maxlength: 2000
                 },
-                sub_title2: {
-                    required: true,
-                    maxlength: 100
-                },
-                sub_title3: {
-                    required: true,
-                    maxlength: 100
-                },
-                sub_title4: {
-                    required: true,
-                    maxlength: 100
-                },
+                
             },
             messages: {
                 title: {
@@ -89,23 +78,11 @@
                   required: "please Enter Description",
                   maxlength: "Description must be 1000 char long"
                 },
-                sub_title1: {
-                    required: "please enter Sub Title 1",
-                    maxlength: "Sub Title must be 100 char long"
+                'sub_title[]': {
+                    required: "please enter Sub Title ",
+                    maxlength: "Sub Title must be 2000 char long"
                 },
-                sub_title2: {
-                    required: "please enter Sub Title 2",
-                    maxlength: "Sub Title must be 100 char long"
-                },
-                sub_title3: {
-                    required: "please enter Sub Title 3",
-                    maxlength: "Sub Title must be 100 char long"
-                },
-                sub_title4: {
-                    required: "please enter Sub Title 4",
-                    maxlength: "Sub Title must be 100 char long"
-                },
-
+                
             },
             submitHandler: function(form) {
                 form.submit();

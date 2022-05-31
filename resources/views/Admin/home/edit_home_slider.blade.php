@@ -23,7 +23,7 @@
                         @csrf
                           <fieldset>
                             <div class="form-group">
-                                  <label for="firstname">Title</label>
+                                  <label for="firstname">image</label>
                                   <img src="{{ asset('upload/'.$dt->image) }}" height="250" width="250"alt="">
                               </div>
                               <div class="form-group ">

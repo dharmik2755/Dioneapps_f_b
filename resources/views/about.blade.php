@@ -38,9 +38,7 @@
                     { ?>
                         <div class="support_item">
                             <div class="support_item-text mg">
-                                <?php
-                                echo $seats_data[$i];
-                                ?>
+                                {{ $seats_data[$i]; }}  
                             </div>
                         </div>
             <?php } ?>
@@ -89,33 +87,36 @@
 <div id="projectFacts" class="sectionClass">
     <div class="fullWidth eight columns">
         <div class="projectFactsWrap ">
+            @foreach ($counter as $cr)
+                
             <div class="item wow fadeInUpBig animated animated" data-number="12" style="visibility: visible;">
                 <!-- <i class="fa fa-briefcase"></i> -->
-                <p class="number"><span id="number1">100</span>+</p>
+                <p class="number"><span id="number1">{{ $cr->clients }}</span>+</p>
                 <span class="span"></span>
                 <p>Happy clients</p>
             </div>
             <div class="item wow fadeInUpBig animated animated" data-number="55" style="visibility: visible;">
                 <!-- <i class="fa fa-smile-o"></i> -->
-                <p class="number"><span id="number2">250</span>+</p>
-
+                <p class="number"><span id="number2">{{ $cr->projects }}</span>+</p>
+                
                 <span class="span"></span>
                 <p>Projects done</p>
             </div>
             <div class="item wow fadeInUpBig animated animated" data-number="359" style="visibility: visible;">
                 <!-- <i class="fa fa-coffee"></i> -->
-                <p class="number"><span id="number3">50</span>+</p>
-
+                <p class="number"><span id="number3">{{ $cr->employees }}</span>+</p>
+                
                 <span class="span"></span>
                 <p>Employees</p>
             </div>
             <div class="item wow fadeInUpBig animated animated" data-number="246" style="visibility: visible;">
                 <!-- <i class="fa fa-camera"></i> -->
-                <p class="number"><span id="number4">3</span>+</p>
-
+                <p class="number"><span id="number4">{{ $cr->branches }}</span>+</p>
+                
                 <span class="span"></span>
                 <p>Branches</p>
             </div>
+            @endforeach
         </div>
     </div>
 </div>
@@ -125,17 +126,19 @@
 <!-- start project Contact Us -->
 <section class="wrapper_form-project">
     <div class="container">
+        @foreach ($project_detail as $pd)
         <form class="form" data-aos="fade-down">
             <div class="crumbs">
-                <h2 class="support_item-text">Do you have any project</h2>
+                <h2 class="support_item-text">{{ $pd->title }}</h2>
             </div>
             <div class="form_title" id="">
-                Do you have any project Let’s Talk About Business Solutions With Us
+                {{ $pd->description }}
             </div>
-            <a href="#contacts" class="page_top-btn-order btn-header">
+            <a href="{{ route('contact.page') }}" class="page_top-btn-order btn-header">
                 Contact Us
             </a>
         </form>
+        @endforeach
     </div>
 </section>
 <!-- End project Contact Us-->

@@ -124,8 +124,10 @@
                                 Activity</a>
                             <a class="dropdown-item"><i class="dropdown-item-icon icon-question text-primary"></i>
                                 FAQ</a>
-                            <a class="dropdown-item"><i class="dropdown-item-icon icon-power text-primary"></i>Sign
-                                Out</a>
+                            <a href="{{ url('/Logout') }}" class="dropdown-item">
+                                <i class="dropdown-item-icon icon-power text-primary"></i>
+                                Sign Out
+                            </a>
                         </div>
                     </li>
                 </ul>
@@ -239,141 +241,130 @@
                         <a class="nav-link" href="{{ route('renowned.view') }}">About Renowned</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('project.contact.create') }}">Project Contact</a>
+                        <a class="nav-link" href="{{ route('counter.view') }}">Counter Panel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('project.contact.view') }}">Project Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('user.contact.view') }}">user Contact view</a>
                     </li>
                 </ul>
             </div>
         </li>
         
-        {{-- ------------------------------------------------Service Page ----------------------}}
-        <li class="nav-item nav-category"><span class="nav-link">Service Page</span></li>
+        {{-- -----------------------------------Service Page ----------------------}}
+        <li class="nav-item nav-category"><span class="nav-link">Service</span></li>
         <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-advanced" aria-expanded="false"
                 aria-controls="ui-advanced">
-                <span class="menu-title">Advanced UI</span>
+                <span class="menu-title">Service Page</span>
                 <i class="icon-star menu-icon"></i>
             </a>
             <div class="collapse" id="ui-advanced">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link"
-                            href="https://www.bootstrapdash.com/demo/stellar-admin/jquery/template/demo_1/pages/ui-features/dragula.html">Dragula</a>
+                            href="{{ route('services.view')}}">Service Page Title</a>
                     </li>
                     <li class="nav-item"> <a class="nav-link"
-                            href="https://www.bootstrapdash.com/demo/stellar-admin/jquery/template/demo_1/pages/ui-features/clipboard.html">Clipboard</a>
+                            href="{{ route('our-services.view')}}">Our Service</a>
                     </li>
                     <li class="nav-item"> <a class="nav-link"
-                            href="https://www.bootstrapdash.com/demo/stellar-admin/jquery/template/demo_1/pages/ui-features/context-menu.html">Context
-                            menu</a></li>
-                    <li class="nav-item"> <a class="nav-link"
-                            href="https://www.bootstrapdash.com/demo/stellar-admin/jquery/template/demo_1/pages/ui-features/slider.html">Slider</a>
+                            href="{{ route('services-offer.view')}}">Services Offer</a>
                     </li>
-                    <li class="nav-item"> <a class="nav-link"
-                            href="https://www.bootstrapdash.com/demo/stellar-admin/jquery/template/demo_1/pages/ui-features/colcade.html">Colcade</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('contact.view') }}">Contact Us</a>
                     </li>
-                    <li class="nav-item"> <a class="nav-link"
-                            href="https://www.bootstrapdash.com/demo/stellar-admin/jquery/template/demo_1/pages/ui-features/carousel.html">Carousel</a>
-                    </li>
-                    <li class="nav-item"> <a class="nav-link"
-                            href="https://www.bootstrapdash.com/demo/stellar-admin/jquery/template/demo_1/pages/ui-features/loaders.html">Loaders</a>
-                    </li>
-                    <li class="nav-item"> <a class="nav-link"
-                            href="https://www.bootstrapdash.com/demo/stellar-admin/jquery/template/demo_1/pages/ui-features/tooltips.html">Tooltip</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('user.contact.view') }}">user Contact view</a>
                     </li>
                 </ul>
             </div>
         </li>
  
-        {{------------------------------------------------------ Portfolio Page ------------------------------------------------------}}
-        <li class="nav-item nav-category"><span class="nav-link">Portfolio Page</span></li>
+        {{------------------------- Portfolio Page  ----------------------------------------}}
+        <li class="nav-item nav-category"><span class="nav-link">Portfolio</span></li>
         <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#icons" aria-expanded="false"
                 aria-controls="icons">
-                <span class="menu-title">Icons</span>
+                <span class="menu-title">Portfolio Page</span>
                 <i class="icon-globe menu-icon"></i>
             </a>
             <div class="collapse" id="icons">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link"
-                            href="https://www.bootstrapdash.com/demo/stellar-admin/jquery/template/demo_1/pages/icons/mdi.html">Material</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('Latest-Work.view') }}">Our Latest Creative Work</a>
                     </li>
-                    <li class="nav-item"> <a class="nav-link"
-                            href="https://www.bootstrapdash.com/demo/stellar-admin/jquery/template/demo_1/pages/icons/flag-icons.html">Flag
-                            icons</a></li>
-                    <li class="nav-item"> <a class="nav-link"
-                            href="https://www.bootstrapdash.com/demo/stellar-admin/jquery/template/demo_1/pages/icons/font-awesome.html">Font
-                            Awesome</a></li>
-                    <li class="nav-item"> <a class="nav-link"
-                            href="https://www.bootstrapdash.com/demo/stellar-admin/jquery/template/demo_1/pages/icons/simple-line-icon.html">Simple
-                            line icons</a></li>
-                    <li class="nav-item"> <a class="nav-link"
-                            href="https://www.bootstrapdash.com/demo/stellar-admin/jquery/template/demo_1/pages/icons/themify.html">Themify
-                            icons</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('portfolio-awards.view') }}">Portfolio Awards</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('project.contact.view') }}">Project Contact</a>
+                    </li>
                 </ul>
             </div>
         </li>
         
-        {{------------------------------------------------------ Career Page -------------------------------------------------------------}}
-        <li class="nav-item nav-category"><span class="nav-link">Career Page</span></li>
+        {{------------------------------------ Career Page -------------------------------}}
+        <li class="nav-item nav-category"><span class="nav-link">Career </span></li>
         <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#forms" aria-expanded="false"
                 aria-controls="forms">
-                <span class="menu-title">Forms</span>
+                <span class="menu-title">Career Page</span>
                 <i class="icon-book-open menu-icon"></i>
             </a>
             <div class="collapse" id="forms">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link"
-                            href="https://www.bootstrapdash.com/demo/stellar-admin/jquery/template/demo_1/pages/forms/basic_elements.html">Form
-                            Elements</a></li>
-                    <li class="nav-item"> <a class="nav-link"
-                            href="https://www.bootstrapdash.com/demo/stellar-admin/jquery/template/demo_1/pages/forms/advanced_elements.html">Advanced
-                            Forms</a></li>
-                    <li class="nav-item"> <a class="nav-link"
-                            href="https://www.bootstrapdash.com/demo/stellar-admin/jquery/template/demo_1/pages/forms/validation.html">Validation</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('career-title.view') }}">Career Page Title</a>
                     </li>
-                    <li class="nav-item"> <a class="nav-link"
-                            href="https://www.bootstrapdash.com/demo/stellar-admin/jquery/template/demo_1/pages/forms/wizard.html">Wizard</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('career-perks.view') }}">Career Page Perks</a>
                     </li>
                 </ul>
             </div>
         </li>
 
-        {{------------------------------------------------------ CONTACT US page -------------------------------------------------------------}}
-        <li class="nav-item nav-category"><span class="nav-link">CONTACT US Page</span></li>
-        <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false"
-                aria-controls="charts">
-                <span class="menu-title">Charts</span>
-                <i class="icon-chart menu-icon"></i>
-            </a>
-            <div class="collapse" id="charts">
-                <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link"
-                            href="https://www.bootstrapdash.com/demo/stellar-admin/jquery/template/demo_1/pages/charts/chartjs.html">ChartJs</a>
-                    </li>
-                    <li class="nav-item"> <a class="nav-link"
-                            href="https://www.bootstrapdash.com/demo/stellar-admin/jquery/template/demo_1/pages/charts/morris.html">Morris</a>
-                    </li>
-                    <li class="nav-item"> <a class="nav-link"
-                            href="https://www.bootstrapdash.com/demo/stellar-admin/jquery/template/demo_1/pages/charts/flot-chart.html">Flot</a>
-                    </li>
-                    <li class="nav-item"> <a class="nav-link"
-                            href="https://www.bootstrapdash.com/demo/stellar-admin/jquery/template/demo_1/pages/charts/google-charts.html">Google
-                            charts</a></li>
-                    <li class="nav-item"> <a class="nav-link"
-                            href="https://www.bootstrapdash.com/demo/stellar-admin/jquery/template/demo_1/pages/charts/sparkline.html">Sparkline
-                            js</a></li>
-                    <li class="nav-item"> <a class="nav-link"
-                            href="https://www.bootstrapdash.com/demo/stellar-admin/jquery/template/demo_1/pages/charts/c3.html">C3
-                            charts</a></li>
-                    <li class="nav-item"> <a class="nav-link"
-                            href="https://www.bootstrapdash.com/demo/stellar-admin/jquery/template/demo_1/pages/charts/chartist.html">Chartist</a>
-                    </li>
-                    <li class="nav-item"> <a class="nav-link"
-                            href="https://www.bootstrapdash.com/demo/stellar-admin/jquery/template/demo_1/pages/charts/justGage.html">JustGage</a>
-                    </li>
-                </ul>
-            </div>
-        </li>
+        {{---------------------------- CONTACT US page ---------------}}
+
+        <li class="nav-item nav-category"><span class="nav-link">CONTACT US</span></li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false"
+                    aria-controls="charts">
+                    <span class="menu-title">Contact Us Page</span>
+                    <i class="icon-chart menu-icon"></i>
+                </a>
+                <div class="collapse" id="charts">
+                    <ul class="nav flex-column sub-menu">
+                        <li class="nav-item"> 
+                            <a class="nav-link" href="{{ route('contact-information.view') }}">Contact Media Information</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        
+        {{---------------------------- Footer ---------------}}
+        <li class="nav-item nav-category"><span class="nav-link">FOOTER</span></li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="collapse" href="#e-commerce" aria-expanded="false" aria-controls="e-commerce">
+                    <span class="menu-title">E-commerce</span> <i class="icon-briefcase menu-icon"></i>
+                </a>
+                <div class="collapse" id="e-commerce">
+                    <ul class="nav flex-column sub-menu">
+                        <li class="nav-item"> 
+                          <a class="nav-link" href="{{ route('footer-first.create') }}">Footer Company Info</a>
+                        </li>
+                        <li class="nav-item"> 
+                            <a class="nav-link" href="{{ route('footer-secound.create') }}">Footer Our Services</a>
+                        </li>
+                        <li class="nav-item"> 
+                            <a class="nav-link" href="{{ route('footer-third.create') }}">Footer Header Info</a>
+                        </li>
+                        <li class="nav-item"> 
+                            <a class="nav-link" href="{{ route('footer-forth.create') }}">footer Contact Information</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
     </ul>
 </nav>

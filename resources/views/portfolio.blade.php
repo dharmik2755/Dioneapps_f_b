@@ -46,142 +46,80 @@
 </section>
 <!-- end -->
 <!-- start -->
+<?php 
+$limit = 5;
+$show_page_data = ceil($record / $limit);
+ ?>
 <section class="portfolio_page">
-    <div class="portfolio_page-item" style="background-image: url(asset/images/f1-b.png)">
-        <div class="cases_left-hover portfolio_page-item_hover" 
-             style="background-image: url(asset/images/f1.png)">
-            <div class="cases_left-title">
-                XPETO
+    @foreach ($portfolio_latest_works as $item)
+        <div class="portfolio_page-item" style="background-image: url({{ asset('upload/'.$item->black_image)}})">
+            <div class="cases_left-hover portfolio_page-item_hover" 
+                style="background-image: url({{ asset('upload/'.$item->color_image)}})">
+                    <div class="cases_left-title">
+                        {{$item->title}}
+                </div>
             </div>
-
         </div>
-    </div>
-    <div class="portfolio_page-item" style="background-image: url(asset/images/f2-b.png)">
-        <div class="cases_left-hover portfolio_page-item_hover"
-             style="background-image: url(asset/images/f2.png)">
-            <div class="cases_left-title">
-                MINGLETAINMENT
-            </div>
-
-        </div>
-    </div>
-    <div class="portfolio_page-item" style="background-image: url(asset/images/f3-b.png)">
-        <div class="cases_left-hover portfolio_page-item_hover"
-             style="background-image: url(asset/images/f3.png)">
-            <div class="cases_left-title">
-                FAIREFINDER
-            </div>
-
-        </div>
-    </div>
-    <div class="portfolio_page-item" style="background-image: url(asset/images/f4-b.png)">
-        <div class="cases_left-hover portfolio_page-item_hover"
-             style="background-image: url(asset/images/f4.png)">
-            <div class="cases_left-title">
-                BIZZBRAINS Learning App
-            </div>
-
-        </div>
-    </div>
-    <div class="portfolio_page-item" style="background-image: url(asset/images/f5-b.png)">
-        <div class="cases_left-hover portfolio_page-item_hover"
-             style="background-image: url(asset/images/f5.png)">
-            <div class="cases_left-title">
-                FRIENDZPOINT
-            </div>
-
-        </div>
-    </div>
-    <div class="portfolio_page-item" style="background-image: url(asset/images/f6-b.png)">
-        <div class="cases_left-hover portfolio_page-item_hover"
-             style="background-image: url(asset/images/f6.png)">
-            <div class="cases_left-title">
-                HOMEBETHE
-            </div>
-
-        </div>
-    </div>
-    <div class="portfolio_page-item" style="background-image: url(asset/images/f7-b.png)">
-        <div class="cases_left-hover portfolio_page-item_hover"
-             style="background-image: url(asset/images/f7.png)">
-            <div class="cases_left-title">
-                SAPORI DEI TEMPI
-            </div>
-
-        </div>
-    </div>
-    <div class="portfolio_page-item" style="background-image: url(asset/images/f8-b.png)">
-        <div class="cases_left-hover portfolio_page-item_hover"
-             style="background-image: url(asset/images/f8.png)">
-            <div class="cases_left-title">
-                KCD
-            </div>
-
-        </div>
-    </div>
-    <div class="portfolio_page-item" style="background-image: url(asset/images/f9-b.png)">
-        <div class="cases_left-hover portfolio_page-item_hover"
-             style="background-image: url(asset/images/f9.png)">
-            <div class="cases_left-title">
-                KATIEDEAN JEWELRY
-            </div>
-
-        </div>
-    </div>
-    <div class="portfolio_page-item" style="background-image: url(asset/images/f10-b.png)">
-        <div class="cases_left-hover portfolio_page-item_hover"
-             style="background-image: url(asset/images/f10.png)">
-            <div class="cases_left-title">
-                QUOTE-REFRESH THE MOOD
-            </div>
-
-        </div>
-    </div>
-    <div class="portfolio_page-item" style="background-image: url(asset/images/f11-b.png)">
-        <div class="cases_left-hover portfolio_page-item_hover"
-             style="background-image: url(asset/images/f11.png)">
-            <div class="cases_left-title">
-                HAPPY THAI
-            </div>
-
-        </div>
-    </div>
-    <div class="portfolio_page-item" style="background-image: url(asset/images/f12-b.png)">
-        <div class="cases_left-hover portfolio_page-item_hover"
-             style="background-image: url(asset/images/f12.png)">
-            <div class="cases_left-title">
-                URBAN MERINO
-            </div>
-
-        </div>
-    </div>
-
+    @endforeach
 </section>
+<!----------------------pagination-------------------- -->
+<div class="container">
+    <div class="text-center" >                             
+        <div align="center" style="margin-top: 15px;" >                             
+            <?php if ($page>1-0) 
+                { ?>
+                    <a class=" btnp btn-success" href="{{url('portfolio/'.$page-1)}}"><<</a>
+            <?php } ?>
+            <!----------------------------------------------------------------------->
+            <?php $cnt=0; 
+            for ($i=$page; $i<$show_page_data ; $i++) 
+            { ?>    
+              <?php if ($cnt<3) 
+                    { ?>
+
+                        <a class=" btnp btn-primary" href="{{url('portfolio/'.$i)}}"><?php echo $i; ?></a>
+        
+                <?php } $cnt++; ?>
+            <?php } ?>
+
+            <?php if ($show_page_data>2 && $page<$show_page_data-1) 
+                    {?>
+                    ...
+            <?php } ?>
+            <!--------------------------------------------------------------------->
+            <?php if ($page<$show_page_data-1) 
+                {?>
+                    <a class=" btnp btn-success" href="{{url('portfolio/'.$page+1)}}">>></a>
+            <?php } ?>
+        </div>
+    </div>  
+</div> 
 <!-- end -->
 
 <!-- start companies -->
 <section class="page_top" data-aos="fade-left">
     <div class="container">
-        <div class="support_title title">
-            Ranked as #1 Top Web & App Development Companies
-        </div>
-        <div class="support_text text">
-            WE MAKE RELATIONSHIPS
-        </div>
-        <div class="support_wrapper_companies">
-            <div class="support_item_companies">
-                <img src="asset/images/badges-1.png" alt="">
+        @foreach ($portfolio_awards as $pa)
+            
+            <div class="support_title title">
+                {{$pa->title}}
             </div>
-            <div class="support_item_companies">
-                <img src="asset/images/badges-2.png" alt="">
+            <div class="support_text text">
+                {{$pa->description}}
             </div>
-            <div class="support_item_companies">
-                <img src="asset/images/badges-3.png" alt="">
+            <div class="support_wrapper_companies">
+                <?php 
+                    $array_image = explode('|||',$pa->image);  
+                    for ($i=0; $i<count($array_image); $i++) { ?> 
+                        
+                        <div class="support_item_companies">
+                            <img src="{{asset('upload/'.$array_image[$i])}}" alt="">
+                        </div>
+
+                    <?php } ?>
             </div>
-            <div class="support_item_companies">
-                <img src="asset/images/badges-4.png" alt="">
-            </div>
-        </div>
+        
+        @endforeach
     </div>
 </section>
 <!-- end companies -->
@@ -191,20 +129,20 @@
  <!-- start project Contact Us -->
  <section class="wrapper_form-project">
     <div class="container">
-        <form class="form"  data-aos="fade-down">
-            <!-- <div id="result_form_project_success" style="display: none"></div>
-            <div id="result_form_project_error" style="display: none"></div> -->
+        @foreach ($project_detail as $pd)
+        <form class="form" data-aos="fade-down">
             <div class="crumbs">
-                <h2 class="support_item-text">Do you have any project</h2>
+                <h2 class="support_item-text">{{ $pd->title }}</h2>
             </div>
             <div class="form_title" id="">
-                Do you have any project Let’s Talk About Business Solutions With Us 
+                {{ $pd->description }}
             </div>
-            <a href="#contacts" class="page_top-btn-order btn-header">
+            <a href="{{ route('contact.page') }}" class="page_top-btn-order btn-header">
                 Contact Us
             </a>
         </form>
-    </div>    
+        @endforeach
+    </div>
 </section>
 <!-- End project Contact Us-->
 

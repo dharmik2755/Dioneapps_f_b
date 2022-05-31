@@ -19,7 +19,19 @@ use App\Http\Controllers\Admin\contact;
 use App\Http\Controllers\Admin\about_expert;
 use App\Http\Controllers\Admin\renownedcontroller;
 use App\Http\Controllers\Admin\project_contact_Controllerr;
-
+use App\Http\Controllers\Admin\user_contact_Controller;
+use App\Http\Controllers\Admin\our_services_Controller;
+use App\Http\Controllers\Admin\service_page_Controller;
+use App\Http\Controllers\Admin\services_offre_Controller;
+use App\Http\Controllers\Admin\career_page_perks;
+use App\Http\Controllers\Admin\career_page_title;
+use App\Http\Controllers\Admin\contact_info;
+use App\Http\Controllers\Admin\portfolio_award;
+use App\Http\Controllers\Admin\portfolio_latest_work;
+use App\Http\Controllers\Admin\footer_first_controller;
+use App\Http\Controllers\Admin\footer_secound_controller;
+use App\Http\Controllers\Admin\footer_third_controller;
+use App\Http\Controllers\Admin\footer_forth_controller;
 
 
 /*
@@ -37,13 +49,17 @@ use App\Http\Controllers\Admin\project_contact_Controllerr;
 Route::any('/', [home::class, 'home']);
 Route::any('/about', [about::class, 'about']);
 Route::any('/service', [service::class, 'service']);
-Route::any('/portfolio', [portfolio::class, 'portfolio']);
+Route::any('/portfolio/{page}', [portfolio::class, 'portfolio']);
 Route::any('/career', [career::class, 'career']);
-Route::any('/contactus', [contactus::class, 'contactus']);
+Route::any('/contactus', [contactus::class, 'contactus'])->name('contact.page');
 
 // Admin Side-----------------------------------------------------------------------------------
 Route::any('/Admin-side', [home_Controller::class, 'login']);
-Route::any('/dashboard', [home_Controller::class, 'dashboard']);
+Route::any('/Logout', [home_Controller::class, 'logout']);
+
+Route::group(['middleware'=>'web'] , function(){
+        
+Route::any('/dashboard', [home_Controller::class, 'dashboard'])->name('dashboard.page');
 
 // home
 Route::any('/Add-home-slider', [home_Controller::class, 'add_home_slider'])->name('home.slider.add');
@@ -114,3 +130,95 @@ Route::any('/view-project-contact-data', [project_contact_Controllerr::class , '
 Route::any('/edit-project-contact-data/{id}', [project_contact_Controllerr::class , 'edit'])->name('project.contact.edit');
 Route::any('/delete-project-contact-data/{id}',[project_contact_Controllerr::class, 'destroy'])->name('project.contact.delete');
 Route::any('/stutus-project-contact-data', [project_contact_Controllerr::class, 'active_and_deactive']);
+
+// contact user contact
+Route::any('/add-user-contact-data', [user_contact_Controller::class , 'create'])->name('user.contact.create');
+Route::any('/view-user-contact-data', [user_contact_Controller::class , 'show'])->name('user.contact.view');
+// Route::any('/edit-user-contact-data/{id}', [user_contact_Controller::class , 'edit'])->name('user.contact.edit');
+Route::any('/delete-user-contact-data/{id}',[user_contact_Controller::class,'destroy'])->name('user.contact.delete');
+Route::any('/stutus-user-contact-data', [user_contact_Controller::class, 'active_and_deactive']);
+
+// services Page
+Route::any('/add-services-page-data', [service_page_Controller::class , 'create'])->name('services.create');
+Route::any('/view-services-page-data', [service_page_Controller::class , 'show'])->name('services.view');
+Route::any('/edit-services-page-data/{id}', [service_page_Controller::class , 'edit'])->name('services.edit');
+Route::any('/delete-services-page-data/{id}',[service_page_Controller::class, 'destroy'])->name('services.delete');
+Route::any('/stutus-services-page-data', [service_page_Controller::class, 'active_and_deactive']);
+
+// our services 
+Route::any('/add-our-services-data', [our_services_Controller::class , 'create'])->name('our-services.create');
+Route::any('/view-our-services-data', [our_services_Controller::class , 'show'])->name('our-services.view');
+Route::any('/edit-our-services-data/{id}', [our_services_Controller::class , 'edit'])->name('our-services.edit');
+Route::any('/delete-our-services-data/{id}',[our_services_Controller::class, 'destroy'])->name('our-services.delete');
+Route::any('/stutus-our-services-data', [our_services_Controller::class, 'active_and_deactive']);
+
+// services offer
+Route::any('/add-services-offer-data', [services_offre_Controller::class , 'create'])->name('services-offer.create');
+Route::any('/view-services-offer-data', [services_offre_Controller::class , 'show'])->name('services-offer.view');
+Route::any('/edit-services-offer-data/{id}', [services_offre_Controller::class , 'edit'])->name('services-offer.edit');
+Route::any('/delete-services-offer-data/{id}',[services_offre_Controller::class, 'destroy'])->name('services-offer.delete');
+Route::any('/stutus-services-offer-data', [services_offre_Controller::class, 'active_and_deactive']);
+
+
+// Career Page title
+Route::any('/add-career-page-title-data', [career_page_title::class , 'create'])->name('career-title.create');
+Route::any('/view-career-page-title-data', [career_page_title::class , 'show'])->name('career-title.view');
+Route::any('/edit-career-page-title-data/{id}', [career_page_title::class , 'edit'])->name('career-title.edit');
+Route::any('/delete-career-page-title-data/{id}',[career_page_title::class, 'destroy'])->name('career-title.delete');
+Route::any('/stutus-career-page-title-data', [career_page_title::class, 'active_and_deactive']);
+
+// career_page_perks
+Route::any('/add-career-page-perks-data', [career_page_perks::class , 'create'])->name('career-perks.create');
+Route::any('/view-career-page-perks-data', [career_page_perks::class , 'show'])->name('career-perks.view');
+Route::any('/edit-career-page-perks-data/{id}', [career_page_perks::class , 'edit'])->name('career-perks.edit');
+Route::any('/delete-career-page-perks-data/{id}',[career_page_perks::class, 'destroy'])->name('career-perks.delete');
+Route::any('/stutus-career-page-perks-data', [career_page_perks::class, 'active_and_deactive']);
+
+// contact media information
+Route::any('/add-contact-information-data', [contact_info::class , 'create'])->name('contact-information.create');
+Route::any('/view-contact-information-data', [contact_info::class , 'show'])->name('contact-information.view');
+Route::any('/edit-contact-information-data/{id}', [contact_info::class , 'edit'])->name('contact-information.edit');
+Route::any('/delete-contact-information-data/{id}',[contact_info::class, 'destroy'])->name('contact-information.delete');
+
+// portfolio_awards
+Route::any('/add-portfolio-awards-data', [portfolio_award::class , 'create'])->name('portfolio-awards.create');
+Route::any('/view-portfolio-awards-data', [portfolio_award::class , 'show'])->name('portfolio-awards.view');
+Route::any('/edit-portfolio-awards-data/{id}', [portfolio_award::class , 'edit'])->name('portfolio-awards.edit');
+Route::any('/delete-portfolio-awards-data/{id}',[portfolio_award::class, 'destroy'])->name('portfolio-awards.delete');
+Route::any('/stutus-portfolio-awards-data', [portfolio_award::class, 'active_and_deactive']);
+
+// portfolio Our Latest Creative Work
+Route::any('/add-portfolio-Latest-Work-data', [portfolio_latest_work::class , 'create'])->name('Latest-Work.create');
+Route::any('/view-portfolio-Latest-Work-data', [portfolio_latest_work::class , 'show'])->name('Latest-Work.view');
+Route::any('/edit-portfolio-Latest-Work-data/{id}', [portfolio_latest_work::class , 'edit'])->name('Latest-Work.edit');
+Route::any('/delete-portfolio-Latest-Work-data/{id}',[portfolio_latest_work::class, 'destroy'])->name('Latest-Work.delete');
+Route::any('/stutus-portfolio-Latest-Work-data', [portfolio_latest_work::class, 'active_and_deactive']);
+
+// footer 
+
+Route::any('/add-footer-first-data', [footer_first_controller::class , 'create'])->name('footer-first.create');
+Route::any('/view-footer-first-data', [footer_first_controller::class , 'show'])->name('footer-first.view');
+Route::any('/edit-footer-first-data/{id}', [footer_first_controller::class , 'edit'])->name('footer-first.edit');
+Route::any('/delete-footer-first-data/{id}',[footer_first_controller::class, 'destroy'])->name('footer-first.delete');
+Route::any('/stutus-footer-first-data', [footer_first_controller::class, 'active_and_deactive']);
+
+Route::any('/add-footer-secound-data', [footer_secound_controller::class , 'create'])->name('footer-secound.create');
+Route::any('/view-footer-secound-data', [footer_secound_controller::class , 'show'])->name('footer-secound.view');
+Route::any('/edit-footer-secound-data/{id}', [footer_secound_controller::class , 'edit'])->name('footer-secound.edit');
+Route::any('/delete-footer-secound-data/{id}',[footer_secound_controller::class, 'destroy'])->name('footer-secound.delete');
+Route::any('/stutus-footer-secound-data', [footer_secound_controller::class, 'active_and_deactive']);
+
+Route::any('/add-footer-third-data', [footer_third_controller::class , 'create'])->name('footer-third.create');
+Route::any('/view-footer-third-data', [footer_third_controller::class , 'show'])->name('footer-third.view');
+Route::any('/edit-footer-third-data/{id}', [footer_third_controller::class , 'edit'])->name('footer-third.edit');
+Route::any('/delete-footer-third-data/{id}',[footer_third_controller::class, 'destroy'])->name('footer-third.delete');
+Route::any('/stutus-footer-third-data', [portfolio_footer_third_controllerlatest_work::class, 'active_and_deactive']);
+
+Route::any('/add-footer-forth-data', [footer_forth_controller::class , 'create'])->name('footer-forth.create');
+Route::any('/view-footer-forth-data', [footer_forth_controller::class , 'show'])->name('footer-forth.view');
+Route::any('/edit-footer-forth-data/{id}', [footer_forth_controller::class , 'edit'])->name('footer-forth.edit');
+Route::any('/delete-footer-forth-data/{id}',[footer_forth_controller::class, 'destroy'])->name('footer-forth.delete');
+Route::any('/stutus-footer-forth-data', [footer_forth_controller::class, 'active_and_deactive']);
+
+
+});

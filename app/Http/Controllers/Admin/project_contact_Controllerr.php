@@ -16,7 +16,6 @@ class project_contact_Controllerr extends Controller
             $title = $res->title;
             $description = $res->description;
             
-            
             $data = array('title' =>  $title , 'description' => $description );
 
             project_contact_Controllers::insert($data);

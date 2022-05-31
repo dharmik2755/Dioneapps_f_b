@@ -14,7 +14,9 @@
     <link href="{{asset('asset/css/counterpanel.css')}}" rel="stylesheet">
     <link href="{{asset('asset/css/style.min.css')}}" rel="stylesheet" />
     <link rel="shortcut icon" href="{{asset('asset/images/logo.png')}}" type="images/ico.ico">
-
+    {{-- ajax data insert  --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -37,7 +39,7 @@
                             <li class="menu_list-item "><a href="{{url('/')}}">Home</a> </li>
                             <li class="menu_list-item"><a href="{{url('/about')}}">AboutUs</a> </li>
                             <li class="menu_list-item"><a href="{{url('/service')}}">Service</a> </li>
-                            <li class="menu_list-item"><a href="{{url('/portfolio')}}">Portfolio</a> </li>
+                            <li class="menu_list-item"><a href="{{url('/portfolio/1')}}">Portfolio</a> </li>
                             <li class="menu_list-item"><a href="{{url('/career')}}">Career</a> </li>
 
                         </ul>

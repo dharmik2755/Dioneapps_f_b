@@ -38,7 +38,7 @@
                         for ($i=0; $i<count($loop_sub_title); $i++) 
                         { ?> 
                           <label for="lastname">Sub Title</label>
-                          <input id="description" class="form-control" name="sub_title[]" type="text" placeholder="Enter Sub Title 1" value="{{$loop_sub_title[$i]}}">
+                          <input id="description" class="form-control" name="sub_title[]" type="text" placeholder="Enter Sub Title " value="{{$loop_sub_title[$i]}}">
                         <?php } ?>
                     </div>
                       

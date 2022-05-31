@@ -370,6 +370,33 @@ ul {
     position: relative;
     cursor: pointer
 }
+.btnp {
+    /* display: -webkit-box; */
+    display: -ms-flexbox;
+    /* display: flex; */
+    border-radius: 10px;
+    padding-left: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 25px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 251px;
+    height: 57px;
+    background: -webkit-gradient(linear, left top, right top, from(#e12b4d), to(#ff0030));
+    background: -o-linear-gradient(left, #e12b4d, #ff0030);
+    background: linear-gradient(to right, #e12b4d, #ff0030);
+    font-weight: 900;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    /* position: relative; */
+    cursor: pointer
+}
 
 .btn-header {
     display: -webkit-box;
@@ -1455,6 +1482,7 @@ ul {
     background-size: cover;
     background-position: left -14px bottom -19px;
     margin-right: 40px;
+    width: 100%
 }
 
 .slider_item-right {
@@ -3242,6 +3270,11 @@ svg {
     .brif_img {
         top: 52%;
         width: 100%;
+    }
+
+   .btnp
+   {
+    padding: 15px;
     }
 
     .form_mail {
@@ -5137,4 +5170,8 @@ svg {
     position: relative;
     cursor: pointer;
     bottom: 5%;
+}
+.error{
+    color: red;
+    margin-top: 5px;
 }
