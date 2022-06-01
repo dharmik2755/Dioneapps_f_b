@@ -46,7 +46,7 @@
                     </nav>
                     <div class="header_top-number_wrapper">
                         <div class="number_inner">
-                            <a href="{{url('contactus')}}" class="header_main-btn btn-header ">
+                            <a href="{{url('/contactus')}}" class="header_main-btn btn-header ">
                                 Contact Us
                             </a>
                         </div>

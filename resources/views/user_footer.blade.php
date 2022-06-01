@@ -5,38 +5,35 @@
             <div class="footer_bottom-wrapper">
                 <!-- start footer DIONEAPPS -->
                 <div class="footer_bottom-item" data-aos="fade-up">
-                    <div class="bottom-item_title">
-                        DIONEAPPS
-                    </div>
-                    <div class="bottom-item_subtitle">
-                        We are known for our proficient and client-centric Mobile application development
-                        services,
-                        Web and Backend Development services, UI/UX Designing services and Logo Designing
-                        services.
-                    </div>
+                    @foreach ($footer_first_use_outher as $ffuo)
+                        <div class="bottom-item_title">
+                            {{$ffuo->title}}
+                        </div>
+                        <div class="bottom-item_subtitle">
+                            {{$ffuo->description}}
+                        </div>
+                    @endforeach
                 </div>
                 <!-- end footer DIONEAPPS -->
 
                 <!-- start footer Our services -->
                 <div class="footer_bottom-item item_none" data-aos="fade-up" data-aos-delay="200">
                     <div class="bottom-item_title">
-                        Our services
+                        @foreach ($footer_secound_use_outher as $fser)
+                        {{$fser->title}}
+                        @endforeach
                     </div>
                     <ul class="bottom-item_list">
-                        <li>
-                            <a class="footer_text" href="#/development/internet_magazin">Mobile application
-                                Development </a>
-                        </li>
-                        <li>
-                            <a class="footer_text" href="#/development/corporate_website">Web and Backend
-                                Development</a>
-                        </li>
-                        <li>
-                            <a class="footer_text" href="#/development/landing">UI/UX Designing</a>
-                        </li>
-                        <li>
-                            <a class="footer_text" href="#/development/business_site">Logo Designing</a>
-                        </li>
+                        @foreach ($footer_secound_use_outher as $fser)
+                        <?php 
+                            $secound_footer = explode('|||',$fser->services);
+
+                            for ($i=0; $i<count($secound_footer); $i++) { ?>
+                                <li>
+                                    <a class="footer_text" href="#">{{$secound_footer[$i]}} </a>
+                                </li>
+                                <?php } ?>
+                        @endforeach
                     </ul>
                 </div>
                 <!-- end footer Our services -->
@@ -75,42 +72,31 @@
                     <div class="bottom-item_title">
                         Contact Info
                     </div>
-                    <div class="bottom-item_subtitle">
-                        <a href="">416, 417-Laxmi Enclave-2, Opp Gajera School,
-                            Near Laxmi Circle,Katargam. 395004</a>
-                    </div>
-                    <div class="bottom-item_phope">
-                        <a href="tel:+91 7211140033" class="item_phope-number footer_text number">
-                            +91 7211140033
-                        </a>
-                    </div>
-                    <div class="bottom-item_email">
-                        <a href="#" class="item_email-adr footer_text">
-                            Info@dioneapps.com
-                        </a>
-                    </div>
-                    <div class="bottom-item_email">
-                        <a href="#" class="item_email-adr footer_text">
-                            support.dioneapps
-                        </a>
-                    </div>
+                    @foreach ($footer_forth_use_outher as $ffth)
+                        
+                        <div class="bottom-item_subtitle">
+                            <a href="{{$ffth->link}}">{{$ffth->description}}</a>
+                        </div>
+                    @endforeach
                     
                     <div class="bottom-item_messan">
                         <div class="item_messan-title footer_title">
                             Social media:
                         </div>
                         <div class="item_messan-wrpper">
-                            <a href="#" class="item_messan-link">
-                                <img src="{{ asset('asset/images/fa.svg')}}" width="18" height="25" alt="">
-                            </a>
-                            <a href="#" class="item_messan-link">
+                            @foreach ($footer_fifth_use_outher as $fifth)    
+                                <a href="{{$fifth->link}}" class="item_messan-link">
+                                    <img src="{{asset('upload/'.$fifth->image)}}" width="18" height="25" alt="">
+                                </a>
+                            @endforeach
+                            {{-- <a href="#" class="item_messan-link">
                                 <img src="{{ asset('asset/images/tw.svg')}}" width="15" height="17" alt="">
                             </a>
                             <a href="#" class="item_messan-link">
                                 <img src="{{ asset('asset/images/in.svg')}}" width="15" height="17" alt="">
                             </a>
                             <a href="#" class="item_messan-link">
-                                <img src="{{ asset('asset/images/insta.svg')}}" width="15" height="17" alt="">
+                                <img src="{{ asset('asset/images/insta.svg')}}" width="15" height="17" alt=""> --}}
                             </a>
                         </div>
                     </div>

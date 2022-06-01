@@ -32,6 +32,7 @@ use App\Http\Controllers\Admin\footer_first_controller;
 use App\Http\Controllers\Admin\footer_secound_controller;
 use App\Http\Controllers\Admin\footer_third_controller;
 use App\Http\Controllers\Admin\footer_forth_controller;
+use App\Http\Controllers\Admin\footer_fifth_controller;
 
 
 /*
@@ -46,6 +47,7 @@ use App\Http\Controllers\Admin\footer_forth_controller;
 */
 
 // User Side
+
 Route::any('/', [home::class, 'home']);
 Route::any('/about', [about::class, 'about']);
 Route::any('/service', [service::class, 'service']);
@@ -55,10 +57,11 @@ Route::any('/contactus', [contactus::class, 'contactus'])->name('contact.page');
 
 // Admin Side-----------------------------------------------------------------------------------
 Route::any('/Admin-side', [home_Controller::class, 'login']);
-Route::any('/Logout', [home_Controller::class, 'logout']);
 
-Route::group(['middleware'=>'web'] , function(){
-        
+Route::group(['middleware'=>'backend'] , function()
+{
+    
+Route::any('/Logout', [home_Controller::class, 'logout']);
 Route::any('/dashboard', [home_Controller::class, 'dashboard'])->name('dashboard.page');
 
 // home
@@ -219,6 +222,12 @@ Route::any('/view-footer-forth-data', [footer_forth_controller::class , 'show'])
 Route::any('/edit-footer-forth-data/{id}', [footer_forth_controller::class , 'edit'])->name('footer-forth.edit');
 Route::any('/delete-footer-forth-data/{id}',[footer_forth_controller::class, 'destroy'])->name('footer-forth.delete');
 Route::any('/stutus-footer-forth-data', [footer_forth_controller::class, 'active_and_deactive']);
+
+Route::any('/add-footer-fifth-data', [footer_fifth_controller::class , 'create'])->name('footer-fifth.create');
+Route::any('/view-footer-fifth-data', [footer_fifth_controller::class , 'show'])->name('footer-fifth.view');
+Route::any('/edit-footer-fifth-data/{id}', [footer_fifth_controller::class , 'edit'])->name('footer-fifth.edit');
+Route::any('/delete-footer-fifth-data/{id}',[footer_fifth_controller::class, 'destroy'])->name('footer-fifth.delete');
+Route::any('/stutus-footer-fifth-data', [footer_fifth_controller::class, 'active_and_deactive']);
 
 
 });

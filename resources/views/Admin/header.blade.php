@@ -352,16 +352,19 @@
                 <div class="collapse" id="e-commerce">
                     <ul class="nav flex-column sub-menu">
                         <li class="nav-item"> 
-                          <a class="nav-link" href="{{ route('footer-first.create') }}">Footer Company Info</a>
+                          <a class="nav-link" href="{{ route('footer-first.view') }}">Footer Company Info</a>
                         </li>
                         <li class="nav-item"> 
-                            <a class="nav-link" href="{{ route('footer-secound.create') }}">Footer Our Services</a>
+                            <a class="nav-link" href="{{ route('footer-secound.view') }}">Footer Our Services</a>
                         </li>
                         <li class="nav-item"> 
                             <a class="nav-link" href="{{ route('footer-third.create') }}">Footer Header Info</a>
                         </li>
                         <li class="nav-item"> 
-                            <a class="nav-link" href="{{ route('footer-forth.create') }}">footer Contact Information</a>
+                            <a class="nav-link" href="{{ route('footer-forth.view') }}">footer Contact Information</a>
+                        </li>
+                        <li class="nav-item"> 
+                            <a class="nav-link" href="{{ route('footer-fifth.view') }}">Footer social media</a>
                         </li>
                     </ul>
                 </div>

@@ -33,18 +33,11 @@
             @endforeach
             <div class="support_item_contact">
                 <div class="item_messan-wrpper">
-                    <a href="#" class="item_messan-link-media">
-                        <img src="asset/images/fa.svg" width="18" height="25" alt="">
+                    @foreach ($footer_fifth_use_outher as $fifth)    
+                    <a href="{{$fifth->link}}" class="item_messan-link">
+                        <img src="{{asset('upload/'.$fifth->image)}}" width="18" height="25" alt="">
                     </a>
-                    <a href="#" class="item_messan-link-media">
-                        <img src="asset/images/tw.svg" width="15" height="17" alt="">
-                    </a>
-                    <a href="#" class="item_messan-link-media">
-                        <img src="asset/images/in.svg" width="15" height="17" alt="">
-                    </a>
-                    <a href="#" class="item_messan-link-media">
-                        <img src="asset/images/insta.svg" width="15" height="17" alt="">
-                    </a>
+                @endforeach
                 </div>
             </div>
         </div>

@@ -25,6 +25,7 @@ class ageCheck
         {
             return redirect('Admin-side');
         }
+
         return $next($res);
     }
 }
