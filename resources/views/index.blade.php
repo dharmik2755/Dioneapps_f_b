@@ -46,7 +46,7 @@ $n = 2;
                             {{ $md->description }}
                         </div>
                     </div>
-                    <a href="/ru/brief" class="brif_btn btn">
+                    <a href="{{ route('service.page') }}" class="brif_btn btn">
                         More
                     </a>
                 </div>
@@ -74,7 +74,7 @@ $n = 2;
 
                         </div>
                     </div>
-                    <a href="/ru/brief" class="brif_btn btn">
+                    <a href="{{ route('service.page') }}" class="brif_btn btn">
                         More
                     </a>
                 </div>
@@ -156,7 +156,7 @@ $n = 2;
                             {{ $ad->description }}
                         </div>
                     </div>
-                    <a href="/ru/brief" class="brif_btn btn">
+                    <a href="{{ route('about.page') }}" class="brif_btn btn">
                         Learn More
                     </a>
                 </div>
@@ -218,9 +218,6 @@ $n = 2;
         </div>
         <div class="reviews_text text">
         </div>
-
-
-
         <div class="reviews_slider" data-aos="fade-right">
             @foreach ($clients as $cs)
                 <div class="slider_wrapper">
@@ -250,11 +247,11 @@ $n = 2;
                 </div>
             @endforeach
         </div>
-        <div class="reviews_btn-wrap">
+        {{-- <div class="reviews_btn-wrap">
             <a href="/" class="reviews_btn btn">
                 All Reviews
             </a>
-        </div>
+        </div> --}}
     </div>
 </section>
 <!-- Our Satisfied Clients end -->

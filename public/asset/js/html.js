@@ -38,6 +38,6 @@ $(window).scroll(function () {
     var sticky = $('.sticky'),
         scroll = $(window).scrollTop();
 
-    if (scroll >= 500) sticky.addClass('kgf');
+    if (scroll >= 100) sticky.addClass('kgf');
     else sticky.removeClass('kgf');
 });

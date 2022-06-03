@@ -89,15 +89,6 @@
                                     <img src="{{asset('upload/'.$fifth->image)}}" width="18" height="25" alt="">
                                 </a>
                             @endforeach
-                            {{-- <a href="#" class="item_messan-link">
-                                <img src="{{ asset('asset/images/tw.svg')}}" width="15" height="17" alt="">
-                            </a>
-                            <a href="#" class="item_messan-link">
-                                <img src="{{ asset('asset/images/in.svg')}}" width="15" height="17" alt="">
-                            </a>
-                            <a href="#" class="item_messan-link">
-                                <img src="{{ asset('asset/images/insta.svg')}}" width="15" height="17" alt=""> --}}
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -108,6 +99,8 @@
     </div>
 </footer>
 
+{{-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> --}}
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <!-- link js file -->
@@ -122,5 +115,4 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" ></script>
 
 </body>
-
 </html>

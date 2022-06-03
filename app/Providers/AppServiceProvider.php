@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+// use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\View;
 use App\Models\footer_first;
 use App\Models\footer_secound;
@@ -28,6 +29,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        // Paginator::useBootstrap();
+
         $footer_first_use_outher_way = footer_first::where('status',1)->get();
         view()->share('footer_first_use_outher',$footer_first_use_outher_way);
 

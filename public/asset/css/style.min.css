@@ -5175,3 +5175,19 @@ svg {
     color: red;
     margin-top: 5px;
 }
+
+/* for laravel pagination css for next and pervious button  */
+.relative > li > a,
+.relative > li > span {
+    color: green; 
+}
+
+.relative > .active > a,
+.relative > .active > a:focus,
+.relative > .active > a:hover,
+.relative > .active > span,
+.relative > .active > span:focus,
+.relative > .active > span:hover {
+    background-color: green;
+    border-color: green;
+}

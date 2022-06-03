@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\contact_media_info;
 use App\Models\our_services;
 use App\Models\services_offer;
 use App\Models\service_page;
@@ -23,6 +24,9 @@ class service extends Controller
 
         $services_offer = services_offer::where('status',1)->get();
         $data['services_offer'] = $services_offer;
+
+        $contact_media_info = contact_media_info::get();
+        $data['contact_media_info'] = $contact_media_info;
 
         $contact = contacts::get();
         $data['contact'] = $contact;
