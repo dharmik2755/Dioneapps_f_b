@@ -45,12 +45,12 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'url' => env('https://databases.000webhost.com/'),
-            'host' => env('DB_HOST', 'localhost'),
+            'url' => env('http://localhost'),
+            'host' => env('DB_HOST', 'database-1.cgsg7oacezid.us-east-1.rds.amazonaws.com'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'id18756942_dioneapps'),
-            'username' => env('DB_USERNAME', 'id18756942_dione'),
-            'password' => env('DB_PASSWORD', '}VTE3SPz1yVa|=q='),
+            'database' => env('DB_DATABASE', 'dioneapps'),
+            'username' => env('DB_USERNAME', 'admin'),
+            'password' => env('DB_PASSWORD', 'Dione&169'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
