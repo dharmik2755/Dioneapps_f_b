@@ -347,7 +347,7 @@
         <li class="nav-item nav-category"><span class="nav-link">FOOTER</span></li>
             <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="collapse" href="#e-commerce" aria-expanded="false" aria-controls="e-commerce">
-                    <span class="menu-title">E-commerce</span> <i class="icon-briefcase menu-icon"></i>
+                    <span class="menu-title">Footer page</span> <i class="icon-briefcase menu-icon"></i>
                 </a>
                 <div class="collapse" id="e-commerce">
                     <ul class="nav flex-column sub-menu">

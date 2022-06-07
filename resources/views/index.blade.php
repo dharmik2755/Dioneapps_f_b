@@ -1,5 +1,7 @@
 @include('user_header')
-<div class="rellax" data-rellax-speed="-5" data-rellax-percentage="0.3"> </div>
+@foreach ($home_slider as $hs)
+@endforeach
+<div class="rellax" data-rellax-speed="-5" data-rellax-percentage="0.3" style="background-image: url({{asset('upload/'.$hs->image)}});"> </div>
 <!-- start slider -->
 <div class="header_main">
     <div class="container">

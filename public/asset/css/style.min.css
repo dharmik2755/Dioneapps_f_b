@@ -629,7 +629,7 @@ ul {
 .rellax {
     display: inline-block;
     position: absolute;
-    background-image: url(../images/home_img.png);
+    /* background-image: url(../images/home_img.png); */
     background-size: 100%;
     background-repeat-x: no-repeat;
     background-repeat-y: no-repeat;
@@ -2053,7 +2053,7 @@ svg {
     }
 
     .rellax {
-        background-image: url(../images/home_img.png);
+        /* background-image: url(../images/home_img.png); */
         height: 100%;
         max-height: 100vh;
         background-position: center;
@@ -2100,7 +2100,7 @@ svg {
     }
 
     .rellax {
-        background-image: url(../images/home_img.png);
+        /* background-image: url(../images/home_img.png); */
         height: 100%;
         background-position: right;
         width: 75%;
