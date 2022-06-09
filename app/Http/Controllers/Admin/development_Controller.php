@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\mobile;
+use Illuminate\Support\Facades\File;
 
 
 class development_Controller extends Controller
@@ -45,7 +46,8 @@ class development_Controller extends Controller
      {
          $update_data = mobile::where('id',$id)->get();
          $old_image = $update_data->first();
- 
+         $old_image_path = 'upload/'.$old_image->image;
+
          if (isset($res->edit)) 
          {
              $title = $res->title;
@@ -59,6 +61,10 @@ class development_Controller extends Controller
              {
                  $image_name = rand(0,999999).$image->getClientOriginalName('image');
                  $image->move('upload',$image_name);
+                 if (File::exists($old_image_path)) 
+                {
+                    File::delete($old_image_path);
+                }
              }
  
              $data = array('title' => $title , 'description' => $description , 'image' => $image_name );
@@ -71,10 +77,18 @@ class development_Controller extends Controller
      }
  
      // delete
-     public function destroy($id)
+     public function destroy(Request $res,$id)
      {
-         mobile::where('id',$id)->delete();
-         return redirect()->route('development.view');
+        $mobile =  mobile::find($id);
+        $old_image_path = 'upload/'.$mobile->image;
+
+        if (File::exists($old_image_path)) 
+        {
+            File::delete($old_image_path);
+        }
+        $mobile->delete();
+        
+        return redirect()->route('development.view');
      }
 
     //  status insert in sata base

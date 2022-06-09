@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\portfolio_awards;
+use Illuminate\Support\Facades\File;
 
 class portfolio_award extends Controller
 {
@@ -13,14 +14,14 @@ class portfolio_award extends Controller
         if (isset($res->add)) 
         {
             $title = $res->title;
-            $description = $res->description;            
+            $description = $res->description;
             if ($res->file('image')) 
            {
                foreach ($res->file('image') as $image) 
                {
                     $image_name = rand(0,999999).$image->getClientOriginalName('image');
                     $image->move('upload/',$image_name);
-                    $image_multi_data[] = $image_name;     
+                    $image_multi_data[] = $image_name;
                }
            }
             
@@ -46,7 +47,7 @@ class portfolio_award extends Controller
     
     public function edit(Request $res,$id)
     {
-        $portfolio_awards = portfolio_awards::get();
+        $portfolio_awards = portfolio_awards::where('id',$id)->get();
         $data['portfolio_awards'] = $portfolio_awards;
         $old_image = $portfolio_awards->first();
 
@@ -67,8 +68,16 @@ class portfolio_award extends Controller
                 {
                     $image_name = rand(0,999999).$image->getClientOriginalName('image');
                     $image->move('upload/',$image_name);
-                    $image_multi_data[] = $image_name;     
+                    $image_multi_data[] = $image_name;
                 }
+                foreach(explode('|||', $old_image->image) as $img)
+                { 
+                    if (File::exists(public_path('upload/').$img))
+                    {
+                        File::delete(public_path('upload/').$img);
+                    }
+                }
+                
            }
             
             $data = array('title' => $title , 'description' => $description , 'image' => implode('|||',$image_multi_data));
@@ -83,7 +92,15 @@ class portfolio_award extends Controller
     
     public function destroy(Request $res,$id)
     {
-        portfolio_awards::where('id',$id)->delete();
+        $portfolio_awards = portfolio_awards::find($id);
+        foreach(explode('|||', $portfolio_awards->image) as $img)
+        { 
+            if (File::exists(public_path('upload/').$img))
+            {
+                File::delete(public_path('upload/').$img);
+            }
+        }
+        $portfolio_awards->delete();
         return redirect()->route('portfolio-awards.view');
     }
     

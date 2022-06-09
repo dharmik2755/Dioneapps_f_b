@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use App\Models\home_slider;
 use App\Models\login;
+use Illuminate\Support\Facades\File;
+
 
 class home_Controller extends Controller
 {
@@ -84,6 +86,7 @@ class home_Controller extends Controller
     {
         $update_data = home_slider::where('id',$id)->get();
         $old_image = $update_data->first();
+        $old_image_path = 'upload/'.$old_image->image;
 
         if (isset($res->save)) 
         {
@@ -98,6 +101,10 @@ class home_Controller extends Controller
             {
                 $image_name = rand(0,999999).$image->getClientOriginalName('image');
                 $image->move('upload',$image_name);
+                if (File::exists($old_image_path)) 
+                {
+                    File::delete($old_image_path);
+                }
             }
         
             $data = array('title' => $title , 'description' => $description , 'image' =>  $image_name );
@@ -112,7 +119,13 @@ class home_Controller extends Controller
     // home slider page delete data
     public function delete_home_slider(Request $res,$id)
     {
-        home_slider::where('id',$id)->delete();
+        $home_slider = home_slider::find($id);
+        $old_image_path = 'upload/'.$home_slider->image;
+        if (File::exists($old_image_path)) 
+        {
+            File::delete($old_image_path);
+        }
+        $home_slider->delete();
         return redirect('/view-home-slider');
     }
 

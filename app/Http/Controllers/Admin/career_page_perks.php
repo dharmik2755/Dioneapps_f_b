@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\career_page_perkss;
+use Illuminate\Support\Facades\File;
 
 class career_page_perks extends Controller
 {
@@ -76,9 +77,16 @@ class career_page_perks extends Controller
            else{
             foreach ($res->file('image') as $image) 
             {
-                 $image_name = rand(0,999999).$image->getClientOriginalName('image');
-                 $image->move('upload/',$image_name);
-                 $image_multi_data[] = $image_name;     
+                $image_name = rand(0,999999).$image->getClientOriginalName('image');
+                $image->move('upload/',$image_name);
+                $image_multi_data[] = $image_name;    
+                foreach(explode('|||', $old_image->image) as $img)
+                { 
+                    if (File::exists(public_path('upload/').$img))
+                    {
+                        File::delete(public_path('upload/').$img);
+                    }
+                } 
             }
            }
 
@@ -102,7 +110,15 @@ class career_page_perks extends Controller
     
     public function destroy(Request $res,$id)
     {
-        career_page_perkss::where('id',$id)->delete();
+        $career_page_perkss = career_page_perkss::find($id);
+        foreach(explode('|||', $career_page_perkss->image) as $img)
+        { 
+            if (File::exists(public_path('upload/').$img))
+            {
+                File::delete(public_path('upload/').$img);
+            }
+        }
+        $career_page_perkss->delete();
         return redirect()->route('career-perks.view');
     }
 

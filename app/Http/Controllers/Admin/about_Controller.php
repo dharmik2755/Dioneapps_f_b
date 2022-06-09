@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\about;
+use Illuminate\Support\Facades\File;
 
 class about_Controller extends Controller
 {
@@ -42,6 +43,7 @@ class about_Controller extends Controller
     {
         $update_data = about::where('id',$id)->get();
         $old_image = $update_data->first();
+        $old_image_path = 'upload/'.$old_image->image;
 
         if (isset($res->edit)) 
         {
@@ -57,6 +59,10 @@ class about_Controller extends Controller
             {
                 $image_name = rand(0,999999).$image->getClientOriginalName('image');
                 $image->move('upload',$image_name);
+                if (File::exists($old_image_path)) 
+                {
+                    File::delete($old_image_path);
+                }
             }
 
             $data = array('title' => $title , 'sub_title'=>$sub_title , 'description' => $description , 'image' => $image_name );
@@ -70,7 +76,13 @@ class about_Controller extends Controller
     // delete data
     public function destroy($id)
     {
-        about::where('id',$id)->delete();
+        $about = about::find($id);
+        $old_image_path = 'upload/'.$about->image;
+        if (File::exists($old_image_path)) 
+        {
+            File::delete($old_image_path);
+        }
+        $about->delete();
          return redirect()->route('about.view');
     }
     

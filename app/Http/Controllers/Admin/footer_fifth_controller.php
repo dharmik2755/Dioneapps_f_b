@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\footer_fifth;
+use Illuminate\Support\Facades\File;
 
 class footer_fifth_controller extends Controller
 {
@@ -15,7 +16,7 @@ class footer_fifth_controller extends Controller
             $link = $res->link;
             $image = $res->file('image');
             $image_name = rand(0,999999).$image->getClientOriginalName('image');
-            $image->move('upload',$image_name);
+            $image->move('upload/',$image_name);
             
             $data = array('link' => $link ,'image' =>$image_name );
             footer_fifth::insert($data);
@@ -37,18 +38,25 @@ class footer_fifth_controller extends Controller
     {
         $footer_fifth = footer_fifth::where('id',$id)->get();
         $old_image = $footer_fifth->first();
+        $old_img_path = 'upload/'.$old_image->image;
 
         if (isset($res->edit)) 
         {
             $link = $res->link;
             $image = $res->file('image');
-            if ($image=="") 
+            
+            if($image=="")
             {
                 $image_name = $old_image->image;
             }
-            else{
+            else
+            {
                 $image_name = rand(0,999999).$image->getClientOriginalName('image');
-                $image->move('upload',$image_name);
+                $image->move('upload/',$image_name);
+                if(File::exists($old_img_path)) 
+                {
+                    File::delete($old_img_path);
+                }
             }
             
             
@@ -63,7 +71,13 @@ class footer_fifth_controller extends Controller
     
     public function destroy(Request $res,$id)
     {
-        footer_fifth::where('id',$id)->delete();
+        $footer_fifth = footer_fifth::find($id);
+        $old_image_path = 'upload/'.$footer_fifth->image;
+        if (File::exists($old_image_path)) 
+        {
+            File::delete($old_image_path);
+        }
+        $footer_fifth->delete();
         return redirect()->route('footer-fifth.view');
     }
 

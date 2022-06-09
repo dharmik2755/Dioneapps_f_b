@@ -43,10 +43,6 @@
                   <input id="description" class="form-control" name="description" type="text" placeholder="Description" value="{{$dt->description}}">
                 </div>
                 <div class="form-group ">
-                  <label for="lastname">Image </label>
-                  <input id="image" class="form-control" name="image[]" type="file" multiple >
-                </div>
-                <div class="form-group ">
                   <?php 
                         $loop_sub_title = explode('|||', $dt->sub_title);
                         for ($i=0; $i<count($loop_sub_title); $i++) 

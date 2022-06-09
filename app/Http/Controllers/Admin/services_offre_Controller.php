@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\services_offer;
+use Illuminate\Support\Facades\File;
 
 class services_offre_Controller extends Controller
 {
@@ -48,6 +49,7 @@ class services_offre_Controller extends Controller
     {   $edit_services_offer = services_offer::where('id',$id)->get();
         $data['edit_services_offer'] = $edit_services_offer;
         $old_image = $edit_services_offer->first();
+        $old_image_path = 'upload/'.$old_image->image;
 
         if (isset($res->edit)) 
         {
@@ -67,6 +69,10 @@ class services_offre_Controller extends Controller
             else{
                 $image_name = rand(0,999999).$image->getClientOriginalName('image');
                 $image->move('upload',$image_name); 
+                if (File::exists($old_image_path)) 
+                {
+                    File::delete($old_image_path);
+                }
             }
 
             $data = array('title' => $title , 'description' => $description , 'sub_title' => $data_sub_title , 'sub_description' => $sub_description , 'image' => $image_name );
@@ -82,7 +88,13 @@ class services_offre_Controller extends Controller
     
     public function destroy(Request $res,$id)
     {
-        services_offer::where('id',$id)->delete();
+        $services_offer = services_offer::find($id);
+        $old_image_path = 'upload/'.$services_offer->image;
+        if (File::exists($old_image_path)) 
+        {
+            File::delete($old_image_path);
+        }
+        $services_offer->delete();
         return redirect()->route('services-offer.view');
     }
     // active and deactive

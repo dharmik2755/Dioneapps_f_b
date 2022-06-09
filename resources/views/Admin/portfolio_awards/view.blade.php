@@ -19,7 +19,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="text-end">
-                    <a href="{{ route('home.slider.add') }}">
+                    <a href="{{ route('portfolio-awards.create') }}">
                         <button type="button" class="btn btn-outline-info btn-fw">Add </button>
                     </a>
                 </div>

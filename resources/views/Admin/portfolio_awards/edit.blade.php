@@ -27,8 +27,8 @@
                                     $i=0; 
                                     foreach (explode('|||', $dt->image) as $picture) 
                                     {  ?>
+                                        <label for="lastname">Edit Image </label><br>
                                         <img src="{{asset('upload/'.$picture)}}" height="100" width="100"  alt=""><br>
-                                        <label for="lastname">Edit Image </label>
                                         <input id="image" class="form-control" name="image[]" type="file" >
                                     <?php $i++; } ?>
                               </div>
@@ -44,6 +44,9 @@
                               </div>
                               
                               <input class="btn btn-primary" type="submit" name="edit" value="Submit">
+                              <a href="{{ route('portfolio-awards.view') }}">
+                                <button type="button" class="btn btn-inverse-dark ">cancel</button>
+                              </a>
                           </fieldset>
                       </form>
                       @endforeach

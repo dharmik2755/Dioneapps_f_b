@@ -106,13 +106,9 @@
                         @foreach ($services_offer as $item3)
                             
                         <div class="brif_title_media title_media">
-                            {{-- Here’s What Dione Apps Can Offer To Your Online Business Venture --}}
                             {{$item3->title}}
                         </div>
                         <div class="brif_text text">
-                            {{-- Finding a web development company you can count on and build a relationship with for the
-                            long term service is a difficult task. Here are few reasons why you have made the best
-                            decision for your brand by choosing us. --}}
                             {{$item3->description}}
                         </div>
                         <div class="support_wrapper_media">
@@ -150,13 +146,14 @@
                     @endforeach
                     </div>
                     <div class="brif_img_media" data-aos="fade-left" data-aos-delay="500">
-                        <img src="asset/images/service-01-01.png" alt="">
+                        @foreach ($services_offer as $item3)
+                        <img src="{{asset('upload/'.$item3->image)}}" alt="">
+                        @endforeach
                     </div>
                 </div>
             </div>
         </section>
         <!-- End About Us -->
-
 
         <!-- start Contact Us -->
         <div class="contacts">

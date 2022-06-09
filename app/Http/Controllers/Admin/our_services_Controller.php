@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use App\Models\our_services;
 
 class our_services_Controller extends Controller
@@ -42,6 +43,7 @@ class our_services_Controller extends Controller
         $our_service = our_services::where('id',$id)->get();
         $data['our_services'] = $our_service;
         $old_image = $our_service->first();
+        $old_image_path = 'upload/'.$old_image->image;
         
         if (isset($res->edit)) 
         {
@@ -50,9 +52,14 @@ class our_services_Controller extends Controller
             {
                 $image_name = $old_image->image;
             }
-            else{
+            else
+            {
                 $image_name = rand(0,999999).$image->getClientOriginalName('image');
-                $image->move('upload',$image_name);
+                $image->move('upload/',$image_name);
+                if(File::exists($old_image_path)) 
+                {
+                    File::delete($old_image_path);
+                }
             }
             $title = $res->title;
             $description = $res->description;
@@ -69,9 +76,15 @@ class our_services_Controller extends Controller
     }
 
    
-    public function destroy(Request $res,$id)
+    public function destroy($id)
     {
-        our_services::where('id',$id)->delete();
+        $our_service = our_services::find($id);
+        $old_image_path = 'upload/'.$our_service->image;
+        if (File::exists($old_image_path)) 
+        {
+            File::delete($old_image_path);
+        }
+        $our_service->delete();
 
         return redirect()->route('our-services.view');
     }

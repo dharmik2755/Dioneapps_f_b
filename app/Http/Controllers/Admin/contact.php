@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\contacts;
+use Illuminate\Support\Facades\File;
 
 class contact extends Controller
 {
@@ -28,6 +29,7 @@ class contact extends Controller
         $edit_data_show = contacts::where('id',$id)->get();
         $data['edit_data'] = $edit_data_show;
         $old_image = $edit_data_show->first();
+        $old_image_path = 'upload/'.$old_image->image;
 
         if (isset($res->edit)) 
         {
@@ -41,6 +43,10 @@ class contact extends Controller
             else{
                 $image_name = rand(0,999999).$image->getClientOriginalName('image');
                 $image->move('upload',$image_name);
+                if (File::exists($old_image_path)) 
+                {
+                    File::delete($old_image_path);
+                }
             }
 
             $update_data = array('title' => $title , 'description' => $description , 'image' => $image_name );
