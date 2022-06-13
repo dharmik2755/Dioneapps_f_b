@@ -14,18 +14,18 @@ class ageCheck
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $res, Closure $next)
+    public function handle(Request $request, Closure $next)
     {
-        $path = $res->path();
+        $path = $request->path();
         if ($path=="Admin-side" && Session::get('user_id')) 
         {
              return redirect('/dashboard');
         } 
         else if($path!="Admin-side" && !Session::get('user_id'))
         {
-            return redirect('Admin-side');
+            return redirect('/Admin-side');
         }
 
-        return $next($res);
+        return $next($request);
     }
 }

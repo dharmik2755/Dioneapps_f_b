@@ -27,21 +27,19 @@ class home_Controller extends Controller
                     $user_data = $select_data->first();
                     Session::put('user_id',$user_data->id);
     
-                    return redirect('/dashboard');
-                }
-                else{
-                    
-                    return redirect('/Admin-side')->with('alert','please Enter valid Username and Password ');
+                    return redirect()->route('dashboard.page');
                 }
     
             }
             return view('Admin.login');
         
     }
+
     // dahsboard page
     public function dashboard(Request $res)
     {  
-        return view('Admin.dashboard');
+        // die();
+        return view('Admin.dashboard_new');
     }
 
     public function logout(Request $res)

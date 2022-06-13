@@ -48,7 +48,7 @@ use App\Http\Controllers\Admin\footer_fifth_controller;
 
 // User Side
 
-Route::any('', [home::class, 'home'])->name('home.page');
+Route::any('/', [home::class, 'home'])->name('home.page');
 Route::any('/about', [about::class, 'about'])->name('about.page');
 Route::any('/service', [service::class, 'service'])->name('service.page');
 Route::any('/portfolio', [portfolio::class, 'portfolio'])->name('portfolio.page');
@@ -56,13 +56,12 @@ Route::any('/career', [career::class, 'career'])->name('career.page');
 Route::any('/contactus', [contactus::class, 'contactus'])->name('contact.page');
 
 // Admin Side-----------------------------------------------------------------------------------
-Route::any('/Admin-side', [home_Controller::class, 'login']);
+Route::any('/Admin-side', [home_Controller::class,'login']);
 
-Route::group(['middleware'=>'backend'] , function()
+Route::group(['middleware'=>"backend"] , function()
 {
 
 Route::any('/Logout', [home_Controller::class, 'logout']);
-    
 Route::any('/dashboard', [home_Controller::class, 'dashboard'])->name('dashboard.page');
 
 // home
