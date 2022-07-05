@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use App\Models\home_slider;
 use App\Models\login;
-use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\File; 
 
 
 class home_Controller extends Controller
@@ -29,7 +29,6 @@ class home_Controller extends Controller
     
                     return redirect()->route('dashboard.page');
                 }
-    
             }
             return view('Admin.login');
         
@@ -62,12 +61,14 @@ class home_Controller extends Controller
             
             
             $data = array('title' => $title , 'description' => $description , 'image' =>  $image_name );
-            // echo "<per>";
-            // print_r($data);
-            // die();
             home_slider::insert($data);
 
             return redirect('/view-home-slider');
+
+            if($data!=1) 
+            {
+                return redirect(404);
+            }
 
         }
         return view('Admin.home.add_home_slider');
@@ -76,7 +77,7 @@ class home_Controller extends Controller
     public function view_home_slider(Request $res)
     {
         $home_slider = home_slider::get();
-        // $data['home_slider'] = $show_data;
+
         return view('Admin.home.view_home_slider', compact('home_slider'));
     }
     // Home slider page update data
@@ -107,7 +108,7 @@ class home_Controller extends Controller
         
             $data = array('title' => $title , 'description' => $description , 'image' =>  $image_name );
             home_slider::where('id',$id)->update($data);
-        
+
             return redirect('/view-home-slider');
         }
 

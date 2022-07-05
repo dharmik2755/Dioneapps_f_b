@@ -45,17 +45,34 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
+            // 1 - for old heidisql
             // 'url' => env('http://localhost'),
             // 'host' => env('DB_HOST', 'database-1.cgsg7oacezid.us-east-1.rds.amazonaws.com'),
+            
+            // 2 - for local server
             'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', '127.0.0.1'),
+            
+            // 3 - for new live server cluster for heidisql 
+            // 'url' => env('http://localhost'),
+            // 'host' => env('DB_HOST', 'sql6.freemysqlhosting.net'),
+
             'port' => env('DB_PORT', '3306'),
+            // 1 - for old heidisql
             // 'database' => env('DB_DATABASE', 'dioneapps'),
             // 'username' => env('DB_USERNAME', 'admin'),
             // 'password' => env('DB_PASSWORD', 'Dione&169'),
+            
+            // 2 - for local server
             'database' => env('DB_DATABASE', 'forge'),
             'username' => env('DB_USERNAME', 'forge'),
             'password' => env('DB_PASSWORD', ''),
+
+            // 3 - for new live server cluster for heidisql
+            // 'database' => env('DB_DATABASE', 'sql6501828'),
+            // 'username' => env('DB_USERNAME', 'sql6501828'),
+            // 'password' => env('DB_PASSWORD', 'n2siX9eVui'),
+            
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',

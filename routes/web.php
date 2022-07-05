@@ -56,11 +56,9 @@ Route::any('/career', [career::class, 'career'])->name('career.page');
 Route::any('/contactus', [contactus::class, 'contactus'])->name('contact.page');
 
 // Admin Side-----------------------------------------------------------------------------------
-Route::any('/Admin-side', [home_Controller::class,'login']);
-
 Route::group(['middleware'=>"backend"] , function()
 {
-
+Route::any('/Admin-side', [home_Controller::class,'login']);
 Route::any('/Logout', [home_Controller::class, 'logout']);
 Route::any('/dashboard', [home_Controller::class, 'dashboard'])->name('dashboard.page');
 
@@ -215,7 +213,7 @@ Route::any('/add-footer-third-data', [footer_third_controller::class , 'create']
 Route::any('/view-footer-third-data', [footer_third_controller::class , 'show'])->name('footer-third.view');
 Route::any('/edit-footer-third-data/{id}', [footer_third_controller::class , 'edit'])->name('footer-third.edit');
 Route::any('/delete-footer-third-data/{id}',[footer_third_controller::class, 'destroy'])->name('footer-third.delete');
-Route::any('/stutus-footer-third-data', [portfolio_footer_third_controllerlatest_work::class, 'active_and_deactive']);
+Route::any('/stutus-footer-third-data', [footer_third_controller::class, 'active_and_deactive']);
 
 Route::any('/add-footer-forth-data', [footer_forth_controller::class , 'create'])->name('footer-forth.create');
 Route::any('/view-footer-forth-data', [footer_forth_controller::class , 'show'])->name('footer-forth.view');

@@ -44,6 +44,9 @@
                                   </div>
                               </div>
                               <input class="btn btn-primary" type="submit" name="save" value="Submit">
+                              <a href="{{ route('view.home.slider') }}">
+                                <button type="button" class="btn btn-inverse-dark ">cancel</button>
+                              </a>
                           </fieldset>
                       </form>
                       @endforeach
