@@ -5197,14 +5197,20 @@ svg {
     border: 1px solid red;
 }
 
-.post-slider .post-wrapper {
+.post-slider_one .post-wrapper {
     width: 84%;
     height: 350px;
+    margin-left: 115px;
     height: 0px auto;
+    overflow: hidden;
     border: 1px dashed red;
 }
-.post-slider .post-wrapper .post {
+.post-slider_one .post-wrapper .post {
     background: #05f7;
+    height: 350px;
+    width: 300px;
+    margin: 0px 10px;
+    display: inline-block;
 } */
 
 /* .post-slider {

@@ -175,11 +175,17 @@ $n = 2;
 {{-- <div class="page-wrapper">
     <div class="post-slider_one">
         <h1 class="slider-title"> Trending Posts </h1>
-        <div class="post">1</div>
-        <div class="post">2</div>
-        <div class="post">3</div>
-        <div class="post">4</div>
-        <div class="post">5</div>
+
+        <i class="fas fa-chevron-left prev"></i>
+        <i class="fas fa-chevron-right next"></i>
+
+        <div class="post-wrapper">
+            <div class="post">1</div>
+            <div class="post">2</div>
+            <div class="post">3</div>
+            <div class="post">4</div>
+            <div class="post">5</div>
+        </div>    
     </div>
 </div><br><br><br><br> --}}
 {{-- End blog slider --}}
