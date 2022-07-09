@@ -5194,7 +5194,13 @@ svg {
 
 /* slider css */
 /* .post-slider_one {
+    position: relative;
     border: 1px solid red;
+}
+
+.post-slider_one .slider-title {
+    text-align: center;
+    margin: 30px auto;
 }
 
 .post-slider_one .post-wrapper {
