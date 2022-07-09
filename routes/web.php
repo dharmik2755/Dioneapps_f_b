@@ -8,6 +8,7 @@ use App\Http\Controllers\Web\service;
 use App\Http\Controllers\Web\portfolio;
 use App\Http\Controllers\Web\career;
 use App\Http\Controllers\Web\contactus;
+use App\Http\Controllers\Web\blog;
 //for Admin side Controllers
 use App\Http\Controllers\Admin\home_Controller;
 use App\Http\Controllers\Admin\development_Controller;
@@ -34,7 +35,6 @@ use App\Http\Controllers\Admin\footer_third_controller;
 use App\Http\Controllers\Admin\footer_forth_controller;
 use App\Http\Controllers\Admin\footer_fifth_controller;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,6 +54,7 @@ Route::any('/service', [service::class, 'service'])->name('service.page');
 Route::any('/portfolio', [portfolio::class, 'portfolio'])->name('portfolio.page');
 Route::any('/career', [career::class, 'career'])->name('career.page');
 Route::any('/contactus', [contactus::class, 'contactus'])->name('contact.page');
+Route::any('/blog', [blog::class, 'blog'])->name('blog.page');
 
 // Admin Side-----------------------------------------------------------------------------------
 Route::group(['middleware'=>"backend"] , function()

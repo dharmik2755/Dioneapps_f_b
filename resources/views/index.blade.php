@@ -171,6 +171,19 @@ $n = 2;
 </section>
 <!-- End About Us -->
 
+{{-- blog slider --}}
+{{-- <div class="page-wrapper">
+    <div class="post-slider_one">
+        <h1 class="slider-title"> Trending Posts </h1>
+        <div class="post">1</div>
+        <div class="post">2</div>
+        <div class="post">3</div>
+        <div class="post">4</div>
+        <div class="post">5</div>
+    </div>
+</div><br><br><br><br> --}}
+{{-- End blog slider --}}
+
 <!-- counter penal -->
 <section class="reviews">
     <div id="projectFacts" class="sectionClass">
