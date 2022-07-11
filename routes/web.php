@@ -54,7 +54,7 @@ Route::any('/service', [service::class, 'service'])->name('service.page');
 Route::any('/portfolio', [portfolio::class, 'portfolio'])->name('portfolio.page');
 Route::any('/career', [career::class, 'career'])->name('career.page');
 Route::any('/contactus', [contactus::class, 'contactus'])->name('contact.page');
-Route::any('/blog', [blog::class, 'blog'])->name('blog.page');
+// Route::any('/blog', [blog::class, 'blog'])->name('blog.page');
 
 // Admin Side-----------------------------------------------------------------------------------
 Route::group(['middleware'=>"backend"] , function()

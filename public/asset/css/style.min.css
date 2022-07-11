@@ -5211,13 +5211,32 @@ svg {
     overflow: hidden;
     border: 1px dashed red;
 }
+
+.post-slider_one .next {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    font-size: 2em;
+    color: #444;
+    cursor: pointer;
+}
+
+.post-slider_one .prev {
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    font-size: 2em;
+    color: #444;
+    cursor: pointer;
+}
+
 .post-slider_one .post-wrapper .post {
     background: #05f7;
     height: 350px;
     width: 300px;
     margin: 0px 10px;
     display: inline-block;
-} */
+}  */
 
 /* .post-slider {
     position: relative;

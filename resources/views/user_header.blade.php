@@ -20,7 +20,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     
     <!-- font awesome -->
-    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/> --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
 
 
 </head>
@@ -43,7 +43,7 @@
                             <li class="menu_list-item"><a href="{{url('/about')}}">AboutUs</a> </li>
                             <li class="menu_list-item"><a href="{{url('/service')}}">Service</a> </li>
                             <li class="menu_list-item"><a href="{{url('/portfolio')}}">Portfolio</a> </li>
-                            <li class="menu_list-item"><a href="{{url('/blog')}}">Blogs</a> </li>
+                            {{-- <li class="menu_list-item"><a href="{{url('/blog')}}">Blogs</a> </li> --}}
                             <li class="menu_list-item"><a href="{{url('/career')}}">Career</a> </li>
 
                         </ul>

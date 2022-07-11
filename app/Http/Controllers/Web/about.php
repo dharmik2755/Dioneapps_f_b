@@ -9,6 +9,10 @@ use App\Models\renowned;
 use App\Models\about_experts;
 use App\Models\project_contact_Controllers;
 use App\Models\counter;
+use App\Models\footer_first;
+use App\Models\footer_secound;
+use App\Models\footer_forth;
+use App\Models\footer_fifth;
 
 
 class about extends Controller
@@ -28,6 +32,17 @@ class about extends Controller
         $project = project_contact_Controllers::where('status',1)->get();
         $data['project_detail'] = $project;
 
+                $footer_first = footer_first::where('status',1)->get();
+                $data['footer_first'] = $footer_first;
+                
+                $footer_secound = footer_secound::where('status',1)->get();
+                $data['footer_secound'] = $footer_secound;
+                
+                $footer_forth = footer_forth::where('status',1)->get();
+                $data['footer_forth'] = $footer_forth;
+                
+                $footer_fifth = footer_fifth::where('status',1)->get();
+                $data['footer_fifth'] = $footer_fifth;
         return view('about',$data);
     }
 }

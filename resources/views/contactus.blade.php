@@ -33,7 +33,7 @@
             @endforeach
             <div class="support_item_contact">
                 <div class="item_messan-wrpper">
-                    @foreach ($footer_fifth_use_outher as $fifth)    
+                    @foreach ($footer_fifth as $fifth)    
                     <a href="{{$fifth->link}}" class="item_messan-link">
                         <img src="{{asset('upload/'.$fifth->image)}}" width="18" height="25" alt="">
                     </a>

@@ -7,11 +7,14 @@ use Illuminate\Http\Request;
 use App\Models\portfolio_awards;
 use App\Models\project_contact_Controllers;
 use App\Models\portfolio_latest_works;
-
+use App\Models\footer_first;
+use App\Models\footer_secound;
+use App\Models\footer_forth;
+use App\Models\footer_fifth;
 
 class portfolio extends Controller
 {
-   // portfolio us page
+  // portfolio us page
    public function portfolio(Request $res)
    {
         $portfolio_awards = portfolio_awards::where('status',1)->get();
@@ -30,7 +33,7 @@ class portfolio extends Controller
 
         //     //   pagination limit and start 
         //       if (!($count_data>$limit)) {
-        //          $page = 1;
+          //          $page = 1;
         //       }
               
         //       $portfolio_latest_works = portfolio_latest_works::skip($start)->take($limit)->where('status',1)->get();
@@ -45,6 +48,19 @@ class portfolio extends Controller
           $view = view('data',compact('portfolio_latest_works'))->render();
           return response()->json(['html'=>$view]);
         }
+        
+                $footer_first = footer_first::where('status',1)->get();
+                $data['footer_first'] = $footer_first;
+                
+                $footer_secound = footer_secound::where('status',1)->get();
+                $data['footer_secound'] = $footer_secound;
+                
+                $footer_forth = footer_forth::where('status',1)->get();
+                $data['footer_forth'] = $footer_forth;
+                
+                $footer_fifth = footer_fifth::where('status',1)->get();
+                $data['footer_fifth'] = $footer_fifth;
+        
         return view('portfolio',$data);
    }
 }

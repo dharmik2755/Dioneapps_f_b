@@ -4,11 +4,11 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 // use Illuminate\Pagination\Paginator;
-use Illuminate\Support\Facades\View;
-use App\Models\footer_first;
-use App\Models\footer_secound;
-use App\Models\footer_forth;
-use App\Models\footer_fifth;
+// use Illuminate\Support\Facades\View;
+// use App\Models\footer_first;
+// use App\Models\footer_secound;
+// use App\Models\footer_forth;
+// use App\Models\footer_fifth;
 
 class AppServiceProvider extends ServiceProvider
 {

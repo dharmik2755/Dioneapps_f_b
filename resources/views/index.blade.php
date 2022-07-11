@@ -180,7 +180,9 @@ $n = 2;
         <i class="fas fa-chevron-right next"></i>
 
         <div class="post-wrapper">
-            <div class="post">1</div>
+            <div class="post">
+                <img src="assets/images/" alt="">
+            </div>
             <div class="post">2</div>
             <div class="post">3</div>
             <div class="post">4</div>
@@ -283,7 +285,7 @@ $n = 2;
     <div class="container">
         <div class="contacts_wrapper">
             @foreach ($contact as $cnt)
-            @endforeach
+            
             <div class="contacts_title title">
                 {{ $cnt->title }}
             </div>
@@ -296,7 +298,7 @@ $n = 2;
                         <img src="{{ asset('upload/' . $cnt->image) }}" alt="">
                     </a>
                 </div>
-
+                @endforeach
                 <form class="form_bottom" id="contactForm" method="POST" data-aos="fade-up-left">
                     @CSRF
                     <div class="footer-form_title">
