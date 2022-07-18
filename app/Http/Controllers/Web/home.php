@@ -15,7 +15,7 @@ use App\Models\footer_first;
 use App\Models\footer_secound;
 use App\Models\footer_forth;
 use App\Models\footer_fifth;
-use App\models\user_contacts;
+use App\Models\user_contacts;
 use Illuminate\Support\Facades\Session;
 
 class home extends Controller

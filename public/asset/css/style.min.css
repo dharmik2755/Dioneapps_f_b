@@ -1495,7 +1495,7 @@ ul {
 }
 
 .slider_item-left {
-    background-image: url(../images/reviews-left.png);
+    /* background-image: url(../images/reviews-left.png); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left -14px bottom -19px;
@@ -3993,7 +3993,7 @@ svg {
 }
 
 .reviews_page_item-left {
-    background-image: url(../images/reviews-left.png);
+    /* background-image: url(../images/reviews-left.png); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left -14px bottom -19px;
