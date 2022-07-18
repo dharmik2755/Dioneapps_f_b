@@ -25,6 +25,6 @@ class blog extends Controller
         $footer_fifth = footer_fifth::where('status',1)->get();
         $data['footer_fifth'] = $footer_fifth;
         
-        return redirect('/');
+        return view('blog',$data);
     }
 }

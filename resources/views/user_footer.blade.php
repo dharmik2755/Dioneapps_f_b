@@ -85,7 +85,7 @@
                         </div>
                         <div class="item_messan-wrpper">
                             @foreach ($footer_fifth as $fifth)    
-                                <a href="{{$fifth->link}}" class="item_messan-link">
+                                <a href="{{$fifth->link}}" class="item_messan-link" target="_blank" >
                                     <img src="{{asset('upload/'.$fifth->image)}}" width="18" height="25" alt="">
                                 </a>
                             @endforeach

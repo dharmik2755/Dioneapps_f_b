@@ -9,6 +9,7 @@ use App\Http\Controllers\Web\portfolio;
 use App\Http\Controllers\Web\career;
 use App\Http\Controllers\Web\contactus;
 use App\Http\Controllers\Web\blog;
+use App\Http\Controllers\Web\blog_single;
 //for Admin side Controllers
 use App\Http\Controllers\Admin\home_Controller;
 use App\Http\Controllers\Admin\development_Controller;
@@ -54,7 +55,8 @@ Route::any('/service', [service::class, 'service'])->name('service.page');
 Route::any('/portfolio', [portfolio::class, 'portfolio'])->name('portfolio.page');
 Route::any('/career', [career::class, 'career'])->name('career.page');
 Route::any('/contactus', [contactus::class, 'contactus'])->name('contact.page');
-// Route::any('/blog', [blog::class, 'blog'])->name('blog.page');
+Route::any('/blog', [blog::class, 'blog'])->name('blog.page');
+Route::any('/blog_single', [blog_single::class, 'blog_single'])->name('blog_single.page');
 
 // Admin Side-----------------------------------------------------------------------------------
 Route::group(['middleware'=>"backend"] , function()
@@ -134,7 +136,7 @@ Route::any('/delete-project-contact-data/{id}',[project_contact_Controllerr::cla
 Route::any('/stutus-project-contact-data', [project_contact_Controllerr::class, 'active_and_deactive']);
 
 // contact user contact
-Route::any('/add-user-contact-data', [user_contact_Controller::class , 'create'])->name('user.contact.create');
+Route::post('/add-user-contact-data', [user_contact_Controller::class , 'create'])->name('user.contact.create');
 Route::any('/view-user-contact-data', [user_contact_Controller::class , 'show'])->name('user.contact.view');
 // Route::any('/edit-user-contact-data/{id}', [user_contact_Controller::class , 'edit'])->name('user.contact.edit');
 Route::any('/delete-user-contact-data/{id}',[user_contact_Controller::class,'destroy'])->name('user.contact.delete');

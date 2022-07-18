@@ -32,16 +32,16 @@
                 </div> -->
             </div>
             
-                    <a href="#" class="page_top-btn-order btn-header">
+                    <a href="#" class="page_top-btn-order btn-header-portfolio">
                         All
                     </a>
-                    <a href="#" class="page_top-btn-order btn-header">
+                    <a href="#" class="page_top-btn-order btn-header-portfolio">
                         Graphics
                     </a>
-                    <a href="#" class="page_top-btn-order btn-header">
+                    <a href="#" class="page_top-btn-order btn-header-portfolio">
                         Mobile Apps
                     </a>
-                    <a href="#" class="page_top-btn-order btn-header">
+                    <a href="#" class="page_top-btn-order btn-header-portfolio">
                         Web side
                     </a>
         </div>

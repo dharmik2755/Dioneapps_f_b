@@ -172,24 +172,216 @@ $n = 2;
 <!-- End About Us -->
 
 {{-- blog slider --}}
-{{-- <div class="page-wrapper">
+<div class="page-wrapper">
     <div class="post-slider_one">
-        <h1 class="slider-title"> Trending Posts </h1>
+        
+        <div class="brif_wrapp_slider text_for_square">
+        <div class="brif_title_title title ">Articals</div>
+        </div>
+        {{-- <h1 class="slider-title text_for_square"> All Blogs </h1> --}}
 
         <i class="fas fa-chevron-left prev"></i>
         <i class="fas fa-chevron-right next"></i>
 
         <div class="post-wrapper">
+
             <div class="post">
-                <img src="assets/images/" alt="">
+                <a href="{{ route('blog_single.page') }}">
+                    <img src="upload/80105914.png" alt="" class="slider-image">
+                </a>
+                <div class="post-info">
+                        <i class="fas fa-calendar blog_caln" >
+                                01, Jul 2022
+                        </i>
+                    <h5 class="text_line_height" >
+                        {{-- <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a> --}}
+                        <a href="{{ route('blog_single.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas nesciunt ea accusantium libero, hic illo mollitia fugit excepturi accusamus eius numquam voluptates vel quasi iusto? Beatae, recusandae possimus! Necessitatibus!</a>
+                    </h5>
+                </div>
+                <div>
+                    <a href="{{ route('blog_single.page') }}">
+                    <button class="button_slider" >
+                        <span class="circle">
+                            <span class="icon arrow"></span>
+                        </span>
+                        <span class="text_btn">Learn more</span>
+                    </button>
+                    </a>
+                </div>
             </div>
-            <div class="post">2</div>
-            <div class="post">3</div>
-            <div class="post">4</div>
-            <div class="post">5</div>
+            <div class="post">
+                <a href="{{ route('blog_single.page') }}">
+                    <img src="upload/80105914.png" alt="" class="slider-image">
+                </a>
+                <div class="post-info">
+                        <i class="fas fa-calendar blog_caln" >
+                                01, Jul 2022
+                        </i>
+                    <h5 class="text_line_height" >
+                        {{-- <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a> --}}
+                        <a href="{{ route('blog_single.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas nesciunt ea accusantium libero, hic illo mollitia fugit excepturi accusamus eius numquam voluptates vel quasi iusto? Beatae, recusandae possimus! Necessitatibus!</a>
+                    </h5>
+                </div>
+                <div>
+                    <a href="{{ route('blog_single.page') }}">
+                    <button class="button_slider" >
+                        <span class="circle">
+                            <span class="icon arrow"></span>
+                        </span>
+                        <span class="text_btn">Learn more</span>
+                    </button>
+                    </a>
+                </div>
+            </div>
+            <div class="post">
+                <a href="{{ route('blog_single.page') }}">
+                    <img src="upload/80105914.png" alt="" class="slider-image">
+                </a>
+                <div class="post-info">
+                        <i class="fas fa-calendar blog_caln" >
+                                01, Jul 2022
+                        </i>
+                    <h5 class="text_line_height" >
+                        {{-- <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a> --}}
+                        <a href="{{ route('blog_single.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas nesciunt ea accusantium libero, hic illo mollitia fugit excepturi accusamus eius numquam voluptates vel quasi iusto? Beatae, recusandae possimus! Necessitatibus!</a>
+                    </h5>
+                </div>
+                <div>
+                    <a href="{{ route('blog_single.page') }}">
+                    <button class="button_slider" >
+                        <span class="circle">
+                            <span class="icon arrow"></span>
+                        </span>
+                        <span class="text_btn">Learn more</span>
+                    </button>
+                    </a>
+                </div>
+            </div>
+            <div class="post">
+                <a href="{{ route('blog_single.page') }}">
+                    <img src="upload/80105914.png" alt="" class="slider-image">
+                </a>
+                <div class="post-info">
+                        <i class="fas fa-calendar blog_caln" >
+                                01, Jul 2022
+                        </i>
+                    <h5 class="text_line_height" >
+                        {{-- <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a> --}}
+                        <a href="{{ route('blog_single.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas nesciunt ea accusantium libero, hic illo mollitia fugit excepturi accusamus eius numquam voluptates vel quasi iusto? Beatae, recusandae possimus! Necessitatibus!</a>
+                    </h5>
+                </div>
+                <div>
+                    <a href="{{ route('blog_single.page') }}">
+                    <button class="button_slider" >
+                        <span class="circle">
+                            <span class="icon arrow"></span>
+                        </span>
+                        <span class="text_btn">Learn more</span>
+                    </button>
+                    </a>
+                </div>
+            </div>
+            <div class="post">
+                <a href="{{ route('blog_single.page') }}">
+                    <img src="upload/80105914.png" alt="" class="slider-image">
+                </a>
+                <div class="post-info">
+                        <i class="fas fa-calendar blog_caln" >
+                                01, Jul 2022
+                        </i>
+                    <h5 class="text_line_height" >
+                        {{-- <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a> --}}
+                        <a href="{{ route('blog_single.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas nesciunt ea accusantium libero, hic illo mollitia fugit excepturi accusamus eius numquam voluptates vel quasi iusto? Beatae, recusandae possimus! Necessitatibus!</a>
+                    </h5>
+                </div>
+                <div>
+                    <a href="{{ route('blog_single.page') }}">
+                    <button class="button_slider" >
+                        <span class="circle">
+                            <span class="icon arrow"></span>
+                        </span>
+                        <span class="text_btn">Learn more</span>
+                    </button>
+                    </a>
+                </div>
+            </div>
+            <div class="post">
+                <a href="{{ route('blog_single.page') }}">
+                    <img src="upload/80105914.png" alt="" class="slider-image">
+                </a>
+                <div class="post-info">
+                        <i class="fas fa-calendar blog_caln" >
+                                01, Jul 2022
+                        </i>
+                    <h5 class="text_line_height" >
+                        {{-- <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a> --}}
+                        <a href="{{ route('blog_single.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas nesciunt ea accusantium libero, hic illo mollitia fugit excepturi accusamus eius numquam voluptates vel quasi iusto? Beatae, recusandae possimus! Necessitatibus!</a>
+                    </h5>
+                </div>
+                <div>
+                    <a href="{{ route('blog_single.page') }}">
+                    <button class="button_slider" >
+                        <span class="circle">
+                            <span class="icon arrow"></span>
+                        </span>
+                        <span class="text_btn">Learn more</span>
+                    </button>
+                    </a>
+                </div>
+            </div>
+            <div class="post">
+                <a href="{{ route('blog_single.page') }}">
+                    <img src="upload/80105914.png" alt="" class="slider-image">
+                </a>
+                <div class="post-info">
+                        <i class="fas fa-calendar blog_caln" >
+                                01, Jul 2022
+                        </i>
+                    <h5 class="text_line_height" >
+                        {{-- <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a> --}}
+                        <a href="{{ route('blog_single.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas nesciunt ea accusantium libero, hic illo mollitia fugit excepturi accusamus eius numquam voluptates vel quasi iusto? Beatae, recusandae possimus! Necessitatibus!</a>
+                    </h5>
+                </div>
+                <div>
+                    <a href="{{ route('blog_single.page') }}">
+                    <button class="button_slider" >
+                        <span class="circle">
+                            <span class="icon arrow"></span>
+                        </span>
+                        <span class="text_btn">Learn more</span>
+                    </button>
+                    </a>
+                </div>
+            </div>
+            <div class="post">
+                <a href="{{ route('blog_single.page') }}">
+                    <img src="upload/80105914.png" alt="" class="slider-image">
+                </a>
+                <div class="post-info">
+                        <i class="fas fa-calendar blog_caln" >
+                                01, Jul 2022
+                        </i>
+                    <h5 class="text_line_height" >
+                        {{-- <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a> --}}
+                        <a href="{{ route('blog_single.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas nesciunt ea accusantium libero, hic illo mollitia fugit excepturi accusamus eius numquam voluptates vel quasi iusto? Beatae, recusandae possimus! Necessitatibus!</a>
+                    </h5>
+                </div>
+                <div>
+                    <a href="{{ route('blog_single.page') }}">
+                    <button class="button_slider" >
+                        <span class="circle">
+                            <span class="icon arrow"></span>
+                        </span>
+                        <span class="text_btn">Learn more</span>
+                    </button>
+                    </a>
+                </div>
+            </div>
+
+            
         </div>    
     </div>
-</div><br><br><br><br> --}}
+</div><br><br><br><br><br><br>
 {{-- End blog slider --}}
 
 <!-- counter penal -->
@@ -300,21 +492,22 @@ $n = 2;
                 </div>
                 @endforeach
                 <form class="form_bottom" id="contactForm" method="POST" data-aos="fade-up-left">
-                    @CSRF
+                    @csrf
                     <div class="footer-form_title">
                         GET IN TOUCH
                     </div>
                         
                     <div class="inp_cont-wrapper">
                         <input type="text" id="name" name="name" class="form_inp-cont" placeholder="name" >
-                        <input type="text" id="phone_number" name="phone_number" class="form_inp-cont" placeholder="Phone No" >
+                        <input type="text" id="phone_number" name="phone_number" class="form_inp-cont" maxlength="10" placeholder="Phone No" >
                     </div>
                         <input type="text" id="email" name="email" class="form_inp-mail" placeholder="Email" >
                         <textarea name="message" id="message" class="form_inp-text" placeholder="Message" ></textarea>
                     <div class="footer_btn-wrpper">
-                        <button class="footer_btn btn"  type="submit" name="send_us">
+                        {{-- <button class="footer_btn btn send_contact_button"  type="submit" name="contact" >
                             Send Us
-                        </button>
+                        </button>  --}}
+                        <input class="footer_btn btn" type="submit" name="contact" value="Send Us">   
                     </div>
                 </form>
             </div>
@@ -375,24 +568,33 @@ $n = 2;
                 form.submit();
             }
         });
-    $('#contactForm').on('submit', function(event) {
-        event.preventDefault();
-        // Get Alll Text Box Id's
-        name = $('#name').val();
-        phone_number = $('#phone_number').val();
-        email = $('#email').val();
-        message = $('#message').val();
+    // $('#contactForm').on('submit', function(event) {
+    //     event.preventDefault();
+    //     name = $('#name').val(),
+    //     phone_number = $('#phone_number').val(),
+    //     email = $('#email').val(),
+    //     message = $('#message').val(),
 
-        $.ajax({
-            url: "/add-user-contact-data", //Define Post URL
-            type: "POST",
-            data: { "_token": "{{ csrf_token() }}", name: name, phone_number: phone_number, email: email, message: message, },
+    //     $.ajax({
+    //         url: "/add-user-contact-data", //Define Post URL
+    //         type: "POST",
+    //         data: { "_token": "{{ csrf_token() }}", name: name, phone_number: phone_number, email: email, message: message, },
+    //         dataType : "json",
+    //         // Display Response Success Message
             
-            //Display Response Success Message
-            success: function(data) {
-                console.log(data.success)
-                document.getElementById("contactForm").reset();
-            },
+    //         success: function(data) {
+    //             console.log(data.success),
+    //             document.getElementById("contactForm").reset();
+    //         },
+    //     });
+    // });
+</script>
+{{-- <script>
+    $('#contactForm').ready(function () {
+        $(document).on('click', '.send_contact_button', function () {
+            e.preventDefault();
+            alert();
+            console.log('hello');
         });
     });
-</script>
+</script> --}}

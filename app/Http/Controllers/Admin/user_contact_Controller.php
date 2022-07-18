@@ -5,20 +5,45 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\user_contacts;
+// use Illuminate\Validation\Validator;
+// use Ramsey\Uuid\Rfc4122\Validator;
+use Illuminate\Support\Facades\Validator;
 
 class user_contact_Controller extends Controller
 {
     
 
    
-    public function create(Request $res)
+    public function create(Request $request)
     {
-        $u_contact = new user_contacts;
-        $u_contact->name            = $res->name; 
-        $u_contact->phone_number    = $res->phone_number;
-        $u_contact->email            = $res->email; 
-        $u_contact->message         = $res->message;
-        $u_contact->save();
+        // $validator = Validator::make($request->all(), [
+        //     'name'=>'required|max:191',
+        //     'phone_number'=>'required|max:10|min:10|numeric',
+        //     'email'=>'required|email|max:191',
+        //     'message'=>'required|max:1000',
+        // ]);
+
+        // if ($validator->fails()) {
+        //     return response()->json([
+        //         'status'=>400,
+        //         'errors'=>$validator, 
+        //     ]);
+        // }
+        // else
+        // {
+            $u_contact = new user_contacts;
+            $u_contact->name = $request->input('name'); 
+            $u_contact->phone_number = $request->input('phone_number');
+            $u_contact->email = $request->input('email'); 
+            $u_contact->message = $request->input('message');
+            $u_contact->save();
+
+        //     return response()->json([
+        //         'status'=>200,
+        //         'message'=>'Student Add Successfully', 
+        //     ]);
+
+        // }
 
         return response()->json(['success'=>'Data Insert successfully.']);
     

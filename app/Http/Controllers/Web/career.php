@@ -11,33 +11,49 @@ use App\Models\footer_first;
 use App\Models\footer_secound;
 use App\Models\footer_forth;
 use App\Models\footer_fifth;
+use App\Models\user_contacts;
 
 class career extends Controller
 {
     //career page
     public function career(Request $res)
     {
-        $career_page_titles = career_page_titles::where('status',1)->get();
+        $career_page_titles = career_page_titles::where('status', 1)->get();
         $data['career_page_titles'] = $career_page_titles;
 
         $contact = contacts::get();
         $data['contact'] = $contact;
 
-        $perkss = career_page_perkss::where('status',1)->get();
+        $perkss = career_page_perkss::where('status', 1)->get();
         $data['career_page_perkss'] = $perkss;
 
-                $footer_first = footer_first::where('status',1)->get();
-                $data['footer_first'] = $footer_first;
+        $footer_first = footer_first::where('status', 1)->get();
+        $data['footer_first'] = $footer_first;
+
+        $footer_secound = footer_secound::where('status', 1)->get();
+        $data['footer_secound'] = $footer_secound;
+
+        $footer_forth = footer_forth::where('status', 1)->get();
+        $data['footer_forth'] = $footer_forth;
+
+        $footer_fifth = footer_fifth::where('status', 1)->get();
+        $data['footer_fifth'] = $footer_fifth;
+
+            if (isset($res->contact)) 
+            {
+                // dd('ifuwheiofuch');
+                $name = $res->name;
+                $phone_number = $res->phone_number;   
+                $email = $res->email;
+                $message = $res->message;
+
+                $data = array('name' => $name , 'phone_number' => $phone_number , 'email' => $email , 'message' => $message);
+
+                user_contacts::insert($data);
                 
-                $footer_secound = footer_secound::where('status',1)->get();
-                $data['footer_secound'] = $footer_secound;
-                
-                $footer_forth = footer_forth::where('status',1)->get();
-                $data['footer_forth'] = $footer_forth;
-                
-                $footer_fifth = footer_fifth::where('status',1)->get();
-                $data['footer_fifth'] = $footer_fifth;
-        
-        return view('career',$data);
+                return redirect('/');
+            }
+
+        return view('career', $data);
     }
 }

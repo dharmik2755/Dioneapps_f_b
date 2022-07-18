@@ -43,9 +43,8 @@
                             <li class="menu_list-item"><a href="{{url('/about')}}">AboutUs</a> </li>
                             <li class="menu_list-item"><a href="{{url('/service')}}">Service</a> </li>
                             <li class="menu_list-item"><a href="{{url('/portfolio')}}">Portfolio</a> </li>
-                            {{-- <li class="menu_list-item"><a href="{{url('/blog')}}">Blogs</a> </li> --}}
+                            <li class="menu_list-item"><a href="{{url('/blog')}}">Blogs</a> </li>
                             <li class="menu_list-item"><a href="{{url('/career')}}">Career</a> </li>
-
                         </ul>
                     </nav>
                     <div class="header_top-number_wrapper">
