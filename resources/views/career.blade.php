@@ -63,11 +63,11 @@
                     $ex_sub_description = explode('|||',$item->sub_description);
                     for ($i=0; $i<count(explode('|||',$item->sub_title)); $i++) {
                     ?>
-                    <div class="support_item">
+                    <div class="support_item career_width">
                         <div class="support_item img">
                             <img src="{{ asset('upload/' . $picture[$i]) }}" alt="">
                         </div>
-                        <a href="/ru/support/base" class="support_item-title">
+                        <a href="#" class="support_item-title">
                             {{ $GLOBALLY[$i] }}
                         </a>
                         <div class="support_item-text">

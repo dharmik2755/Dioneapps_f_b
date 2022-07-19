@@ -56,27 +56,34 @@
             <div class="support_text text">
                 {{ $rws->description }}
             </div>
-
-
             <div class="support_wrapper">
-                    <?php  $GLOBALLY = explode('|||',$rws->sub_title);
+                <?php
+                    $GLOBALLY_sub_description = explode('|||',$rws->sub_description); 
+                    $GLOBALLY = explode('|||',$rws->sub_title);
                             for ($i=0; $i<count($GLOBALLY); $i++) 
                             { ?>
                             {{-- <div class="support_item"> --}}
                                     <a href="#" class="support_item-title support_item ">
                                         {{ $GLOBALLY[$i] }}
                                     </a>
+                                    <div class="support_item-text support_item">
+                                        {{$GLOBALLY_sub_description[$i]}}
+                                    </div>
                             {{-- </div> --}}
-                    <?php } ?>
-                    <?php  $GLOBALLY_sub_description = explode('|||',$rws->sub_description);
-                        for ($i=0; $i<count($GLOBALLY_sub_description); $i++) 
-                        { ?>
+                <?php } ?>
+                    <?php  
+                    // $GLOBALLY_sub_description = explode('|||',$rws->sub_description);
+                    //     for ($i=0; $i<count($GLOBALLY_sub_description); $i++) 
+                    //     { 
+                            ?>
                             {{-- <div class="support_item"> --}}
-                                <div class="support_item-text support_item">
-                                    {{$GLOBALLY_sub_description[$i]}}
-                                </div>
+                                {{-- <div class="support_item-text support_item"> --}}
+                                    {{-- {{$GLOBALLY_sub_description[$i]}} --}}
+                                {{-- </div> --}}
                             {{-- </div> --}}
-                   <?php }?>   
+                   <?php 
+                //    }
+                   ?>   
             </div>
         @endforeach
     </div>

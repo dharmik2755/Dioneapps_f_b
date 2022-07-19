@@ -108,48 +108,61 @@
                         <div class="brif_title_media title_media">
                             {{$item3->title}}
                         </div>
-                        <div class="brif_text text">
-                            {{$item3->description}}
-                        </div>
-                        <div class="support_wrapper_media">
-                            <?php
-                            $array_of_sub_title = explode('|||',$item3->sub_title);
-                            for ($i=0; $i<count($array_of_sub_title) ; $i++) 
-                            {?> 
-                                <div class="support_item_media">
-                                        <div class="support_item-text_media mg-media">
-                                            
-                                            {{$array_of_sub_title[$i]}}
-                                        </div>
+                        <div class="our_offers">
+                            <div class="left-side">
+                                <div class="brif_text text">
+                                    {{$item3->description}}
+                                </div>
+                                <div class="support_wrapper_media">
+                                    <?php
+                                    $array_of_sub_title = explode('|||',$item3->sub_title);
+                                    for ($i=0; $i<count($array_of_sub_title) ; $i++) 
+                                    {?> 
+                                        <div class="support_item_media">
+                                                <div class="support_item-text_media mg-media">
+                                                    
+                                                    {{$array_of_sub_title[$i]}}
+                                                </div>
+                                            </div>
+                                    <?php } ?>
+                                </div>
+                                <div class="brif_info">
+                                    <div class="brif_info-text text">
+                                    {{$item3->sub_description}}
                                     </div>
-                            <?php } ?>
-                        </div>
-                        <div class="brif_info">
-                            <div class="brif_info-text text">
-                               {{$item3->sub_description}}
+                                </div>
+                            </div>
+                            <div class="right-side">
+                                <div class="right-support-bottom-img" data-aos="fade-left" data-aos-delay="500">
+                                    @foreach ($services_offer as $item3)
+                                    <img src="{{asset('upload/'.$item3->image)}}" alt="">
+                                    @endforeach
+                                </div>
                             </div>
                         </div>
                         <div class="support_item_contact">
                             <div class="item_messan-wrpper">
                                 @foreach ($footer_fifth as $fifth)    
-                                <a href="{{$fifth->link}}" class="item_messan-link">
-                                    <img src="{{asset('upload/'.$fifth->image)}}" width="18" height="25" alt="">
-                                </a>
-                            @endforeach
+                                    <a href="{{$fifth->link}}" class="item_messan-link">
+                                        <img src="{{asset('upload/'.$fifth->image)}}" width="18" height="25" alt="">
+                                    </a>
+                                @endforeach
                             </div>
                         </div>
-                        <br>
-                        <a href="#" class="brif_btn btn">
+                        <div class="bottom-support-bottom-img" data-aos="fade-left" data-aos-delay="500">
+                            @foreach ($services_offer as $item3)
+                            <img src="{{asset('upload/'.$item3->image)}}" alt="">
+                            @endforeach
+                        </div>
+                    <div class="follow-btn">
+                        <a href="#" class="brif_btn btn sevices_about_btn">
                             Follow Us
                         </a>
-
+                    </div>
+                        <br>
                     @endforeach
                     </div>
-                    <div class="brif_img_media" data-aos="fade-left" data-aos-delay="500">
-                        @foreach ($services_offer as $item3)
-                        <img src="{{asset('upload/'.$item3->image)}}" alt="">
-                        @endforeach
-                    </div>
+                    
                 </div>
             </div>
         </section>

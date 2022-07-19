@@ -2885,7 +2885,7 @@ svg {
 
 @media (max-width: 510px) {
     .services_item-wrapper {
-        max-height: 450px
+        max-height: 510px
     }
 }
 
@@ -3502,9 +3502,17 @@ svg {
 }
 
 .support_item {
-    width: 40%;
+    width: 100%;
+    /* width: 40%; */
     margin-bottom: 30px;
     padding: 0 12px;
+}
+
+@media (min-width:770px) and (max-width:2560px) {
+    
+    .career_width {
+        width: 40% !important;
+    }
 }
 
 .support_item-title {
@@ -4340,8 +4348,8 @@ svg {
 
 @media (max-width: 475px) {
     .page_top {
-        padding-top: 95px;
-        padding-bottom: 30px
+        padding-top: 40px;
+        padding-bottom: 1px
     }
 
     .page_top-title {
@@ -4730,11 +4738,11 @@ svg {
     }
 
     .brif_img_size-left img {
-        margin-top: -23%;
+        margin-top: -9%;
         width: 100%;
         /* height: 100%; */
         margin-left: -61px;
-        max-height: 232px;
+        max-height: 287px;
     }
 }
 
@@ -4744,17 +4752,24 @@ svg {
         left: -2%;
         width: 80%;
     }
+
 }
 
 @media (max-width: 425px) {
     .brif_img_size {
         top: 50%;
     }
+    .brif_img_size-left {
+        top: 45%;
+    }
 }
 
 @media (max-width:375px) {
     .brif_img_size {
         width: 100%;
+    }
+    .brif_img_size-left {
+        top: 45%;
     }
 }
 
@@ -4898,6 +4913,10 @@ svg {
     .menu_burger {
         top: auto;
     }
+
+    .support_item {
+        width: 100%;
+    }
 }
 
 /* media query for services */
@@ -4984,7 +5003,18 @@ svg {
     text-transform: uppercase;
     letter-spacing: 9px
 }
-
+@media (min-width:320px) and (max-width:425px) {
+    
+    .title_media {
+        font-size: 20px;
+        font-weight: 900;
+        position: relative;
+        z-index: 3;
+        text-transform: uppercase;
+        letter-spacing: 9px
+    }
+}
+    
 .brif_img_media {
     position: absolute;
     right: 0;
@@ -5162,7 +5192,11 @@ svg {
         position: absolute;
         right: 0;
         top: 237vh;
-        width: 100%
+        width: 100%;
+    }
+
+    .sevices_about_btn {
+        margin-top: 430px !important;
     }
 
     .brif_img_media img {
@@ -5698,4 +5732,112 @@ svg {
 
 .button_slider .text_btn {
     color: #fff;
+}
+
+/* live  */
+/* canvas{
+    border: 1px solid black;
+    background-color: black; 
+    
+  } */
+
+@media (min-width: 320px) and (max-width: 429px) {
+    
+    .btn-header-portfolio {
+        display: flex;
+        -webkit-box-pack: center;
+        justify-content: center;
+        flex-direction: column !important;
+        -webkit-box-align: center;
+        align-items: center;
+        border-radius: 30px;
+        width: 100%;
+        height: 45px;
+        margin-bottom: 10px;
+        background: linear-gradient(to right, rgb(225, 43, 77), rgb(255, 0, 48));
+        font-weight: 900;
+        font-size: 10px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        position: relative;
+        cursor: pointer;
+    }
+}
+
+@media (min-width: 430px) and (max-width: 768px) {
+    
+    .btn-header-portfolio {
+        display: flex;
+        -webkit-box-pack: center;
+        justify-content: center;
+        flex-direction: column !important;
+        -webkit-box-align: center;
+        align-items: center;
+        border-radius: 30px;
+        width: 150px;
+        height: 45px;
+        margin-bottom: 10px;
+        background: linear-gradient(to right, rgb(225, 43, 77), rgb(255, 0, 48));
+        font-weight: 900;
+        font-size: 10px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        position: relative;
+        cursor: pointer;
+    }
+}
+  
+@media (min-width: 1024px) and (max-width: 2560px) {
+    
+    .btn-header-portfolio {
+        display: flex;
+        -webkit-box-pack: center;
+        justify-content: center;
+        flex-direction: column !important;
+        -webkit-box-align: center;
+        align-items: center;
+        border-radius: 30px;
+        width: 150px;
+        height: 45px;
+        margin-bottom: 10px;
+        background: linear-gradient(to right, rgb(225, 43, 77), rgb(255, 0, 48));
+        font-weight: 900;
+        font-size: 10px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        position: relative;
+        cursor: pointer;
+    }
+}
+.bottom-support-bottom-img{
+    width:100%;
+}
+.bottom-support-bottom-img img{
+    width:100%;
+} 
+.follow-btn .sevices_about_btn{
+    margin-top :15px;
+}
+@media screen and (max-width: 991px){
+    .our_offers .right-side{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .bottom-support-bottom-img{
+        display: none;
+    }
+}
+.our_offers{
+    display: flex;
+}
+.our_offers .left-side{
+    width: 60%;
+}
+.our_offers .right-side{
+    width: 40%;
+}
+.our_offers .right-side img{
+    width: 100%;
 }

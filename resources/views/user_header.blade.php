@@ -31,9 +31,11 @@
         <div class="header_top sticky">
             <div class="container">
                 <div class="header_top-wrapper">
-                    <a href="{{url('/')}}" class="header_logo">
-                        <img src="{{asset('asset/images/logo7.png')}}" alt="">
-                    </a>
+                    <div class="header_logo">
+                        <a href="{{url('/')}}" >
+                            <img src="{{asset('asset/images/logo7.png')}}" alt="">
+                        </a>
+                    </div>
                     <div class="menu_burger">
                         <span></span>
                     </div>

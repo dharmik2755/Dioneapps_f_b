@@ -180,8 +180,8 @@ $n = 2;
         </div>
         {{-- <h1 class="slider-title text_for_square"> All Blogs </h1> --}}
 
-        <i class="fas fa-chevron-left prev"></i>
-        <i class="fas fa-chevron-right next"></i>
+        {{-- <i class="fas fa-chevron-left prev"></i> --}}
+        {{-- <i class="fas fa-chevron-right next"></i> --}}
 
         <div class="post-wrapper">
 
