@@ -3282,7 +3282,7 @@ svg {
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
-        height: 33px;
+        height: 37px;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -4856,7 +4856,7 @@ svg {
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
-        height: 23px;
+        height: 28px;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -4885,7 +4885,7 @@ svg {
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
-        height: 27px;
+        height: 34px;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -4912,11 +4912,33 @@ svg {
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
-        height: 24px;
+        height: 26px;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
         margin-right: 5px;
+        background-size: cover;
+    }
+}
+
+@media (min-width:770px) and (max-width: 1024px) 
+{
+
+    .item_messan-link {
+        background-color: #fff;
+        border-radius: 23%;
+        width: 33px;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        height: 36px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        margin-right: 17px;
         background-size: cover;
     }
 }
@@ -5394,9 +5416,13 @@ svg {
 @media (min-width: 320px) and (max-width: 425px) {
 
     .support_item_contact {
-        width: 44%;
+        width: 100%;
         margin-bottom: 30px;
         padding: 0 12px;
+    }
+
+    .contact_page_media {
+        width: 47%;
     }
 }
 
