@@ -5102,6 +5102,9 @@ svg {
         display: block;
     }
     
+    .service_icone_set {
+        width: 45%;
+    }
 }
 
 @media (min-width:226px) and (max-width:2560px) {
