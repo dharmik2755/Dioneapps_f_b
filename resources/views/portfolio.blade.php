@@ -1,11 +1,5 @@
 @include('user_header')
-{{-- slider js and css
-<link href="{{ asset('asset/css/slick.css')}}" rel="stylesheet">
-<link href="{{ asset('asset/css/slick-theme.css')}}" rel="stylesheet">
-<script src="{{ asset('asset/js/slick.min.js')}}"></script> --}}
 
-{{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> --}}
-    <!-- start about us title -->
     <section class="wrapper_form">
         <div class="container">
             <form class="form" id="ajax_form_project" data-aos="fade-down">
@@ -25,25 +19,29 @@
                 <div class="page_top-title">
                     <span class="red">Our Latest Creative Work</span>
                 </div>
-                <!-- <div class="page_top-btn-wrapper">
-                    <a href="#contacts" class="page_top-btn-order btn">
-                        Contact Us
-                    </a>
-                </div> -->
             </div>
-            
+                <div class="dis_inline" >
+                    <div>
                     <a href="#" class="page_top-btn-order btn-header-portfolio">
                         All
                     </a>
+                    </div>
+                    <div>
                     <a href="#" class="page_top-btn-order btn-header-portfolio">
                         Graphics
                     </a>
+                    </div>
+                    <div>
                     <a href="#" class="page_top-btn-order btn-header-portfolio">
                         Mobile Apps
                     </a>
+                    </div>
+                    <div>
                     <a href="#" class="page_top-btn-order btn-header-portfolio">
-                        Web side
+                        Web site
                     </a>
+                    </div>
+                </div>
         </div>
     </div>
 </section>
@@ -54,11 +52,8 @@
 // $show_page_data = ceil($record / $limit);
  ?>
  
-<section class="portfolio_page" id="post-data">
-    
+<section class="portfolio_page" id="post-data">    
    @include('data')
-
-        
 </section>
         {{-- <div class="ajax-load text-center" style="display: none;" >
             <p><img src="{{ asset('loader/load.gif') }}" width="50" alt=""> Loading More </p>

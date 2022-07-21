@@ -1,6 +1,7 @@
 @include('user_header')
 @foreach ($home_slider as $hs2)
-<div class="rellax" data-rellax-speed="-5" data-rellax-percentage="0.3" style="background-image: url({{asset('upload/'.$hs2->image)}});"> </div>
+    <div class="rellax" data-rellax-speed="-5" data-rellax-percentage="0.3"
+        style="background-image: url({{ asset('upload/' . $hs2->image) }});"> </div>
 @endforeach
 <!-- start slider -->
 <div class="header_main">
@@ -53,7 +54,8 @@ $n = 2;
                     </a>
                 </div>
                 <div class="brif_img_size" data-aos="fade-left" data-aos-delay="500">
-                    <img src="{{ asset('upload/' . $md->image) }}" alt="">
+                    <img class="img_uiux_size {{ $md->title == 'UI/UX DESIGNING' ? 'main-img' : '' }}"
+                        src="{{ asset('upload/' . $md->image) }}" alt="">
                 </div>
             </div>
         </div>
@@ -172,16 +174,13 @@ $n = 2;
 <!-- End About Us -->
 
 {{-- blog slider --}}
-<div class="page-wrapper">
+{{-- <div class="page-wrapper">
     <div class="post-slider_one">
-        
-        <div class="brif_wrapp_slider text_for_square">
-        <div class="brif_title_title title ">Articals</div>
-        </div>
-        {{-- <h1 class="slider-title text_for_square"> All Blogs </h1> --}}
 
-        {{-- <i class="fas fa-chevron-left prev"></i> --}}
-        {{-- <i class="fas fa-chevron-right next"></i> --}}
+        <div class="brif_wrapp_slider text_for_square">
+            <div class="brif_title_title title ">Articals</div>
+        </div>
+
 
         <div class="post-wrapper">
 
@@ -190,22 +189,24 @@ $n = 2;
                     <img src="upload/80105914.png" alt="" class="slider-image">
                 </a>
                 <div class="post-info">
-                        <i class="fas fa-calendar blog_caln" >
-                                01, Jul 2022
-                        </i>
-                    <h5 class="text_line_height" >
-                        {{-- <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a> --}}
-                        <a href="{{ route('blog_single.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas nesciunt ea accusantium libero, hic illo mollitia fugit excepturi accusamus eius numquam voluptates vel quasi iusto? Beatae, recusandae possimus! Necessitatibus!</a>
+                    <i class="fas fa-calendar blog_caln">
+                        01, Jul 2022
+                    </i>
+                    <h5 class="text_line_height">
+                        <a href="{{ route('blog_single.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Neque voluptas nesciunt ea accusantium libero, hic illo mollitia fugit excepturi
+                            accusamus eius numquam voluptates vel quasi iusto? Beatae, recusandae possimus!
+                            Necessitatibus!</a>
                     </h5>
                 </div>
                 <div>
                     <a href="{{ route('blog_single.page') }}">
-                    <button class="button_slider" >
-                        <span class="circle">
-                            <span class="icon arrow"></span>
-                        </span>
-                        <span class="text_btn">Learn more</span>
-                    </button>
+                        <button class="button_slider">
+                            <span class="circle">
+                                <span class="icon arrow"></span>
+                            </span>
+                            <span class="text_btn">Learn more</span>
+                        </button>
                     </a>
                 </div>
             </div>
@@ -214,22 +215,25 @@ $n = 2;
                     <img src="upload/80105914.png" alt="" class="slider-image">
                 </a>
                 <div class="post-info">
-                        <i class="fas fa-calendar blog_caln" >
-                                01, Jul 2022
-                        </i>
-                    <h5 class="text_line_height" >
-                        {{-- <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a> --}}
-                        <a href="{{ route('blog_single.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas nesciunt ea accusantium libero, hic illo mollitia fugit excepturi accusamus eius numquam voluptates vel quasi iusto? Beatae, recusandae possimus! Necessitatibus!</a>
+                    <i class="fas fa-calendar blog_caln">
+                        01, Jul 2022
+                    </i>
+                    <h5 class="text_line_height">
+
+                        <a href="{{ route('blog_single.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Neque voluptas nesciunt ea accusantium libero, hic illo mollitia fugit excepturi
+                            accusamus eius numquam voluptates vel quasi iusto? Beatae, recusandae possimus!
+                            Necessitatibus!</a>
                     </h5>
                 </div>
                 <div>
                     <a href="{{ route('blog_single.page') }}">
-                    <button class="button_slider" >
-                        <span class="circle">
-                            <span class="icon arrow"></span>
-                        </span>
-                        <span class="text_btn">Learn more</span>
-                    </button>
+                        <button class="button_slider">
+                            <span class="circle">
+                                <span class="icon arrow"></span>
+                            </span>
+                            <span class="text_btn">Learn more</span>
+                        </button>
                     </a>
                 </div>
             </div>
@@ -238,22 +242,25 @@ $n = 2;
                     <img src="upload/80105914.png" alt="" class="slider-image">
                 </a>
                 <div class="post-info">
-                        <i class="fas fa-calendar blog_caln" >
-                                01, Jul 2022
-                        </i>
-                    <h5 class="text_line_height" >
-                        {{-- <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a> --}}
-                        <a href="{{ route('blog_single.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas nesciunt ea accusantium libero, hic illo mollitia fugit excepturi accusamus eius numquam voluptates vel quasi iusto? Beatae, recusandae possimus! Necessitatibus!</a>
+                    <i class="fas fa-calendar blog_caln">
+                        01, Jul 2022
+                    </i>
+                    <h5 class="text_line_height">
+
+                        <a href="{{ route('blog_single.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Neque voluptas nesciunt ea accusantium libero, hic illo mollitia fugit excepturi
+                            accusamus eius numquam voluptates vel quasi iusto? Beatae, recusandae possimus!
+                            Necessitatibus!</a>
                     </h5>
                 </div>
                 <div>
                     <a href="{{ route('blog_single.page') }}">
-                    <button class="button_slider" >
-                        <span class="circle">
-                            <span class="icon arrow"></span>
-                        </span>
-                        <span class="text_btn">Learn more</span>
-                    </button>
+                        <button class="button_slider">
+                            <span class="circle">
+                                <span class="icon arrow"></span>
+                            </span>
+                            <span class="text_btn">Learn more</span>
+                        </button>
                     </a>
                 </div>
             </div>
@@ -262,22 +269,25 @@ $n = 2;
                     <img src="upload/80105914.png" alt="" class="slider-image">
                 </a>
                 <div class="post-info">
-                        <i class="fas fa-calendar blog_caln" >
-                                01, Jul 2022
-                        </i>
-                    <h5 class="text_line_height" >
-                        {{-- <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a> --}}
-                        <a href="{{ route('blog_single.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas nesciunt ea accusantium libero, hic illo mollitia fugit excepturi accusamus eius numquam voluptates vel quasi iusto? Beatae, recusandae possimus! Necessitatibus!</a>
+                    <i class="fas fa-calendar blog_caln">
+                        01, Jul 2022
+                    </i>
+                    <h5 class="text_line_height">
+
+                        <a href="{{ route('blog_single.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Neque voluptas nesciunt ea accusantium libero, hic illo mollitia fugit excepturi
+                            accusamus eius numquam voluptates vel quasi iusto? Beatae, recusandae possimus!
+                            Necessitatibus!</a>
                     </h5>
                 </div>
                 <div>
                     <a href="{{ route('blog_single.page') }}">
-                    <button class="button_slider" >
-                        <span class="circle">
-                            <span class="icon arrow"></span>
-                        </span>
-                        <span class="text_btn">Learn more</span>
-                    </button>
+                        <button class="button_slider">
+                            <span class="circle">
+                                <span class="icon arrow"></span>
+                            </span>
+                            <span class="text_btn">Learn more</span>
+                        </button>
                     </a>
                 </div>
             </div>
@@ -286,22 +296,25 @@ $n = 2;
                     <img src="upload/80105914.png" alt="" class="slider-image">
                 </a>
                 <div class="post-info">
-                        <i class="fas fa-calendar blog_caln" >
-                                01, Jul 2022
-                        </i>
-                    <h5 class="text_line_height" >
-                        {{-- <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a> --}}
-                        <a href="{{ route('blog_single.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas nesciunt ea accusantium libero, hic illo mollitia fugit excepturi accusamus eius numquam voluptates vel quasi iusto? Beatae, recusandae possimus! Necessitatibus!</a>
+                    <i class="fas fa-calendar blog_caln">
+                        01, Jul 2022
+                    </i>
+                    <h5 class="text_line_height">
+
+                        <a href="{{ route('blog_single.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Neque voluptas nesciunt ea accusantium libero, hic illo mollitia fugit excepturi
+                            accusamus eius numquam voluptates vel quasi iusto? Beatae, recusandae possimus!
+                            Necessitatibus!</a>
                     </h5>
                 </div>
                 <div>
                     <a href="{{ route('blog_single.page') }}">
-                    <button class="button_slider" >
-                        <span class="circle">
-                            <span class="icon arrow"></span>
-                        </span>
-                        <span class="text_btn">Learn more</span>
-                    </button>
+                        <button class="button_slider">
+                            <span class="circle">
+                                <span class="icon arrow"></span>
+                            </span>
+                            <span class="text_btn">Learn more</span>
+                        </button>
                     </a>
                 </div>
             </div>
@@ -310,22 +323,25 @@ $n = 2;
                     <img src="upload/80105914.png" alt="" class="slider-image">
                 </a>
                 <div class="post-info">
-                        <i class="fas fa-calendar blog_caln" >
-                                01, Jul 2022
-                        </i>
-                    <h5 class="text_line_height" >
-                        {{-- <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a> --}}
-                        <a href="{{ route('blog_single.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas nesciunt ea accusantium libero, hic illo mollitia fugit excepturi accusamus eius numquam voluptates vel quasi iusto? Beatae, recusandae possimus! Necessitatibus!</a>
+                    <i class="fas fa-calendar blog_caln">
+                        01, Jul 2022
+                    </i>
+                    <h5 class="text_line_height">
+
+                        <a href="{{ route('blog_single.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Neque voluptas nesciunt ea accusantium libero, hic illo mollitia fugit excepturi
+                            accusamus eius numquam voluptates vel quasi iusto? Beatae, recusandae possimus!
+                            Necessitatibus!</a>
                     </h5>
                 </div>
                 <div>
                     <a href="{{ route('blog_single.page') }}">
-                    <button class="button_slider" >
-                        <span class="circle">
-                            <span class="icon arrow"></span>
-                        </span>
-                        <span class="text_btn">Learn more</span>
-                    </button>
+                        <button class="button_slider">
+                            <span class="circle">
+                                <span class="icon arrow"></span>
+                            </span>
+                            <span class="text_btn">Learn more</span>
+                        </button>
                     </a>
                 </div>
             </div>
@@ -334,22 +350,25 @@ $n = 2;
                     <img src="upload/80105914.png" alt="" class="slider-image">
                 </a>
                 <div class="post-info">
-                        <i class="fas fa-calendar blog_caln" >
-                                01, Jul 2022
-                        </i>
-                    <h5 class="text_line_height" >
-                        {{-- <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a> --}}
-                        <a href="{{ route('blog_single.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas nesciunt ea accusantium libero, hic illo mollitia fugit excepturi accusamus eius numquam voluptates vel quasi iusto? Beatae, recusandae possimus! Necessitatibus!</a>
+                    <i class="fas fa-calendar blog_caln">
+                        01, Jul 2022
+                    </i>
+                    <h5 class="text_line_height">
+
+                        <a href="{{ route('blog_single.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Neque voluptas nesciunt ea accusantium libero, hic illo mollitia fugit excepturi
+                            accusamus eius numquam voluptates vel quasi iusto? Beatae, recusandae possimus!
+                            Necessitatibus!</a>
                     </h5>
                 </div>
                 <div>
                     <a href="{{ route('blog_single.page') }}">
-                    <button class="button_slider" >
-                        <span class="circle">
-                            <span class="icon arrow"></span>
-                        </span>
-                        <span class="text_btn">Learn more</span>
-                    </button>
+                        <button class="button_slider">
+                            <span class="circle">
+                                <span class="icon arrow"></span>
+                            </span>
+                            <span class="text_btn">Learn more</span>
+                        </button>
                     </a>
                 </div>
             </div>
@@ -358,30 +377,33 @@ $n = 2;
                     <img src="upload/80105914.png" alt="" class="slider-image">
                 </a>
                 <div class="post-info">
-                        <i class="fas fa-calendar blog_caln" >
-                                01, Jul 2022
-                        </i>
-                    <h5 class="text_line_height" >
-                        {{-- <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a> --}}
-                        <a href="{{ route('blog_single.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas nesciunt ea accusantium libero, hic illo mollitia fugit excepturi accusamus eius numquam voluptates vel quasi iusto? Beatae, recusandae possimus! Necessitatibus!</a>
+                    <i class="fas fa-calendar blog_caln">
+                        01, Jul 2022
+                    </i>
+                    <h5 class="text_line_height">
+
+                        <a href="{{ route('blog_single.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Neque voluptas nesciunt ea accusantium libero, hic illo mollitia fugit excepturi
+                            accusamus eius numquam voluptates vel quasi iusto? Beatae, recusandae possimus!
+                            Necessitatibus!</a>
                     </h5>
                 </div>
                 <div>
                     <a href="{{ route('blog_single.page') }}">
-                    <button class="button_slider" >
-                        <span class="circle">
-                            <span class="icon arrow"></span>
-                        </span>
-                        <span class="text_btn">Learn more</span>
-                    </button>
+                        <button class="button_slider">
+                            <span class="circle">
+                                <span class="icon arrow"></span>
+                            </span>
+                            <span class="text_btn">Learn more</span>
+                        </button>
                     </a>
                 </div>
             </div>
 
-            
-        </div>    
+
+        </div>
     </div>
-</div><br><br><br><br><br><br>
+</div><br><br><br><br><br><br> --}}
 {{-- End blog slider --}}
 
 <!-- counter penal -->
@@ -390,27 +412,31 @@ $n = 2;
         <div class="fullWidth eight columns">
             <div class="projectFactsWrap ">
                 @foreach ($counter as $cr)
-                    <div class="item wow fadeInUpBig animated animated" data-number="12" style="visibility: visible;">
+                    <div class="item wow fadeInUpBig animated animated" data-number="12"
+                        style="visibility: visible;">
                         <!-- <i class="fa fa-briefcase"></i> -->
                         <p class="number"><span id="number1">{{ $cr->clients }}</span>+</p>
                         <span class="span"></span>
                         <p>Happy clients</p>
                     </div>
-                    <div class="item wow fadeInUpBig animated animated" data-number="55" style="visibility: visible;">
+                    <div class="item wow fadeInUpBig animated animated" data-number="55"
+                        style="visibility: visible;">
                         <!-- <i class="fa fa-smile-o"></i> -->
                         <p class="number"><span id="number2">{{ $cr->projects }}</span>+</p>
 
                         <span class="span"></span>
                         <p>Projects done</p>
                     </div>
-                    <div class="item wow fadeInUpBig animated animated" data-number="359" style="visibility: visible;">
+                    <div class="item wow fadeInUpBig animated animated" data-number="359"
+                        style="visibility: visible;">
                         <!-- <i class="fa fa-coffee"></i> -->
                         <p class="number"><span id="number3">{{ $cr->employees }}</span>+</p>
 
                         <span class="span"></span>
                         <p>Employees</p>
                     </div>
-                    <div class="item wow fadeInUpBig animated animated" data-number="246" style="visibility: visible;">
+                    <div class="item wow fadeInUpBig animated animated" data-number="246"
+                        style="visibility: visible;">
                         <!-- <i class="fa fa-camera"></i> -->
                         <p class="number"><span id="number4">{{ $cr->branches }}</span>+</p>
 
@@ -477,97 +503,97 @@ $n = 2;
     <div class="container">
         <div class="contacts_wrapper">
             @foreach ($contact as $cnt)
-            
-            <div class="contacts_title title">
-                {{ $cnt->title }}
-            </div>
-            <div class="contacts_text text">
-                {{ $cnt->description }}
-            </div>
-            <div class="form-wrapper">
-                <div class="form_mail" data-aos="fade-up-right">
-                    <a href="#" class="form_mail-link">
-                        <img src="{{ asset('upload/' . $cnt->image) }}" alt="">
-                    </a>
+                <div class="contacts_title title">
+                    {{ $cnt->title }}
                 </div>
-                @endforeach
-                <form class="form_bottom" id="contactForm" method="POST" data-aos="fade-up-left">
-                    @csrf
-                    <div class="footer-form_title">
-                        GET IN TOUCH
+                <div class="contacts_text text">
+                    {{ $cnt->description }}
+                </div>
+                <div class="form-wrapper">
+                    <div class="form_mail" data-aos="fade-up-right">
+                        <a href="#" class="form_mail-link">
+                            <img src="{{ asset('upload/' . $cnt->image) }}" alt="">
+                        </a>
                     </div>
-                        
-                    <div class="inp_cont-wrapper">
-                        <input type="text" id="name" name="name" class="form_inp-cont" placeholder="name" >
-                        <input type="text" id="phone_number" name="phone_number" class="form_inp-cont" maxlength="10" placeholder="Phone No" >
-                    </div>
-                        <input type="text" id="email" name="email" class="form_inp-mail" placeholder="Email" >
-                        <textarea name="message" id="message" class="form_inp-text" placeholder="Message" ></textarea>
-                    <div class="footer_btn-wrpper">
-                        {{-- <button class="footer_btn btn send_contact_button"  type="submit" name="contact" >
+            @endforeach
+            <form class="form_bottom" id="contactForm" method="POST" data-aos="fade-up-left">
+                @csrf
+                <div class="footer-form_title">
+                    GET IN TOUCH
+                </div>
+
+                <div class="inp_cont-wrapper">
+                    <input type="text" id="name" name="name" class="form_inp-cont" placeholder="name">
+                    <input type="text" id="phone_number" name="phone_number" class="form_inp-cont"
+                        maxlength="10" placeholder="Phone No">
+                </div>
+                <input type="text" id="email" name="email" class="form_inp-mail" placeholder="Email">
+                <textarea name="message" id="message" class="form_inp-text" placeholder="Message"></textarea>
+                <div class="footer_btn-wrpper">
+                    {{-- <button class="footer_btn btn send_contact_button"  type="submit" name="contact" >
                             Send Us
-                        </button>  --}}
-                        <input class="footer_btn btn" type="submit" name="contact" value="Send Us">   
-                    </div>
-                </form>
-            </div>
+                        </button> --}}
+                    <input class="footer_btn btn" type="submit" name="contact" value="Send Us">
+                </div>
+            </form>
         </div>
     </div>
+</div>
 </div>
 <!-- End Contact Us-->
 @include('user_footer')
 <script>
     jQuery('#contactForm').validate({
-            rules: {
-                name: {
-                    required: true,
-                    number: false,
-                    maxlength: 50
-                },
-                phone_number: {
-                  required: true,
-                  number:true,
-                  maxlength: 10,
-                  minlength: 10
-                },
-                email: {
-                    required: true,
-                    email: true,
-                    maxlength: 2000
-                },
-                message: {
-                    required: true,
-                    maxlength: 2000
-                },
-                
+        rules: {
+            name: {
+                required: true,
+                number: false,
+                maxlength: 50
             },
-            messages: {
-                name: {
-                    required: "Please enter Name",
-                    number: "Do not enter Number ",
-                    maxlength: "Title must be 50 char long"
-                },
-                phone_number: {
-                  required: "please Enter Phone Number",
-                  number:"Enter Only Number",
-                  maxlength: "Phone Number must be 10 char long",
-                  minlength: "Enter valid Numer length" 
-                },
-                email: {
-                    required: "please enter Email ",
-                    email: "Emter vlid Email ",
-                    maxlength: "Sub Title must be 2000 char long"
-                },
-                message: {
-                    required: "please enter Message ",
-                    maxlength: "Sub Title must be 2000 char long"
-                },
-                
+            phone_number: {
+                required: true,
+                number: true,
+                maxlength: 10,
+                minlength: 10
             },
-            submitHandler: function(form) {
-                form.submit();
-            }
-        });
+            email: {
+                required: true,
+                email: true,
+                maxlength: 2000
+            },
+            message: {
+                required: true,
+                maxlength: 2000
+            },
+
+        },
+        messages: {
+            name: {
+                required: "Please enter Name",
+                number: "Do not enter Number ",
+                maxlength: "Title must be 50 char long"
+            },
+            phone_number: {
+                required: "please Enter Phone Number",
+                number: "Enter Only Number",
+                maxlength: "Phone Number must be 10 char long",
+                minlength: "Enter valid Numer length"
+            },
+            email: {
+                required: "please enter Email ",
+                email: "Emter vlid Email ",
+                maxlength: "Sub Title must be 2000 char long"
+            },
+            message: {
+                required: "please enter Message ",
+                maxlength: "Sub Title must be 2000 char long"
+            },
+
+        },
+        submitHandler: function(form) {
+            form.submit();
+        }
+    });
     // $('#contactForm').on('submit', function(event) {
     //     event.preventDefault();
     //     name = $('#name').val(),
@@ -581,7 +607,7 @@ $n = 2;
     //         data: { "_token": "{{ csrf_token() }}", name: name, phone_number: phone_number, email: email, message: message, },
     //         dataType : "json",
     //         // Display Response Success Message
-            
+
     //         success: function(data) {
     //             console.log(data.success),
     //             document.getElementById("contactForm").reset();

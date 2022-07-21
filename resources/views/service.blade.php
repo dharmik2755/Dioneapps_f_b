@@ -53,7 +53,7 @@
                 { ?>
                     <div class=" advantages_item ">
                         <div class="advantages_item-main">
-                            <img src="{{('upload/'.$item->image)}}" alt="">
+                            <img class="service_img" src="{{('upload/'.$item->image)}}" alt="">
                             <div class="advantages_item-title">
                                 {{ $item->title }}
                             </div>
@@ -66,7 +66,7 @@
                 { ?>
                     <div class="advantages_item advantages_item-tree">
                         <div class="advantages_item-main">
-                            <img src="{{('upload/'.$item->image)}}" alt="">
+                            <img class="service_img" src="{{('upload/'.$item->image)}}" alt="">
                             <div class="advantages_item-title">
                                 {{ $item->title }}
                             </div>
