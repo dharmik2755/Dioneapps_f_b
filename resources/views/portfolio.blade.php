@@ -17,10 +17,32 @@
         <div class="page_top-wrapper">
             <div class="page_top-left">
                 <div class="page_top-title">
-                    <span class="red">Our Latest Creative Work</span>
+                    {{-- <span class="red">Our latest creative work</span> --}}
+                    <div class="dis_inline" >
+                        <div>
+                        <a href="#" class="page_top-btn-order btn-header-portfolio">
+                            All
+                        </a>
+                        </div>
+                        <div>
+                        <a href="#" class="page_top-btn-order btn-header-portfolio">
+                            Graphics
+                        </a>
+                        </div>
+                        <div>
+                        <a href="#" class="page_top-btn-order btn-header-portfolio">
+                            Mobile Apps
+                        </a>
+                        </div>
+                        <div>
+                        <a href="#" class="page_top-btn-order btn-header-portfolio">
+                            Web site
+                        </a>
+                        </div>
+                    </div>
                 </div>
             </div>
-                <div class="dis_inline" >
+                {{-- <div class="dis_inline" >
                     <div>
                     <a href="#" class="page_top-btn-order btn-header-portfolio">
                         All
@@ -41,7 +63,7 @@
                         Web site
                     </a>
                     </div>
-                </div>
+                </div> --}}
         </div>
     </div>
 </section>
@@ -197,7 +219,7 @@
 
 
  <!-- start project Contact Us -->
- <section class="wrapper_form-project">
+ {{-- <section class="wrapper_form-project">
     <div class="container">
         @foreach ($project_detail as $pd)
         <form class="form" data-aos="fade-down">
@@ -213,7 +235,7 @@
         </form>
         @endforeach
     </div>
-</section>
+</section> --}}
 <!-- End project Contact Us-->
 
 {{-- scroller --}}

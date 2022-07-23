@@ -458,7 +458,7 @@ ul {
 }
 
 .text {
-    width: 440px;
+    width: 465px;
     font-size: 16px;
     line-height: 30px;
     position: relative;
@@ -526,7 +526,8 @@ ul {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    margin-bottom: 75px
+    /* margin-bottom: 75px; */
+    margin-bottom: -50px;
 }
 
 .crumbs {
@@ -757,6 +758,7 @@ ul {
     font-size: 22px;
     font-weight: 500;
     position: relative;
+    white-space: nowrap;
     -webkit-transition: all 1s;
     -o-transition: all 1s;
     transition: all 1s
@@ -1972,7 +1974,9 @@ ul {
     border: none;
     outline: none;
     color: #fff;
-    padding: 20px 95px 20px 35px;
+    /* padding: 20px 95px 20px 35px; */
+    padding: 10px;
+    align-items: center;
     font-size: 14px;
     font-weight: 900;
     text-align: right;
@@ -1989,7 +1993,7 @@ ul {
 }
 
 .footer_bottom {
-    padding: 50px 0 110px;
+    padding: 50px 0 50px;
     background-size: cover;
     background-image: url(../images/wrapper_form_bg.jpg);
     position: relative
@@ -5464,9 +5468,13 @@ svg {
     cursor: pointer;
     bottom: 5%;
 }
-.error{
+
+.error {
     color: red;
     margin-top: 5px;
+    font-size: small;
+    font-weight: 500;
+    letter-spacing: 1px;
     margin-bottom: 5px;
 }
 

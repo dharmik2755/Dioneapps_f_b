@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dione Apps – IT company</title>
+    <title>DioneApps – IT company</title>
 
     <!-- link css -->
     <link
@@ -44,7 +44,7 @@
                     <nav class="menu">
                         <ul class="menu_list">
                             <li class="menu_list-item"><a href="{{ url('/') }}">Home</a> </li>
-                            <li class="menu_list-item"><a href="{{ url('/about') }}">AboutUs</a> </li>
+                            <li class="menu_list-item"><a href="{{ url('/about') }}">About  us</a> </li>
                             <li class="menu_list-item"><a href="{{ url('/service') }}">Service</a> </li>
                             <li class="menu_list-item"><a href="{{ url('/portfolio') }}">Portfolio</a> </li>
                             {{-- <li class="menu_list-item"><a href="{{ url('/blog') }}">Blogs</a> </li> --}}

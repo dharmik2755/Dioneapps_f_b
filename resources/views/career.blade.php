@@ -102,22 +102,21 @@
                 </div>
 
                 <form class="form_bottom" id="contactForm" method="POST" data-aos="fade-up-left">
-                    @CSRF
+                    @csrf
                     <div class="footer-form_title">
                         GET IN TOUCH
                     </div>
-
-                    <div class="inp_cont-wrapper">
-                        <input type="text" id="name" name="name" class="form_inp-cont" placeholder="name">
-                        <input type="text" id="phone_number" name="phone_number" class="form_inp-cont"
-                            placeholder="Phone No">
-                    </div>
-                    <input type="text" id="email" name="email" class="form_inp-mail" placeholder="Email">
-                    <textarea name="message" id="message" class="form_inp-text" placeholder="Message"></textarea>
+    
+                    <input type="text" id="name" name="name" class="form_inp-mail" required placeholder="name">
+                    <input type="text" id="phone_number" name="phone_number" required class="form_inp-mail"
+                            maxlength="10" placeholder="Phone No">
+                    <input type="email" id="email" name="email" class="form_inp-mail" required placeholder="Email">
+                    <textarea name="message" id="message" class="form_inp-text" required placeholder="Message"></textarea>
                     <div class="footer_btn-wrpper">
-                        <button class="footer_btn btn" type="submit" name="send_us">
-                            Send Us
-                        </button>
+                        {{-- <button class="footer_btn btn send_contact_button"  type="submit" name="contact" >
+                                Send Us
+                            </button> --}}
+                        <input class="footer_btn btn" type="submit" name="contact" value="Send Us">
                     </div>
                 </form>
             </div>
@@ -127,7 +126,7 @@
 <!-- End Contact Us-->
 
 @include('user_footer')
-<script>
+{{-- <script>
     jQuery('#contactForm').validate({
         rules: {
             name: {
@@ -205,4 +204,4 @@
             },
         });
     });
-</script>
+</script> --}}
