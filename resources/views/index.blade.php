@@ -1,7 +1,7 @@
 @include('user_header')
 @foreach ($home_slider as $hs2)
     <div class="rellax" data-rellax-speed="-5" data-rellax-percentage="0.3"
-        style="background-image: url({{ asset('upload/' . $hs2->image) }});"> </div>
+        style="background-image: url({{ asset('upload/' . $hs2->image) }});transform : none "> </div>
 @endforeach
 <!-- start slider -->
 <div class="header_main">
@@ -498,46 +498,6 @@ $n = 2;
 <!-- Our Satisfied Clients end -->
 
 <!-- start Contact Us -->
-<div class="contacts">
-    <div id="contacts" class="contacts_scroll"></div>
-    <div class="container">
-        <div class="contacts_wrapper">
-            @foreach ($contact as $cnt)
-                <div class="contacts_title title">
-                    {{ $cnt->title }}
-                </div>
-                <div class="contacts_text text">
-                    {{ $cnt->description }}
-                </div>
-                <div class="form-wrapper">
-                    <div class="form_mail" data-aos="fade-up-right">
-                        <a href="#" class="form_mail-link">
-                            <img src="{{ asset('upload/' . $cnt->image) }}" alt="">
-                        </a>
-                    </div>
-            @endforeach
-            <form class="form_bottom" id="contactForm" method="POST" data-aos="fade-up-left">
-                @csrf
-                <div class="footer-form_title">
-                    GET IN TOUCH
-                </div>
-
-                <input type="text" id="name" name="name" class="form_inp-mail" required placeholder="name">
-                <input type="text" id="phone_number" name="phone_number" required class="form_inp-mail"
-                        maxlength="10" placeholder="Phone No">
-                <input type="email" id="email" name="email" class="form_inp-mail" required placeholder="Email">
-                <textarea name="message" id="message" class="form_inp-text" required placeholder="Message"></textarea>
-                <div class="footer_btn-wrpper">
-                    {{-- <button class="footer_btn btn send_contact_button"  type="submit" name="contact" >
-                            Send Us
-                        </button> --}}
-                    <input class="footer_btn btn" type="submit" name="contact" value="Send Us">
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-</div>
 <!-- End Contact Us-->
 @include('user_footer')
 {{-- <script>

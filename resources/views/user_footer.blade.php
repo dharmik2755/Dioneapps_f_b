@@ -39,7 +39,7 @@
                 <!-- end footer Our services -->
 
                 <!-- start footer Do More With -->
-                <div class="footer_bottom-item item_none" data-aos="fade-up" data-aos-delay="400">
+                {{-- <div class="footer_bottom-item item_none" data-aos="fade-up" data-aos-delay="400">
                     <div class="bottom-item_title">
                         Do More With
                     </div>
@@ -64,6 +64,18 @@
                         </li>
 
                     </ul>
+                </div> --}}
+                <div class="footer_bottom-item item_none" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bottom-item_title">
+                        Social media
+                    </div>
+                    <div class="item_messan-wrpper">
+                        @foreach ($footer_fifth as $fifth)    
+                                <a href="{{$fifth->link}}" class="item_messan-link" target="_blank" >
+                                    <img src="{{asset('upload/'.$fifth->image)}}" width="18" height="25" alt="">
+                                </a>
+                        @endforeach
+                    </div>
                 </div>
                 <!-- End footer Do More With -->
 
@@ -79,11 +91,11 @@
                         </div>
                     @endforeach
                     
-                    <div class="bottom-item_messan">
+                    <div class="bottom-item_messan item_view">
                         <div class="item_messan-title footer_title">
                             Social media:
                         </div>
-                        <div class="item_messan-wrpper">
+                        <div class="item_messan-wrpper  ">
                             @foreach ($footer_fifth as $fifth)    
                                 <a href="{{$fifth->link}}" class="item_messan-link" target="_blank" >
                                     <img src="{{asset('upload/'.$fifth->image)}}" width="18" height="25" alt="">

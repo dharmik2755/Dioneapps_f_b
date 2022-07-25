@@ -640,9 +640,9 @@ ul {
     background-size: 100%;
     background-repeat-x: no-repeat;
     background-repeat-y: no-repeat;
-    width: 55%;
+    width: 60%;
     height: 75vh;
-    top: 0;
+    top: 100px;
     right: 0;
     opacity: .6;
     filter: alpha(opacity=50);
@@ -881,9 +881,9 @@ ul {
 }
 
 .header_main-title {
-    font-size: 85px;
+    font-size: 74px;
     font-weight: 800;
-    width: 75%;
+    width: 70%;
     position: relative;
     padding-bottom: 40px
 }
@@ -2041,6 +2041,7 @@ ul {
 
 .bottom-item_subtitle {
     font-size: 14px;
+    line-height: normal;
     margin-bottom: 17px;
     margin-bottom: 13px;
 }
@@ -4728,10 +4729,10 @@ svg {
 
 
 .brif_img_size-left img {
-    width: 100%;
+    width: 80%;
     position: absolute;
     right: 0;
-    top: -51px;
+    top: -32px;
     /* height: 100% */
 }
 
@@ -4751,12 +4752,12 @@ svg {
 
 @media (max-width: 425px) {
     .brif_img_size-left img {
-        margin-top: 9% !important;
+        margin-top: 20% !important;
         /* margin-top: -23% !important; */
         width: 168% !important;
         /* height: 100%; */
         margin-left: -61px !important;
-        max-height: 232px !important;
+        /* max-height: 232px !important; */
     }
 }
 
@@ -5020,10 +5021,11 @@ svg {
 
 /* page title for custom  */
 .form_title_custom {
-    font-weight: 900;
-    font-size: 45px;
+    font-weight: 200;
+    font-size: 39px;
     line-height: 100px;
     height: 106px;
+    font-family: none;
     justify-content: center;
     text-align: center;
 }
@@ -5031,10 +5033,11 @@ svg {
 /* @media for title mobile view */
 @media (max-width: 425px) {
     .form_title_custom {
-        font-weight: 900;
-        font-size: 45px;
+        font-weight: 200;
+        font-size: 39px;
         line-height: 95px;
         height: 106px;
+        font-family: none;
         justify-content: center;
         text-align: center;
     }
@@ -5987,12 +5990,22 @@ svg {
     display: flex;
 }
 .our_offers .left-side{
-    width: 60%;
+    width: 48%;
 }
 .our_offers .right-side{
     width: 40%;
 }
 .our_offers .right-side img{
-    width: 100%;
+    width: 134%;
 }
 
+/* footer social media mobile view */
+.item_view {
+    display: none;
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+    .item_view {
+        display: inline;
+    }
+}

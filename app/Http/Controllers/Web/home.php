@@ -15,7 +15,6 @@ use App\Models\footer_first;
 use App\Models\footer_secound;
 use App\Models\footer_forth;
 use App\Models\footer_fifth;
-use App\Models\user_contacts;
 use Illuminate\Support\Facades\Session;
 
 class home extends Controller
@@ -56,22 +55,6 @@ class home extends Controller
         $footer_fifth = footer_fifth::where('status',1)->get();
         $data['footer_fifth'] = $footer_fifth;
         
-            if (isset($res->contact)) 
-            {
-                // dd('ifuwheiofuch');
-                $name = $res->name;
-                $phone_number = $res->phone_number;   
-                $email = $res->email;
-                $message = $res->message;
-
-                $data = array('name' => $name , 'phone_number' => $phone_number , 'email' => $email , 'message' => $message);
-
-                user_contacts::insert($data);
-                
-                return redirect('/');
-            }
-
-
         return view('index',$data);
     }
 

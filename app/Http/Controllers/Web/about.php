@@ -20,29 +20,30 @@ class about extends Controller
     // about us page
     public function about(Request $res)
     {
-        $renowned = about_experts::where('status',1)->get();
+        $renowned = about_experts::where('status', 1)->get();
         $data['renowned'] = $renowned;
 
-        $renowneds = renowned::where('status',1)->get();
+        $renowneds = renowned::where('status', 1)->get();
         $data['renowneds'] = $renowneds;
 
         $counter_data = counter::get();
         $data['counter'] = $counter_data;
 
-        $project = project_contact_Controllers::where('status',1)->get();
+        $project = project_contact_Controllers::where('status', 1)->get();
         $data['project_detail'] = $project;
 
-                $footer_first = footer_first::where('status',1)->get();
-                $data['footer_first'] = $footer_first;
-                
-                $footer_secound = footer_secound::where('status',1)->get();
-                $data['footer_secound'] = $footer_secound;
-                
-                $footer_forth = footer_forth::where('status',1)->get();
-                $data['footer_forth'] = $footer_forth;
-                
-                $footer_fifth = footer_fifth::where('status',1)->get();
-                $data['footer_fifth'] = $footer_fifth;
-        return view('about',$data);
+        $footer_first = footer_first::where('status', 1)->get();
+        $data['footer_first'] = $footer_first;
+
+        $footer_secound = footer_secound::where('status', 1)->get();
+        $data['footer_secound'] = $footer_secound;
+
+        $footer_forth = footer_forth::where('status', 1)->get();
+        $data['footer_forth'] = $footer_forth;
+
+        $footer_fifth = footer_fifth::where('status', 1)->get();
+        $data['footer_fifth'] = $footer_fifth;
+        
+        return view('about', $data);
     }
 }

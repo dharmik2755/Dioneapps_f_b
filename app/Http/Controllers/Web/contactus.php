@@ -47,7 +47,7 @@ class contactus extends Controller
 
                 user_contacts::insert($data);
                 
-                return redirect('/');
+                return redirect('/contactus');
             }
         
         return view('contactus',$data);
