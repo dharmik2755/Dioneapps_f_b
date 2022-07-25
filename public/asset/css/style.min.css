@@ -640,7 +640,7 @@ ul {
     background-size: 100%;
     background-repeat-x: no-repeat;
     background-repeat-y: no-repeat;
-    width: 60%;
+    width: 59%;
     height: 75vh;
     top: 100px;
     right: 0;
@@ -4752,7 +4752,7 @@ svg {
 
 @media (max-width: 425px) {
     .brif_img_size-left img {
-        margin-top: 20% !important;
+        margin-top: 9% !important;
         /* margin-top: -23% !important; */
         width: 168% !important;
         /* height: 100%; */
@@ -4788,7 +4788,7 @@ svg {
     }
 
     .brif_img_size-left {
-        top: 50%;
+        top: 45%;
         left: 25%;
     }
 
@@ -4827,7 +4827,7 @@ svg {
         top: 50%;
     }
     .brif_img_size-left {
-        top: 45%;
+        top: 39%;
     }
 }
 
