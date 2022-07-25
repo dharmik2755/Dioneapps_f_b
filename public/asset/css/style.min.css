@@ -2814,57 +2814,57 @@ svg {
     }
 
     .services_item-wrapper {
-        max-height: 425px
+        max-height: 425px;
     }
 
     .contacts_title {
-        margin-bottom: 15px
+        margin-bottom: 15px;
     }
 }
 
 @media (max-width: 560px) {
     .wrapper_form {
-        padding: 50px 0
+        padding: 40px 0;
     }
 
     .wrapper_form-project {
-        padding: 50px 0
+        padding: 50px 0;
     }
 
     .form_title {
-        font-size: 27px
+        font-size: 27px;
     }
 
     .form_inp {
-        width: 100%
+        width: 100%;
     }
 
     .form_btn {
-        width: 100%
+        width: 100%;
     }
 
     .brif_img {
         top: 37%;
         left: -2%;
-        width: 80%
+        width: 80%;
     }
 
     .footer-form_title {
-        letter-spacing: 4px
+        letter-spacing: 4px;
     }
 }
 
 @media (max-width: 530px) {
     .rellax {
-        background-position: center
+        background-position: center;
     }
 
     .header_main-text {
-        width: 100%
+        width: 100%;
     }
 
     .scroll {
-        display: none
+        display: none;
     }
 
     .header_main-title {
