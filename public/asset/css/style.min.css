@@ -440,7 +440,7 @@ ul {
     content: "";
     background-image: url(../images/right-btn.png);
     width: 15px;
-    height: 11px;
+    height: 10px;
     right: 25px;
     top: 49%;
     -webkit-transform: translateY(-50%);
@@ -596,7 +596,7 @@ ul {
 }
 
 .page_top-text:last-child {
-    margin-bottom: 0
+    margin-bottom: 70px;
 }
 
 .lines {
@@ -4403,7 +4403,7 @@ svg {
     }
 
     .page_top-text:last-child {
-        margin-bottom: 0
+        margin-bottom: 70px;
     }
 
     .page_top-right {
