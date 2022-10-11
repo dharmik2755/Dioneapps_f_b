@@ -86,7 +86,7 @@
                      @foreach ($contact_media_info as $cmi)
                          <div class="bottom-item_subtitle">
                              <i class="{{ $cmi->code }}"></i>
-                             <a class="footer_text" href="{{ $cmi->title_link }}">
+                             <a class="footer_text_2" href="{{ $cmi->title_link }}">
                                  {{ $cmi->title }}
                              </a><br>
                          </div>
