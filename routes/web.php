@@ -33,7 +33,6 @@ use App\Http\Controllers\Admin\contact_info;
 use App\Http\Controllers\Admin\portfolio_award;
 use App\Http\Controllers\Admin\portfolio_latest_work;
 use App\Http\Controllers\Admin\footer_first_controller;
-use App\Http\Controllers\Admin\footer_secound_controller;
 use App\Http\Controllers\Admin\footer_forth_controller;
 use App\Http\Controllers\Admin\footer_fifth_controller;
 use App\Http\Controllers\Admin\specializeds_Controller;
@@ -286,12 +285,6 @@ Route::group(['middleware' => "backend"], function () {
     Route::any('/edit-footer-first-data/{id}', [footer_first_controller::class, 'edit'])->name('footer-first.edit');
     Route::any('/delete-footer-first-data/{id}', [footer_first_controller::class, 'destroy'])->name('footer-first.delete');
     Route::any('/stutus-footer-first-data', [footer_first_controller::class, 'active_and_deactive']);
-
-    Route::any('/add-footer-secound-data', [footer_secound_controller::class, 'create'])->name('footer-secound.create');
-    Route::any('/view-footer-secound-data', [footer_secound_controller::class, 'show'])->name('footer-secound.view');
-    Route::any('/edit-footer-secound-data/{id}', [footer_secound_controller::class, 'edit'])->name('footer-secound.edit');
-    Route::any('/delete-footer-secound-data/{id}', [footer_secound_controller::class, 'destroy'])->name('footer-secound.delete');
-    Route::any('/stutus-footer-secound-data', [footer_secound_controller::class, 'active_and_deactive']);
 
     Route::any('/add-footer-forth-data', [footer_forth_controller::class, 'create'])->name('footer-forth.create');
     Route::any('/view-footer-forth-data', [footer_forth_controller::class, 'show'])->name('footer-forth.view');
