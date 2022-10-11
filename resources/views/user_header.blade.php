@@ -43,7 +43,7 @@
                 <div class="header_top-wrapper">
                     <div class="header_logo">
                         <a href="{{ url('/') }}">
-                            <img src="{{ asset('asset/images/logo.svg') }}" alt="">
+                            <img src="{{ asset('asset/images/LOGO.svg') }}" alt="">
                         </a>
                     </div>
                     <div class="menu_burger">
