@@ -41,7 +41,14 @@
                                             <td>{{ $dt->id }}</td>
                                             <td>{{ $dt->title }}</td>
                                             <td>{{ $dt->description }}</td>
-                                            <td>{{ $dt->sub_title }}</td>
+                                            <td>
+                                                <ul>
+                                                    <?php $loop_sub_title = explode('|||',$dt->sub_title); 
+                                                        for ($i=0; $i < count($loop_sub_title); $i++) { ?>
+                                                            <li>{{ $loop_sub_title[$i]}}</li>
+                                                        <?php } ?>
+                                                </ul>
+                                            </td>
                                             <td>{{ $dt->sub_description }}</td>
                                             <td>
                                                 <img height="200px" width="200px" src="{{ asset('upload/' . $dt->image) }}"

@@ -12,5 +12,5 @@ class portfolio_latest_works extends Model
     protected $primaryKey = 'id';
     public $incrementing = true;
     public $timestamps = true;
-    protected $fillable = ['title' , 'color_image' , 'black_image' , 'status'];
+    protected $fillable = ['special_id' , 'title' , 'color_image' , 'black_image' , 'status'];
 }

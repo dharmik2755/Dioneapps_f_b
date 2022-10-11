@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('portfolio_latest_works', function (Blueprint $table) {
             $table->id();
+            $table->string('special_id');
             $table->string('title',300);
             $table->string('color_image',1000);
             $table->string('black_image',1000);

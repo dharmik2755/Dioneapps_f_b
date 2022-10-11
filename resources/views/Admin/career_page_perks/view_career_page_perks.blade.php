@@ -34,8 +34,8 @@
                                         <th>Sub Title </th>
                                         <th>Sub Description </th>
                                         <th>Status</th>
-                                        <th>Edit</th>
-                                        <th>Delete</th>
+                                        <th>Action</th>
+                                        {{-- <th>Delete</th> --}}
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -82,9 +82,9 @@
                                                     <button class="btn btn-outline-primary">
                                                         <i class="fa-solid fa-pen-to-square"></i>
                                                     </button>
-                                                </a>
-                                            </td>
-                                            <td style="max-width: 100px">
+                                                </a><br><br><br><br><br><br><br>
+                                            {{-- </td>
+                                            <td style="max-width: 100px"> --}}
                                                 {{-- delete link --}}
                                                 <a href="{{ url('/delete-career-page-perks-data/'. $dt->id) }}">
                                                     <button class="btn btn-outline-danger">

@@ -22,10 +22,6 @@
                       <form class="cmxform" id="signupForm" method="POST" enctype="multipart/form-data">
                         @csrf
                           <fieldset>
-                            <div class="form-group">
-                                  <label for="firstname">Title</label>
-                                  <img src="{{ asset('upload/'.$dt->image) }}" height="250" width="250"alt="">
-                              </div>
                               <div class="form-group ">
                                   <label for="firstname">Title</label>
                                   <input id="firstname" class="form-control" name="title" type="text"
@@ -42,12 +38,17 @@
                                       placeholder="Description" value="{{ $dt->description }}">
                               </div>
                               <div class="form-group">
-                                  <label>File upload</label>
-                                  <div class="input-group col-xs-12">
-                                      <input type="file" name="image" class="form-control file-upload-info"
-                                          placeholder="Upload Image">
-                                  </div>
-                              </div>
+                                <div class="row">
+                                    <label>File upload</label>
+                                    <div class="col-6">
+                                        <input type="file" id="image" class="form-control file-upload-info" style="width: 100%" name="image" placeholder="Upload Image" multiple><br>
+                                    </div>
+                                    <div class="col-6">
+                                        <img id="previewHolder" alt="Uploaded Image" src="{{ asset('upload/'.$dt->image) }}" width="200px"
+                                            height="200px" />
+                                    </div>
+                                </div>
+                            </div>
                               <div class="text-start">
                               <input class="btn btn-primary" type="submit" name="edit" value="Submit">
                                 <a href="{{ route('about.view') }}">

@@ -10,11 +10,14 @@ use App\Models\stages_of_work;
 use App\Models\about;
 use App\Models\counter;
 use App\Models\clients;
+use App\Models\contact_media_info;
 use App\Models\contacts;
 use App\Models\footer_first;
 use App\Models\footer_secound;
 use App\Models\footer_forth;
 use App\Models\footer_fifth;
+use App\Models\specialized;
+use App\Models\specializ_id;
 use Illuminate\Support\Facades\Session;
 
 class home extends Controller
@@ -24,6 +27,7 @@ class home extends Controller
     {
         $home_slider_data = home_slider::where('status',1)->get();
         $data['home_slider'] = $home_slider_data;
+
 
         $developer_data = mobile::where('status',1)->get();
         $data['mobile_data'] = $developer_data;
@@ -43,6 +47,12 @@ class home extends Controller
         $contact = contacts::get();
         $data['contact'] = $contact;
 
+        $specialized = specialized::where('status',1)->get();
+        $data['specialized'] = $specialized;
+
+        $contact_media_info = contact_media_info::get();
+        $data['contact_media_info'] = $contact_media_info;
+
         $footer_first = footer_first::where('status',1)->get();
         $data['footer_first'] = $footer_first;
         
@@ -54,6 +64,9 @@ class home extends Controller
         
         $footer_fifth = footer_fifth::where('status',1)->get();
         $data['footer_fifth'] = $footer_fifth;
+
+        $specializ_id = specializ_id::where('status',1)->get();
+        $data['specializ_id'] = $specializ_id;
         
         return view('index',$data);
     }

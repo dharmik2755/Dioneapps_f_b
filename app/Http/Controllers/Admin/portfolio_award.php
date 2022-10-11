@@ -25,7 +25,6 @@ class portfolio_award extends Controller
                }
            }
             
-            
             $data = array('title' => $title , 'description' => $description , 'image' => implode('|||',$image_multi_data));
             portfolio_awards::insert($data);
 
@@ -60,7 +59,6 @@ class portfolio_award extends Controller
            {
                $image_name = $old_image->image;
                $image_multi_data[] = $image_name;
-               
            }
            else
            {
@@ -77,7 +75,6 @@ class portfolio_award extends Controller
                         File::delete(public_path('upload/').$img);
                     }
                 }
-                
            }
             
             $data = array('title' => $title , 'description' => $description , 'image' => implode('|||',$image_multi_data));

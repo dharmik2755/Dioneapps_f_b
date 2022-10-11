@@ -12,5 +12,5 @@ class mobile extends Model
     protected $primaryKey = 'id';
     public $incrementing = true;
     public $timestamps = true;
-    protected $fillable = ['title','description','image'];
+    protected $fillable = ['special_id','title','description','image1', 'image2'];
 }

@@ -24,13 +24,18 @@
                           <fieldset>
                             <div class="form-group">
                                     <?php
-                                    $i=0; 
+                                    $i=0;
                                     foreach (explode('|||', $dt->image) as $picture) 
                                     {  ?>
                                         <label for="lastname">Edit Image </label><br>
                                         <img src="{{asset('upload/'.$picture)}}" height="100" width="100"  alt=""><br>
-                                        <input id="image" class="form-control" name="image[]" type="file" >
+                                        <input id="image" class="form-control" name="image[]" type="file" value="{{$picture}}" >
                                     <?php $i++; } ?>
+                                    <?php 
+                                            // echo'<pre>';
+                                            // print_r($picture);
+                                            // die();
+                                        ?>
                               </div>
                               <div class="form-group ">
                                   <label for="firstname">Title</label>

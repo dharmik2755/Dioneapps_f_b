@@ -39,7 +39,8 @@ class services_offre_Controller extends Controller
 
     
     public function show(Request $res)
-    {   $services_offer = services_offer::get();
+    {   
+        $services_offer = services_offer::get();
         $data['services_offer'] = $services_offer;
         return view('Admin.services_offer.view_services_offer',$data);
     }

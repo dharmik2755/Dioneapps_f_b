@@ -22,14 +22,17 @@
               <form class="cmxform" id="signupForm" method="POST" enctype="multipart/form-data">
                 @csrf
                 <fieldset>
-                  <div class="form-group ">
-                    <label for="firstname">Social Media Image</label>
-                    <img src="{{asset('upload/'.$dt->image)}}" height="100" width="100" alt="">
-                  </div>
                   
-                  <div class="form-group ">
-                    <label for="firstname">Enter New Image</label>
-                    <input id="image" class="form-control" name="image" type="file" >
+                    <div class="form-group">
+                      <div class="row">
+                          <label>File upload</label>
+                          <div class="col-6">
+                              <input type="file" id="image" class="form-control file-upload-info" style="width: 100%" name="image" placeholder="Upload Image"><br>
+                          </div>
+                          <div class="col-6">
+                              <img id="previewHolder" alt="Uploaded Image" src="{{ asset('upload/' . $dt->image) }}" style="background-color: grey"  width="200px" height="200px" />
+                          </div>
+                      </div>
                   </div>
                   <div class="form-group ">
                     <label for="firstname">Link</label>

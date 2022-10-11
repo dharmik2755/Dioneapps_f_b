@@ -5,91 +5,114 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\mobile;
+use App\Models\specializ_id;
 use Illuminate\Support\Facades\File;
 
 
 class development_Controller extends Controller
 {
-     // add
-     public function create(Request $res)
-     {
-       
+    // add
+    public function create(Request $res)
+    {
+        if (isset($res->save)) {
+            $special_id = $res->special_id;
+            $title = $res->title;
+            $description = $res->description;
+            $image1 = $res->file('image1');
+            $image_name1 = rand(0, 999999) . $image1->getClientOriginalName('image1');
+            $image1->move('upload', $image_name1);
+            $image2 = $res->file('image2');
+            $image_name2 = rand(0, 999999) . $image2->getClientOriginalName('image2');
+            $image2->move('upload', $image_name2);
 
-         if (isset($res->save)) 
-         {
-            // dd($res->all());
-             $title = $res->title;
-             $description = $res->description;
-             $image = $res->file('image');
-             $image_name = rand(0,999999).$image->getClientOriginalName('image');
-             $image->move('upload',$image_name);
- 
-             $data = array('title' => $title , 'description' => $description , 'image' => $image_name );
-             mobile::insert($data);
-             
-             return redirect()->route('development.view');
-         }
-         return view('Admin.development.add_development_data');
-     }
- 
-     // show data
-     public function show(Request $id)
-     {
-         $show_data = mobile::get();
-         $data['mobile'] = $show_data;
+            $data = array('special_id' => $special_id, 'title' => $title, 'description' => $description, 'image1' => $image_name1, 'image2' => $image_name2);
 
-         return view('Admin.development.view_development_data',$data);
-     }
- 
-     // edit
-     public function edit(Request $res,$id)
-     {
-         $update_data = mobile::where('id',$id)->get();
-         $old_image = $update_data->first();
-         $old_image_path = 'upload/'.$old_image->image;
+            // echo '<pre>';
+            // print_r($data);
+            // die();
 
-         if (isset($res->edit)) 
-         {
-             $title = $res->title;
-             $description = $res->description;
-             $image = $res->file('image'); 
-             if($image=="") 
-             {
-                 $image_name = $old_image->image;
-             }            
-             else
-             {
-                 $image_name = rand(0,999999).$image->getClientOriginalName('image');
-                 $image->move('upload',$image_name);
-                 if (File::exists($old_image_path)) 
-                {
-                    File::delete($old_image_path);
+            mobile::insert($data);
+
+            return redirect()->route('development.view');
+        }
+        $show_specializ_id = specializ_id::where('status', 1)->get();
+        return view('Admin.development.add_development_data', compact('show_specializ_id'));
+    }
+
+    // show data
+    public function show(Request $id)
+    {
+        $mobile = mobile::get();;
+        $show_specializ_id = specializ_id::where('status', 1)->get();
+
+        return view('Admin.development.view_development_data', compact('mobile','show_specializ_id'));
+    }
+
+    // edit
+    public function edit(Request $res, $id)
+    {
+        $show_specializ_id = specializ_id::where('status', 1)->get();
+        $update_data = mobile::where('id', $id)->get();
+        $old_image = $update_data->first();
+        $old_image_path1 = 'upload/' . $old_image->image1;
+        $old_image_path2 = 'upload/' . $old_image->image2;
+
+        if (isset($res->edit)) {
+            $title = $res->title;
+            $description = $res->description;
+            $image1 = $res->file('image1');
+
+            if ($image1 == "") {
+                $image_name1 = $old_image->image1;
+            } else {
+                $image_name1 = rand(0, 999999) . $image1->getClientOriginalName('image1');
+
+                $image1->move('upload', $image_name1);
+
+                if (File::exists($old_image_path1)) {
+                    File::delete($old_image_path1);
                 }
-             }
- 
-             $data = array('title' => $title , 'description' => $description , 'image' => $image_name );
-             mobile::where('id',$id)->update($data);
-             
-             return redirect()->route('development.view');
-         }
- 
-         return view('Admin.development.edit_development_data',['edit_mobile_data'=>$update_data]);
-     }
- 
-     // delete
-     public function destroy(Request $res,$id)
-     {
-        $mobile =  mobile::find($id);
-        $old_image_path = 'upload/'.$mobile->image;
+            }
 
-        if (File::exists($old_image_path)) 
-        {
-            File::delete($old_image_path);
+            $image2 = $res->file('image2');
+            if ($image2 == "") {
+                $image_name2 = $old_image->image2;
+            } else {
+                $image_name2 = rand(0, 999999) . $image2->getClientOriginalName('image2');
+                $image2->move('upload', $image_name2);
+                if (File::exists($old_image_path2)) {
+                    File::delete($old_image_path2);
+                }
+            }
+
+
+            $data = array('title' => $title, 'description' => $description, 'image1' => $image_name1, 'image2' => $image_name2);
+
+            // echo '<pre>';
+            // print_r($data);
+            // die();
+
+            mobile::where('id', $id)->update($data);
+
+            return redirect()->route('development.view');
+        }
+
+        return view('Admin.development.edit_development_data', compact('update_data', 'show_specializ_id'));
+    }
+
+    // delete
+    public function destroy(Request $res, $id)
+    {
+        $mobile =  mobile::find($id);
+        $old_image_path1 = 'upload/'.$mobile->image1;
+        $old_image_path2 = 'upload/'.$mobile->image2;
+
+        if (File::exists($old_image_path1) || File::exists($old_image_path2)) {
+            File::delete($old_image_path1,$old_image_path2);
         }
         $mobile->delete();
-        
         return redirect()->route('development.view');
-     }
+    }
 
     //  status insert in sata base
     public function active_and_deactive(Request $res)
@@ -98,6 +121,6 @@ class development_Controller extends Controller
         $home->status = $res->status;
         $home->save();
 
-        return response()->json(['success'=>'Status change successfully.']);
+        return response()->json(['success' => 'Status change successfully.']);
     }
 }

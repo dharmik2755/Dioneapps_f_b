@@ -24,10 +24,12 @@
                             <table id="order-listing" class="table">
                                 <thead>
                                     <tr>
-                                        <th>id</th>
+                                        <th>Id</th>
+                                        <th>Services name</th>
                                         <th>Title</th>
                                         <th>Description</th>
-                                        <th>Image</th>
+                                        <th>Home Page Image</th>
+                                        <th>Development Page Image</th>
                                         <th>Status</th>
                                         <th>Edit</th>
                                         <th>Delete</th>
@@ -37,10 +39,21 @@
                                     @foreach ($mobile as $dt)
                                         <tr>
                                             <td>{{ $dt->id }}</td>
+                                            <td>
+                                                @foreach ($show_specializ_id as $ss)
+                                                    <?php
+                                                    if ($dt->special_id == $ss->id) { ?>
+                                                        {{ $ss->development_name }}
+                                                    <?php } ?>
+                                                @endforeach
+                                            </td>
                                             <td>{{ $dt->title }}</td>
                                             <td>{{ $dt->description }}</td>
                                             <td>
-                                                <img height="200px" width="200px" src="{{ asset('upload/' . $dt->image) }}" alt="">
+                                                <img height="200px" width="200px" src="{{ asset('upload/' . $dt->image1) }}" alt="">
+                                            </td>
+                                            <td>
+                                                <img height="200px" width="200px" src="{{ asset('upload/' . $dt->image2) }}" alt="">
                                             </td>
                                             <td>
                                                 <input data-id="{{$dt->id}}" class="toggle-class"type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" {{$dt->status ? 'checked' : '' }}>

@@ -31,6 +31,7 @@
                                 <thead>
                                     <tr>
                                         <th>id</th>
+                                        <th>Services</th>
                                         <th>Title</th>
                                         <th>Color Image</th>
                                         <th>Black Image</th>
@@ -40,9 +41,16 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($portfolio_latest_works as $dt)
+                                    @foreach ($data as $dt)
                                         <tr>
                                             <td>{{ $dt->id }}</td>
+                                            <td>
+                                                @foreach ($specializ_id as $si)
+                                                    <?php if ($si->id == $dt->special_id) { ?>
+                                                            {{ $si->development_name }}
+                                                            <?php } ?>
+                                                @endforeach
+                                            </td>
                                             <td>{{ $dt->title }}</td>
                                             <td>
                                                 <img height="200px" width="200px" src="{{ asset('upload/' . $dt->color_image) }}" alt="">

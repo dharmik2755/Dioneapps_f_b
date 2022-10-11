@@ -24,7 +24,6 @@ class about_Controller extends Controller
             $data = array('title' => $title ,'sub_title' => $sub_title , 'description' => $description , 'image' => $image_name);
 
             about::insert($data);
-
             return redirect()->route('about.view');
         }
         return view('Admin.about.add_about_data');

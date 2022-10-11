@@ -13,13 +13,14 @@ use App\Models\footer_first;
 use App\Models\footer_secound;
 use App\Models\footer_forth;
 use App\Models\footer_fifth;
-
+use App\Models\specializ_id;
 
 class service extends Controller
 {
     // service us page
     public function service(Request $res)
     {
+
         $service_page = service_page::where('status', 1)->get();
         $data['service_page'] = $service_page;
 
@@ -46,6 +47,9 @@ class service extends Controller
 
         $footer_fifth = footer_fifth::where('status', 1)->get();
         $data['footer_fifth'] = $footer_fifth;
+
+        $specializ_id = specializ_id::where('status',1)->get();
+        $data['specializ_id'] = $specializ_id;
 
         return view('service', $data);
     }

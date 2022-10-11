@@ -41,5 +41,9 @@
 <!-- End custom jqery for this page -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" ></script>
 
+{{-- CKEditer CDN link --}}
+<script src="https://cdn.ckeditor.com/ckeditor5/35.1.0/classic/ckeditor.js"></script>
+{{-- <script src="{{asset('assets/js/CKediter.js')}}"></script> --}}
+
 </body>
 </html>

@@ -10,6 +10,7 @@ use App\Models\footer_first;
 use App\Models\footer_secound;
 use App\Models\footer_forth;
 use App\Models\footer_fifth;
+use App\Models\specializ_id;
 use App\Models\user_contacts;
 
 class contactus extends Controller
@@ -49,6 +50,9 @@ class contactus extends Controller
                 
                 return redirect('/contactus');
             }
+
+        $specializ_id = specializ_id::where('status',1)->get();
+        $data['specializ_id'] = $specializ_id;
         
         return view('contactus',$data);
     }

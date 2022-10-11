@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('renowneds', function (Blueprint $table) {
             $table->id();
             $table->string('title',200);
-            $table->string('description',1000);
-            $table->string('sub_title',50);
-            $table->string('sub_description',500);
+            $table->string('description',2000);
+            $table->string('sub_title',500);
+            $table->string('sub_description',1000);
             $table->tinyInteger('status')->default('1');
             $table->timestamps();
         });

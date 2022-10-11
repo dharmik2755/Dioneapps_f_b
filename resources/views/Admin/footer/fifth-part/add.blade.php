@@ -21,10 +21,23 @@
             <form class="cmxform" id="frm" method="POST" enctype="multipart/form-data">
               @csrf
               <fieldset>
-                <div class="form-group ">
+                {{-- <div class="form-group ">
                   <label for="firstname">Social Media Image</label>
                   <input id="image" class="form-control" name="image" type="file" >
-                </div>
+                </div> --}}
+                <div class="form-group">
+                  <div class="row">
+                      <label>Social Media Image</label>
+                      <div class="col-6">
+                          <input type="file" id="image" class="form-control file-upload-info"
+                              style="width: 100%" name="image" placeholder="Upload Image"><br>
+                      </div>
+                      <div class="col-6">
+                          <img id="previewHolder" alt="Uploaded Image" width="200px"
+                              height="200px"/>
+                      </div>
+                  </div>
+              </div>
                 
                 <div class="form-group">
                   <label for="lastname">Link</label>
@@ -33,7 +46,7 @@
 
                 <div class="text-start">
                   <input class="btn btn-primary" type="submit" name="add" value="Submit">
-                    <a href="{{ route('services.view') }}">
+                    <a href="{{ route('footer-fifth.view') }}">
                       <button type="button" class="btn btn-inverse-dark btn-fw">Cancel </button>
                     </a>
                 </div>
@@ -47,6 +60,24 @@
 
 @include('Admin.footer')
 <script>
+   // live show image start
+   function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#previewHolder').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                alert('select a file to see preview');
+                $('#previewHolder').attr('src', '');
+            }
+        }
+        $("#image").change(function() {
+            readURL(this);
+        });
+        // end
+
   jQuery('#frm').validate({
             rules: {
                 link: {

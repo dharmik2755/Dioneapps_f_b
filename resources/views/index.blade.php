@@ -1,191 +1,227 @@
-@include('user_header')
-@foreach ($home_slider as $hs2)
+{{-- @include('user_header') --}}
+@extends('main')
+
+@section('main-section')
+    {{-- @foreach ($home_slider as $hs2)
     <div class="rellax" data-rellax-speed="-5" data-rellax-percentage="0.3"
         style="background-image: url({{ asset('upload/' . $hs2->image) }});transform : none "> </div>
-@endforeach
-<!-- start slider -->
-<div class="header_main">
+@endforeach --}}
+    <!-- start slider -->
+    {{-- <div class="header_main">
     <div class="container">
-        @foreach ($home_slider as $hs)
-            <h1 class="header_main-title">
-                {{ $hs->title }}
-            </h1>
-            <p class="header_main-text">
-                {{ $hs->description }}
-            </p>
-            <a href="{{ route('contact.page') }}" class="header_main-btn btn">
-                Learn More
-            </a>
-        @endforeach
+            @foreach ($home_slider as $hs)
+                <h1 class="header_main-title">
+                    {{ $hs->title }}
+                </h1>
+                <p class="header_main-text">
+                    {{ $hs->description }}
+                </p>
+                <a href="{{ route('contact.page') }}" class="header_main-btn btn">
+                    Learn More
+                </a>
+            @endforeach
     </div>
     <a href="#services" class="scroll">
         <img src="https://smav.com.ua/images/scroll.svg" alt="">
     </a>
-</div>
-<!-- slider end -->
+</div> --}}
+    <!-- slider end -->
+
+    <!-- start slider -->
+    <section class="page_top slider_page_top ">
+        <div class="header_main">
+            <div class="container">
+                <div class="page_top-wrapper sack_wrapper home_slider_main">
+                    @foreach ($home_slider as $hs)
+                        <div class="home_slider_box">
+                            <div class="page_top-left slider_left">
+                                <div class="header_main-title slider_title">
+                                    <h1>
+                                        {{ $hs->title }}
+                                    </h1>
+                                </div>
+                                <div class="slider_description">
+                                    <p>{{ $hs->description }}</p>
+                                </div>
+                                <a href="#" class="header_main-btn btn">
+                                    Learn More
+                                </a>
+                            </div>
+                            <div class="page_top-right slider_right">
+                                <img src="{{ asset('upload/' . $hs->image) }}" class="page_top-title slider_img "
+                                    alt="">
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+        <a href="#services" class="scroll">
+            <img src="https://smav.com.ua/images/scroll.svg" alt="">
+        </a>
+    </section>
+    <br>
+    <br>
+    <!-- slider end -->
 
 
-<!-- Services  start -->
-<?php
-$i = 1;
-$n = 2;
-
-?>
-@foreach ($mobile_data as $md)
-    <?php 
+    <!-- Services  start -->
+    <?php
+    $i = 1;
+    $n = 2;
+    ?>
+    @foreach ($mobile_data as $md)
+        <?php 
         if($i % $n != 0)
         { ?>
-    <section class="brif" id="services">
-        <div class="container">
-            <div class="brif_wrapp">
-                <div class="brif_content" data-aos="fade-right">
-                    <div class="brif_title title">
-                        {{ $md->title }}
-                    </div>
-                    <div class="brif_text text">
-                    </div>
-                    <div class="brif_info">
-                        <div class="brif_info-text text">
-                            {{ $md->description }}
+        <section class="brif" id="services">
+            <div class="container">
+                <div class="brif_wrapp">
+                    <div class="brif_content" data-aos="fade-right">
+                        <div class="brif_title title">
+                            {{ $md->title }}
                         </div>
+                        <div class="brif_text text">
+                        </div>
+                        <div class="brif_info">
+                            <div class="brif_info-text text">
+                                {{ $md->description }}
+                            </div>
+                        </div>
+                        <a href="{{ url('development/' . $md->special_id) }}" class="brif_btn new_btn">
+                            Explore
+                        </a>
                     </div>
-                    <a href="{{ route('service.page') }}" class="brif_btn btn">
-                        More
-                    </a>
-                </div>
-                <div class="brif_img_size" data-aos="fade-left" data-aos-delay="500">
-                    <img class="img_uiux_size {{ $md->title == 'UI/UX DESIGNING' ? 'main-img' : '' }}"
-                        src="{{ asset('upload/' . $md->image) }}" alt="">
+                    <div class="brif_img_size" data-aos="fade-left" data-aos-delay="500">
+                        <img src="{{ asset('upload/' . $md->image1) }}" alt="">
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <?php
-        } else 
+        </section>
+        <?php
+        } 
+        else 
         { ?>
-    <section class="brif" id="services">
-        <div class="container">
-            <div class="brif_wrapp">
-                <div class="brif_content-left" data-aos="fade-right">
-                    <div class="brif_title title">
-                        {{ $md->title }}
-                    </div>
-                    <div class="brif_text text">
-                    </div>
-                    <div class="brif_info">
-                        <div class="brif_info-text text">
-                            {{ $md->description }}
-
+        <section class="brif" id="services">
+            <div class="container">
+                <div class="brif_wrapp">
+                    <div class="brif_content-left" data-aos="fade-left">
+                        <div class="brif_title title">
+                            {{ $md->title }}
                         </div>
+                        <div class="brif_text text">
+                        </div>
+                        <div class="brif_info">
+                            <div class="brif_info-text text">
+                                {{ $md->description }}
+                            </div>
+                        </div>
+                        <a href="{{ url('development/' . $md->special_id) }}" class="brif_btn new_btn">
+                            Explore
+                        </a>
                     </div>
-                    <a href="{{ route('service.page') }}" class="brif_btn btn">
-                        More
-                    </a>
-                </div>
-                <div class="brif_img_size-left" data-aos="fade-left" data-aos-delay="500">
-                    <img src="{{ asset('upload/' . $md->image) }}" alt="">
+                    <div class="brif_img_size-left" data-aos="fade-right" data-aos-delay="500">
+                        <img src="{{ asset('upload/' . $md->image1) }}" alt="">
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <?php 
-        } $i = $i + 1; 
+        </section>
+        <?php 
+        } 
+        $i = $i + 1; 
         ?>
-@endforeach
-<!-- End Services -->
+    @endforeach
+    <!-- End Services -->
 
-<!-- start STAGES OF WORK -->
-<section class="stages" data-aos="fade-right">
-    <div class="container">
-        @foreach ($stages_of_work_data as $sowd)
-            <div class="support_title title">
-                {{ $sowd->title }}
-            </div>
-            <div class="support_text text">
-                {{ $sowd->sub_title }}
-            </div>
-            <div class="stages_wrapper" data-aos="fade" data-aos-delay="300">
-                <div class="stages_item">
-                    <div class="stages_item-title">
-                        {{ $sowd->stages1 }}
-                    </div>
-                    <div class="stages_item-text">
-                        {{ $sowd->description1 }}
-                    </div>
+    <!-- start STAGES OF WORK -->
+    <section class="stages" data-aos="fade-up">
+        <div class="container">
+            @foreach ($stages_of_work_data as $sowd)
+                <div class="support_title title">
+                    {{ $sowd->title }}
                 </div>
-                <div class="stages_item">
-                    <div class="stages_item-title">
-                        {{ $sowd->stages2 }}
-                    </div>
-                    <div class="stages_item-text">
-                        {{ $sowd->description2 }}
-                    </div>
+                <div class="support_text text">
+                    {{ $sowd->sub_title }}
                 </div>
-                <div class="stages_item">
-                    <div class="stages_item-title">
-                        {{ $sowd->stages3 }}
-                    </div>
-                    <div class="stages_item-text">
-                        {{ $sowd->description3 }}
-                    </div>
-                </div>
-                <div class="stages_item">
-                    <div class="stages_item-title">
-                        {{ $sowd->stages4 }}
-                    </div>
-                    <div class="stages_item-text">
-                        {{ $sowd->description4 }}
-                    </div>
-                </div>
-            </div>
-        @endforeach
-    </div>
-</section>
-<!-- End STAGES OF WORK -->
-
-<!-- start About Us -->
-<section class="brif">
-    <div class="container">
-        <div class="brif_wrapp">
-            @foreach ($about_data as $ad)
-                <div class="brif_content" data-aos="fade-right">
-                    <div class="brif_title title">
-                        {{ $ad->title }}
-                    </div>
-                    <div class="brif_text text">
-                        {{ $ad->sub_title }}
-                    </div>
-                    <div class="brif_info">
-                        <div class="brif_info-text text">
-                            {{ $ad->description }}
+                <div class="stages_wrapper" data-aos="fade" data-aos-delay="300">
+                    <div class="stages_item">
+                        <div class="stages_item-title">
+                            {{ $sowd->stages1 }}
+                        </div>
+                        <div class="stages_item-text">
+                            {{ $sowd->description1 }}
                         </div>
                     </div>
-                    <a href="{{ route('about.page') }}" class="brif_btn btn">
-                        Learn More
-                    </a>
-                </div>
-                <div class="brif_img" data-aos="fade-left" data-aos-delay="500">
-                    <img src="{{ asset('upload/' . $ad->image) }}" alt="">
+                    <div class="stages_item">
+                        <div class="stages_item-title">
+                            {{ $sowd->stages2 }}
+                        </div>
+                        <div class="stages_item-text">
+                            {{ $sowd->description2 }}
+                        </div>
+                    </div>
+                    <div class="stages_item">
+                        <div class="stages_item-title">
+                            {{ $sowd->stages3 }}
+                        </div>
+                        <div class="stages_item-text">
+                            {{ $sowd->description3 }}
+                        </div>
+                    </div>
+                    <div class="stages_item">
+                        <div class="stages_item-title">
+                            {{ $sowd->stages4 }}
+                        </div>
+                        <div class="stages_item-text">
+                            {{ $sowd->description4 }}
+                        </div>
+                    </div>
                 </div>
             @endforeach
         </div>
-    </div>
-</section>
-<!-- End About Us -->
+    </section>
+    <!-- End STAGES OF WORK -->
 
-{{-- blog slider --}}
-{{-- <div class="page-wrapper">
+    <!-- start About Us -->
+    <section class="brif">
+        <div class="container">
+            <div class="brif_wrapp">
+                @foreach ($about_data as $ad)
+                    <div class="brif_content" data-aos="fade-right">
+                        <div class="brif_title title">
+                            {{ $ad->title }}
+                        </div>
+                        <div class="brif_text text">
+                            {{ $ad->sub_title }}
+                        </div>
+                        <div class="brif_info">
+                            <div class="brif_info-text text">
+                                {{ $ad->description }}
+                            </div>
+                        </div>
+                        <a href="{{ route('about.page') }}" class="brif_btn btn">
+                            Learn More
+                        </a>
+                    </div>
+                    <div class="brif_img" data-aos="fade-left" data-aos-delay="500">
+                        <img src="{{ asset('upload/' . $ad->image) }}" alt="">
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+    <!-- End About Us -->
+
+    {{-- blog slider --}}
+    {{-- <div class="page-wrapper">
     <div class="post-slider_one">
-
         <div class="brif_wrapp_slider text_for_square">
             <div class="brif_title_title title ">Articals</div>
         </div>
-
-
         <div class="post-wrapper">
 
             <div class="post">
-                <a href="{{ route('blog_single.page') }}">
+                <a href="{{ route('about2.page') }}">
                     <img src="upload/80105914.png" alt="" class="slider-image">
                 </a>
                 <div class="post-info">
@@ -193,14 +229,14 @@ $n = 2;
                         01, Jul 2022
                     </i>
                     <h5 class="text_line_height">
-                        <a href="{{ route('blog_single.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing
+                        <a href="{{ route('about2.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing
                             elit. Neque voluptas nesciunt ea accusantium libero, hic illo mollitia fugit excepturi
                             accusamus eius numquam voluptates vel quasi iusto? Beatae, recusandae possimus!
                             Necessitatibus!</a>
                     </h5>
                 </div>
                 <div>
-                    <a href="{{ route('blog_single.page') }}">
+                    <a href="{{ route('about2.page') }}">
                         <button class="button_slider">
                             <span class="circle">
                                 <span class="icon arrow"></span>
@@ -211,7 +247,7 @@ $n = 2;
                 </div>
             </div>
             <div class="post">
-                <a href="{{ route('blog_single.page') }}">
+                <a href="{{ route('about2.page') }}">
                     <img src="upload/80105914.png" alt="" class="slider-image">
                 </a>
                 <div class="post-info">
@@ -220,14 +256,14 @@ $n = 2;
                     </i>
                     <h5 class="text_line_height">
 
-                        <a href="{{ route('blog_single.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing
+                        <a href="{{ route('about2.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing
                             elit. Neque voluptas nesciunt ea accusantium libero, hic illo mollitia fugit excepturi
                             accusamus eius numquam voluptates vel quasi iusto? Beatae, recusandae possimus!
                             Necessitatibus!</a>
                     </h5>
                 </div>
                 <div>
-                    <a href="{{ route('blog_single.page') }}">
+                    <a href="{{ route('about2.page') }}">
                         <button class="button_slider">
                             <span class="circle">
                                 <span class="icon arrow"></span>
@@ -238,7 +274,7 @@ $n = 2;
                 </div>
             </div>
             <div class="post">
-                <a href="{{ route('blog_single.page') }}">
+                <a href="{{ route('about2.page') }}">
                     <img src="upload/80105914.png" alt="" class="slider-image">
                 </a>
                 <div class="post-info">
@@ -247,14 +283,14 @@ $n = 2;
                     </i>
                     <h5 class="text_line_height">
 
-                        <a href="{{ route('blog_single.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing
+                        <a href="{{ route('about2.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing
                             elit. Neque voluptas nesciunt ea accusantium libero, hic illo mollitia fugit excepturi
                             accusamus eius numquam voluptates vel quasi iusto? Beatae, recusandae possimus!
                             Necessitatibus!</a>
                     </h5>
                 </div>
                 <div>
-                    <a href="{{ route('blog_single.page') }}">
+                    <a href="{{ route('about2.page') }}">
                         <button class="button_slider">
                             <span class="circle">
                                 <span class="icon arrow"></span>
@@ -265,7 +301,7 @@ $n = 2;
                 </div>
             </div>
             <div class="post">
-                <a href="{{ route('blog_single.page') }}">
+                <a href="{{ route('about2.page') }}">
                     <img src="upload/80105914.png" alt="" class="slider-image">
                 </a>
                 <div class="post-info">
@@ -274,14 +310,14 @@ $n = 2;
                     </i>
                     <h5 class="text_line_height">
 
-                        <a href="{{ route('blog_single.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing
+                        <a href="{{ route('about2.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing
                             elit. Neque voluptas nesciunt ea accusantium libero, hic illo mollitia fugit excepturi
                             accusamus eius numquam voluptates vel quasi iusto? Beatae, recusandae possimus!
                             Necessitatibus!</a>
                     </h5>
                 </div>
                 <div>
-                    <a href="{{ route('blog_single.page') }}">
+                    <a href="{{ route('about2.page') }}">
                         <button class="button_slider">
                             <span class="circle">
                                 <span class="icon arrow"></span>
@@ -292,7 +328,7 @@ $n = 2;
                 </div>
             </div>
             <div class="post">
-                <a href="{{ route('blog_single.page') }}">
+                <a href="{{ route('about2.page') }}">
                     <img src="upload/80105914.png" alt="" class="slider-image">
                 </a>
                 <div class="post-info">
@@ -301,14 +337,14 @@ $n = 2;
                     </i>
                     <h5 class="text_line_height">
 
-                        <a href="{{ route('blog_single.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing
+                        <a href="{{ route('about2.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing
                             elit. Neque voluptas nesciunt ea accusantium libero, hic illo mollitia fugit excepturi
                             accusamus eius numquam voluptates vel quasi iusto? Beatae, recusandae possimus!
                             Necessitatibus!</a>
                     </h5>
                 </div>
                 <div>
-                    <a href="{{ route('blog_single.page') }}">
+                    <a href="{{ route('about2.page') }}">
                         <button class="button_slider">
                             <span class="circle">
                                 <span class="icon arrow"></span>
@@ -319,7 +355,7 @@ $n = 2;
                 </div>
             </div>
             <div class="post">
-                <a href="{{ route('blog_single.page') }}">
+                <a href="{{ route('about2.page') }}">
                     <img src="upload/80105914.png" alt="" class="slider-image">
                 </a>
                 <div class="post-info">
@@ -328,14 +364,14 @@ $n = 2;
                     </i>
                     <h5 class="text_line_height">
 
-                        <a href="{{ route('blog_single.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing
+                        <a href="{{ route('about2.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing
                             elit. Neque voluptas nesciunt ea accusantium libero, hic illo mollitia fugit excepturi
                             accusamus eius numquam voluptates vel quasi iusto? Beatae, recusandae possimus!
                             Necessitatibus!</a>
                     </h5>
                 </div>
                 <div>
-                    <a href="{{ route('blog_single.page') }}">
+                    <a href="{{ route('about2.page') }}">
                         <button class="button_slider">
                             <span class="circle">
                                 <span class="icon arrow"></span>
@@ -345,83 +381,27 @@ $n = 2;
                     </a>
                 </div>
             </div>
-            <div class="post">
-                <a href="{{ route('blog_single.page') }}">
-                    <img src="upload/80105914.png" alt="" class="slider-image">
-                </a>
-                <div class="post-info">
-                    <i class="fas fa-calendar blog_caln">
-                        01, Jul 2022
-                    </i>
-                    <h5 class="text_line_height">
-
-                        <a href="{{ route('blog_single.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Neque voluptas nesciunt ea accusantium libero, hic illo mollitia fugit excepturi
-                            accusamus eius numquam voluptates vel quasi iusto? Beatae, recusandae possimus!
-                            Necessitatibus!</a>
-                    </h5>
-                </div>
-                <div>
-                    <a href="{{ route('blog_single.page') }}">
-                        <button class="button_slider">
-                            <span class="circle">
-                                <span class="icon arrow"></span>
-                            </span>
-                            <span class="text_btn">Learn more</span>
-                        </button>
-                    </a>
-                </div>
-            </div>
-            <div class="post">
-                <a href="{{ route('blog_single.page') }}">
-                    <img src="upload/80105914.png" alt="" class="slider-image">
-                </a>
-                <div class="post-info">
-                    <i class="fas fa-calendar blog_caln">
-                        01, Jul 2022
-                    </i>
-                    <h5 class="text_line_height">
-
-                        <a href="{{ route('blog_single.page') }}">Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Neque voluptas nesciunt ea accusantium libero, hic illo mollitia fugit excepturi
-                            accusamus eius numquam voluptates vel quasi iusto? Beatae, recusandae possimus!
-                            Necessitatibus!</a>
-                    </h5>
-                </div>
-                <div>
-                    <a href="{{ route('blog_single.page') }}">
-                        <button class="button_slider">
-                            <span class="circle">
-                                <span class="icon arrow"></span>
-                            </span>
-                            <span class="text_btn">Learn more</span>
-                        </button>
-                    </a>
-                </div>
-            </div>
-
-
         </div>
     </div>
-</div><br><br><br><br><br><br> --}}
-{{-- End blog slider --}}
+</div><br><br> --}}
+    {{-- End blog slider --}}
 
-<!-- counter penal -->
-<section class="reviews">
+    <!-- counter penal -->
+    {{-- <section class="reviews">
     <div id="projectFacts" class="sectionClass">
         <div class="fullWidth eight columns">
             <div class="projectFactsWrap ">
                 @foreach ($counter as $cr)
                     <div class="item wow fadeInUpBig animated animated" data-number="12"
                         style="visibility: visible;">
-                        <!-- <i class="fa fa-briefcase"></i> -->
+                        
                         <p class="number"><span id="number1">{{ $cr->clients }}</span>+</p>
                         <span class="span"></span>
                         <p>Happy clients</p>
                     </div>
                     <div class="item wow fadeInUpBig animated animated" data-number="55"
                         style="visibility: visible;">
-                        <!-- <i class="fa fa-smile-o"></i> -->
+                        
                         <p class="number"><span id="number2">{{ $cr->projects }}</span>+</p>
 
                         <span class="span"></span>
@@ -429,7 +409,7 @@ $n = 2;
                     </div>
                     <div class="item wow fadeInUpBig animated animated" data-number="359"
                         style="visibility: visible;">
-                        <!-- <i class="fa fa-coffee"></i> -->
+                        
                         <p class="number"><span id="number3">{{ $cr->employees }}</span>+</p>
 
                         <span class="span"></span>
@@ -437,7 +417,7 @@ $n = 2;
                     </div>
                     <div class="item wow fadeInUpBig animated animated" data-number="246"
                         style="visibility: visible;">
-                        <!-- <i class="fa fa-camera"></i> -->
+                        
                         <p class="number"><span id="number4">{{ $cr->branches }}</span>+</p>
 
                         <span class="span"></span>
@@ -448,58 +428,85 @@ $n = 2;
         </div>
     </div>
 </section>
-<br><br>
-<!-- end counter penal -->
+<br><br> --}}
+    <!-- end counter penal -->
 
-<!-- start our satisfied clients -->
-<section class="reviews">
-    <div class="container">
-        <div class="reviews_title title">
-            Our Satisfied Clients
+
+
+    {{-- start infinite slide bar --}}
+    <section>
+        <div class="container">
+            <div class="reviews_title title">
+                We are specialized in
+            </div>
+            <div class="reviews_text text">
+            </div>
         </div>
-        <div class="reviews_text text">
-        </div>
-        <div class="reviews_slider" data-aos="fade-right">
-            @foreach ($clients as $cs)
-                <div class="slider_wrapper">
-                    <div class="slider_item slider_item-left">
-                        <div class="slider_item-top">
-                            <div class="slider_item-fio">
-                                <div class="slider_item-name">
-                                    {{ $cs->name }}
-                                </div>
-                                <div class="slider_item-prof">
-                                    {{ $cs->profession }}
-                                </div>
-                                <div class="slider_item-prof">
-                                    {{ $cs->information }}
-                                </div>
-                            </div>
-                            <div class="slider_item-img">
-                                <img src="{{ asset('upload/' . $cs->image) }}" alt="">
-                            </div>
-                        </div>
-
-                        <div class="slider_item-text">
-                            {{ $cs->description }}
-                        </div>
-
+        <div class="slider_infi">
+            <div class="slide_infinite-track">
+                @foreach ($specialized as $special)
+                    <div class="slide_infinite">
+                        <img src="{{ asset('upload/' . $special->image) }}" height="100" width="150" alt="">
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+                {{-- </div>
+        <div class="slide_infinite-track"> --}}
+                @foreach ($specialized as $special)
+                    <div class="slide_infinite">
+                        <img src="{{ asset('upload/' . $special->image) }}" height="100" width="150" alt="">
+                    </div>
+                @endforeach
+            </div>
         </div>
-        {{-- <div class="reviews_btn-wrap">
+    </section>
+    {{-- end infinite slide ber --}}
+
+    <!-- start our satisfied clients -->
+    <section class="reviews">
+        <div class="container">
+            <div class="reviews_title title">
+                Our Satisfied Clients
+            </div>
+            <div class="reviews_text text">
+            </div>
+            <div class="reviews_slider" data-aos="fade-down">
+                @foreach ($clients as $cs)
+                    <div class="slider_wrapper">
+                        <div class="slider_item slider_item-left">
+                            <div class="slider_item-top">
+                                <div class="slider_item-img client_position">
+                                    <img src="{{ asset('upload/' . $cs->image) }}" alt="">
+                                </div>
+                                <div class="slider_item-fio client_left">
+                                    <div class="slider_item-name ">
+                                        {{ $cs->name }}
+                                    </div>
+                                    <div class="slider_item-prof ">
+                                        {{ $cs->profession }}, {{ $cs->information }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slider_item-text">
+                                {{ $cs->description }}
+                            </div>
+
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            {{-- <div class="reviews_btn-wrap">
             <a href="/" class="reviews_btn btn">
                 All Reviews
             </a>
         </div> --}}
-    </div>
-</section>
-<!-- Our Satisfied Clients end -->
+        </div>
+    </section>
+    <!-- Our Satisfied Clients end -->
+@endsection
+{{-- @include('user_footer') --}}
 
-<!-- start Contact Us -->
-<!-- End Contact Us-->
-@include('user_footer')
+
 {{-- <script>
     jQuery('#contactForm').validate({
         rules: {

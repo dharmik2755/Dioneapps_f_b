@@ -15,17 +15,13 @@ class about_expert extends Controller
         {
             $title = $res->title;
             $description = $res->description;
-
             $array_data = $res->input('sub_title');
-            $add_array_data = implode('|||',$array_data);
+            $add_array_data = implode(',',$array_data);
            
-
             $data = array('title' => $title , 'description' => $description , 'sub_title' => $add_array_data );        
             
             about_experts::insert($data);
-
             return redirect()->route('about.expert.view');
-        
         }
         return view('Admin.about_expert.add_about_expert_data');
     }
@@ -50,7 +46,7 @@ class about_expert extends Controller
             $description = $res->description;
 
             $array_data = $res->input('sub_title');
-            $add_array_data = implode('|||',$array_data);
+            $add_array_data = implode(',',$array_data);
            
 
             $data = array('title' => $title , 'description' => $description , 'sub_title' => $add_array_data );        

@@ -1,32 +1,41 @@
-$.fn.jQuerySimpleCounter = function (options) {
-    var settings = $.extend({
-        start: 0,
-        end: 100,
+// about 2 page in counter start
+$('.about_1').each(function () {
+    $(this).prop('Counter',0).animate({
+        Counter: $(this).text()
+    }, {
+        duration: 4000,
         easing: 'swing',
-        duration: 300,
-        complete: ''
-    }, options);
-
-    var thisElement = $(this);
-
-    $({ count: settings.start }).animate({ count: settings.end }, {
-        duration: settings.duration,
-        easing: settings.easing,
-        step: function () {
-            var mathCount = Math.ceil(this.count);
-            thisElement.text(mathCount);
-        },
-        complete: settings.complete
+        step: function (now) {
+            $(this).text(Math.ceil(now));
+        }
     });
-};
+});
+$('.about_2').each(function () {
+    $(this).prop('Counter',0).animate({
+        Counter: $(this).text()
+    }, {
+        duration: 4000,
+        easing: 'swing',
+        step: function (now) {
+            $(this).text(Math.ceil(now));
+        }
+    });
+});
+// end
 
-
-$('#number1').jQuerySimpleCounter({ end: $('#number1').html(), duration: 2000 });
-$('#number2').jQuerySimpleCounter({ end: $('#number2').html(), duration: 2000 });
-$('#number3').jQuerySimpleCounter({ end: $('#number3').html(), duration: 2000 });
-$('#number4').jQuerySimpleCounter({ end: $('#number4').html(), duration: 2000 });
-
-
+// about page 3 counter start
+$('.count_info').each(function () {
+    $(this).prop('Counter',0).animate({
+        Counter: $(this).text()
+    }, {
+        duration: 4000,
+        easing: 'swing',
+        step: function (now) {
+            $(this).text(Math.ceil(now));
+        }
+    });
+});
+// end
 
 /* AUTHOR LINK */
 $('.about-me-img').hover(function () {

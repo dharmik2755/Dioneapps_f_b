@@ -1,12 +1,18 @@
-@include('user_header')
+{{-- @include('user_header') --}}
+@extends('main')
 
+@section('main-section')
+    
 <!-- start about us title -->
 <section class="wrapper_form">
     <div class="container">
         <form class="form" id="ajax_form_project" data-aos="fade-down">
-            <div class="form_title_custom" id="">
+            {{-- <div class="form_title_custom" id="">
                 Career
-            </div>
+            </div> --}}
+            <h1 class="form_title_custom" id="">
+                Career
+            </h1>
         </form>
     </div>
 </section>
@@ -20,7 +26,7 @@
         <div class="page_top-wrapper">
 
             @foreach ($career_page_titles as $cpt)
-                <div class="page_top-left">
+                <div class="page_top-left header_title">
                     {{-- <div class="crumbs">
                         <a href="#">
                             WE ARE CREATIVE
@@ -28,10 +34,10 @@
                     </div> --}}
 
                     <div class="page_top-title">
-                        <span class="red">{{ $cpt->title }}</span>
+                        <span   >{{ $cpt->title }}</span>
                     </div>
                 </div>
-                <div class="page_top-right">
+                <div class="page_top-right career_title_right">
                     <div class="page_top-text">
                         {{ $cpt->description }}
                     </div>
@@ -53,26 +59,24 @@
                 {{ $cpp->description }}
             </div>
         @endforeach
-
-
         @foreach ($career_page_perkss as $item)
-            <div class="support_wrapper">
+            <div class="support_wrapper"  >
                 <?php 
                     $picture = explode('|||', $item->image);
                     $GLOBALLY = explode('|||',$item->sub_title);
                     $ex_sub_description = explode('|||',$item->sub_description);
                     for ($i=0; $i<count(explode('|||',$item->sub_title)); $i++) {
                     ?>
-                    <div class="support_item career_width">
-                        <div class="support_item img">
-                            <img src="{{ asset('upload/' . $picture[$i]) }}" alt="">
+                    <div class="support_item career_width" data-aos="fade-down">
+                        <div class="support_item img service_round">
+                            <img src="{{ asset('upload/' . $picture[$i]) }}" alt="service" width="70"  >
                         </div>
                         <a href="#" class="support_item-title">
                             {{ $GLOBALLY[$i] }}
                         </a>
-                        <div class="support_item-text">
+                        <p class="support_item-text">
                             {{ $ex_sub_description[$i] }}
-                        </div>
+                        </p>
                     </div>
                 <?php } ?>
             </div>
@@ -81,8 +85,7 @@
 </section>
 <!-- End career WORK WITH DIONEAPPS -->
 
-<!-- start Contact Us -->
-<!-- End Contact Us-->
 
-@include('user_footer')
+@endsection
+{{-- @include('user_footer') --}}
 

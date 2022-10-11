@@ -3,9 +3,12 @@
 <section class="wrapper_form">
     <div class="container">
         <form class="form" id="ajax_form_project" data-aos="fade-down">
-            <div class="form_title_custom" id="">
+            {{-- <div class="form_title_custom">
                 All Blogs
-            </div>
+            </div> --}}
+            <h1 class="form_title_custom">
+                All Blogs
+            </h1>
         </form>
     </div>
 </section><br><br><br>

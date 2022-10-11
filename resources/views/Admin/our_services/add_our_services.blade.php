@@ -22,9 +22,16 @@
               @csrf
               <fieldset>
                 <div class="form-group">
-                  <label>File upload</label>
-                  <div class="input-group col-xs-12">
-                    <input type="file" id="image"   name="image" class="form-control file-upload-info"  placeholder="Upload Image" style="width: 100%;">
+                  <div class="row">
+                      <label>File upload</label>
+                      <div class="col-6">
+                          <input type="file" id="image" class="form-control file-upload-info"
+                              style="width: 100%" name="image" placeholder="Upload Image" multiple><br>
+                      </div>
+                      <div class="col-6">
+                          <img id="previewHolder" alt="Uploaded Image" width="200px"
+                              height="200px" />
+                      </div>
                   </div>
                 </div>
                 <div class="form-group ">
@@ -53,6 +60,23 @@
 
 @include('Admin/footer')
 <script>
+   // live show image start
+   function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#previewHolder').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                alert('select a file to see preview');
+                $('#previewHolder').attr('src', '');
+            }
+        }
+        $("#image").change(function() {
+            readURL(this);
+        });
+        // end
   jQuery('#frm').validate({
             rules: {
               title: {

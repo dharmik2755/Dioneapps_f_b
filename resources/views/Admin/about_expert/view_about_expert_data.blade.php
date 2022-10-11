@@ -41,9 +41,15 @@
                                         <tr>
                                             <td>{{ $dt->id }}</td>
                                             <td>{{ $dt->title }}</td>
-                                            <td>{{ $dt->description }}</td>
-                                            <td>{{ $dt->sub_title }}</td>
-                                            
+                                            <td>{!! $dt->description !!}</td>
+                                            <td>
+                                                <ul>
+                                                    <?php $loop_sub_title = explode(',',$dt->sub_title); 
+                                                        for ($i=0; $i < count($loop_sub_title); $i++) { ?>
+                                                            <li>{{ $loop_sub_title[$i]}}</li>
+                                                        <?php } ?>
+                                                </ul>
+                                            </td>
                                             <td>
                                                 <input data-id="{{$dt->id}}" class="toggle-class"type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" {{$dt->status ? 'checked' : '' }}>
                                             </td>

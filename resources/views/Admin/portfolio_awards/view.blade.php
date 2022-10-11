@@ -52,7 +52,7 @@
                                                    {  ?>
                                                          <img src="{{ asset('upload/'.$picture) }}" style="height:100px; width:100px"/>
                                                     <?php $i++; } ?>
-                                               </td>
+                                            </td>
                                             <td>
                                                 <input data-id="{{$dt->id}}" class="toggle-class"type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" {{$dt->status ? 'checked' : '' }}>
                                              </td>

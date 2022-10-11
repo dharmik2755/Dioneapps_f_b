@@ -44,7 +44,7 @@
                                 @CSRF
                                 <div class="form-group">
                                     <label style="color: rgba(0, 255, 255, 0.63)" for="examplePassword1"><h1>Login</h1></label>
-                                    <input type="text" name="username" class="form-control text-center" placeholder="Username"><br>
+                                    <input type="text" name="username" class="form-control text-center" autocomplete="off" placeholder="Username"><br>
                                     <input type="password" name="password" class="form-control text-center" placeholder="Password">
                                 </div>
                                 <div class="mt-5">
