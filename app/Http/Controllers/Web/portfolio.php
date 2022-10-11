@@ -9,7 +9,6 @@ use App\Models\portfolio_awards;
 use App\Models\project_contact_Controllers;
 use App\Models\portfolio_latest_works;
 use App\Models\footer_first;
-use App\Models\footer_secound;
 use App\Models\footer_forth;
 use App\Models\footer_fifth;
 use App\Models\specializ_id;
@@ -39,8 +38,6 @@ class portfolio extends Controller
         $footer_first = footer_first::where('status',1)->get();
         $data['footer_first'] = $footer_first;
         
-        $footer_secound = footer_secound::where('status',1)->get();
-        $data['footer_secound'] = $footer_secound;
         
         $footer_forth = footer_forth::where('status',1)->get();
         $data['footer_forth'] = $footer_forth;

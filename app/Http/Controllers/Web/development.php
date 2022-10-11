@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\contact_media_info;
 use Illuminate\Http\Request;
 use App\Models\footer_first;
-use App\Models\footer_secound;
 use App\Models\footer_forth;
 use App\Models\footer_fifth;
 use App\Models\mobile;
@@ -32,7 +31,6 @@ class development extends Controller
         $contact_media_info = contact_media_info::get();
         $project_detail = project_contact_Controllers::where('status', 1)->get();
         $footer_first = footer_first::where('status', 1)->get();
-        $footer_secound = footer_secound::where('status', 1)->get();
         $footer_forth = footer_forth::where('status', 1)->get();
         $footer_fifth = footer_fifth::where('status', 1)->get();
         $app_develop_title = app_develop_title::where([['status', 1], ['special_id', '=', $special_id]])->get();
@@ -46,6 +44,6 @@ class development extends Controller
         $specializ_id = specializ_id::where('status', 1)->get();
         $our_services = our_services::where('status', 1)->get();
 
-        return view('development', compact('development_data', 'contact_media_info', 'project_detail', 'footer_first', 'footer_secound', 'footer_forth', 'footer_fifth', 'app_develop_title', 'web_develop_title', 'uiux_develop_title', 'features_development', 'company_work_features', 'specialized', 'portfolio_latest_works', 'company_project', 'specializ_id', 'our_services'));
+        return view('development', compact('development_data', 'contact_media_info', 'project_detail', 'footer_first', 'footer_forth', 'footer_fifth', 'app_develop_title', 'web_develop_title', 'uiux_develop_title', 'features_development', 'company_work_features', 'specialized', 'portfolio_latest_works', 'company_project', 'specializ_id', 'our_services'));
     }
 }

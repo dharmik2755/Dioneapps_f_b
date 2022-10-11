@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\contact_media_info;
 use Illuminate\Http\Request;
 use App\Models\footer_first;
-use App\Models\footer_secound;
 use App\Models\footer_forth;
 use App\Models\footer_fifth;
 
@@ -19,9 +18,6 @@ class blog extends Controller
 
         $footer_first = footer_first::where('status',1)->get();
         $data['footer_first'] = $footer_first;
-        
-        $footer_secound = footer_secound::where('status',1)->get();
-        $data['footer_secound'] = $footer_secound;
         
         $footer_forth = footer_forth::where('status',1)->get();
         $data['footer_forth'] = $footer_forth;
