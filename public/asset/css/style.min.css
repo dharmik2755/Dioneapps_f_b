@@ -2444,6 +2444,10 @@ ul {
     .bottom-item_subtitle {
         font-size: 14px !important;
     }
+    .footer_text { 
+        font-size: 14px;
+    }
+    
 }
 
 @media only screen and (min-width: 220px) and (max-width: 320px) {
@@ -3316,6 +3320,10 @@ svg {
         background-position: center;
     }
 
+    .footer_text_2 {
+        font-size: 12px;
+    }
+
     .header_main-text {
         width: 100%;
     }
@@ -4114,6 +4122,7 @@ svg {
 
 .support_item-title:hover {
     color: #ff0130;
+    -webkit-text-stroke-width: thin;
 }
 
 .support_item-text {
@@ -8473,6 +8482,7 @@ svg {
 
 /* new button */
 .new_button2 {
+    width: 200px;
     transition: all .5s ease;
     color: #fff;
     border: 3px solid rgb(198, 23, 23);
@@ -8496,7 +8506,7 @@ svg {
 }
 
 .contactus_button {
-    width: 200px;
+    width: 157px;
     transition: all .5s ease;
     color: #fff;
     border: 3px solid rgb(198, 23, 23);
