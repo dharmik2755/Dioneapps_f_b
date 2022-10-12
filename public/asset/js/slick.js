@@ -152,7 +152,7 @@ $(document).ready(function() {
 
 // home page Slider 
 $('.home_slider_main').slick({
-  autoplay: false,
+  autoplay: true,
   // infinite:true,
   Speed: 4000,
   // slidesToScroll: 1,
