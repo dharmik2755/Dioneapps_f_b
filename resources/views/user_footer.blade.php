@@ -24,7 +24,7 @@
                      <ul class="bottom-item_list">
                          @foreach ($specializ_id as $sd)
                              <li>
-                                 <a class="footer_text" href="{{ url('/development/'.$sd->id) }}">{{ $sd->development_name }} </a>
+                                 <a class="footer_text text_transform" href="{{ url('/development/'.$sd->id) }}">{{ $sd->development_name }} </a>
                              </li>
                          @endforeach
                      </ul>

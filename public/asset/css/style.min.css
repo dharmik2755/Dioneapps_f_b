@@ -2414,6 +2414,10 @@ ul {
     margin-bottom: 15px;
 }
 
+.text_transform {
+    text-transform: capitalize;
+}
+
 .footer_text {
     font-size: 17px;
     margin-bottom: 17px;
