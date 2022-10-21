@@ -2199,16 +2199,17 @@ ul {
     background-color: #34353e;
     background-position: bottom -20px right -15px;
     border-radius: 10px;
+    border-top: 8px solid #e20a22;
 }
 
 .form_bottom::after {
-    height: 10px;
+    /* height: 10px;
     width: 100%;
     background-color: #e20a22;
     position: absolute;
     content: "";
     top: 0px;
-    left: 0px;
+    left: 0px; */
 }
 
 .footer-form_title {

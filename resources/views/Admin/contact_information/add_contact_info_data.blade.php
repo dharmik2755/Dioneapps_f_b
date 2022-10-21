@@ -39,7 +39,7 @@
                 </div>
                 <div class="text-start">
                     <input class="btn btn-primary" type="submit" name="add" value="Submit">
-                      <a href="{{ route('about.expert.view') }}">
+                      <a href="{{ route('contact-information.view') }}">
                         <button type="button" class="btn btn-inverse-dark ">cancel</button>
                       </a>
                 </div>

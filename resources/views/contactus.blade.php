@@ -1,43 +1,41 @@
 {{-- @include('user_header') --}}
 @extends('main')
 @section('main-section')
-    
-
-<!-- start about us title -->
-<section class="wrapper_form">
-    <div class="container">
-        <form class="form" id="ajax_form_project" data-aos="fade-down">
-            {{-- <div class="form_title_custom" id="">
+    <!-- start about us title -->
+    <section class="wrapper_form">
+        <div class="container">
+            <form class="form" id="ajax_form_project" data-aos="fade-down">
+                {{-- <div class="form_title_custom" id="">
                    Contact Us
                 </div> --}}
-            <h1 class="form_title_custom">
-                Contact Us
-            </h1>
-        </form>
-    </div>
-</section>
-<!-- about us title End -->
+                <h1 class="form_title_custom">
+                    Contact Us
+                </h1>
+            </form>
+        </div>
+    </section>
+    <!-- about us title End -->
 
 
-<!-- start contact detail -->
-<section class="support" data-aos="fade-up">
-    <div class="container">
+    <!-- start contact detail -->
+    <section class="support" data-aos="fade-up">
+        <div class="container">
 
-        <div class="support_wrapper">
-            @foreach ($contact_media_info as $cmi)
-                <div class="support_item_contact contact_align">
-                    <div class="support_item-icon fa-2xl contact_img">
-                        <i class="{{ $cmi->code }}"></i>
+            <div class="support_wrapper">
+                @foreach ($contact_media_info as $cmi)
+                    <div class="support_item_contact contact_align">
+                        <div class="support_item-icon fa-2xl contact_img">
+                            <i class="{{ $cmi->code }}"></i>
+                        </div>
+                        <a href="{{ $cmi->title_link }}" class="support_item-title contact_title">
+                            {{ $cmi->title }}
+                        </a>
+                        <div class="support_item-text contact_des">
+                            {{ $cmi->description }}
+                        </div>
                     </div>
-                    <a href="{{ $cmi->title_link }}" class="support_item-title contact_title">
-                        {{ $cmi->title }}
-                    </a>
-                    <div class="support_item-text contact_des">
-                        {{ $cmi->description }}
-                    </div>
-                </div>
-            @endforeach
-            {{-- <div class="support_item_contact">
+                @endforeach
+                {{-- <div class="support_item_contact">
                 <div class="item_messan-wrpper contact_page_media ">
                     @foreach ($footer_fifth as $fifth)    
                     <a href="{{$fifth->link}}" class="item_messan-link">
@@ -46,64 +44,67 @@
                 @endforeach
                 </div>
             </div> --}}
+            </div>
         </div>
-    </div>
-</section>
-<!-- end contact detail -->
+    </section>
+    <!-- end contact detail -->
 
-<!-- start Contact Us -->
-<div class="contacts">
-    <div id="contacts" class="contacts_scroll"></div>
-    <div class="container">
-        <div class="contacts_wrapper">
-            @foreach ($contact as $cnt)
-                <div class="contacts_title title">
-                    {{ $cnt->title }}
-                </div>
-
-                <div class="item_messan-wrpper  ">
-                    @foreach ($footer_fifth as $fifth)
-                        <a href="{{ $fifth->link }}" class="item_messan-link media_round" target="_blank">
-                            <img src="{{ asset('upload/' . $fifth->image) }}" width="22" height="25"
-                                alt="">
-                        </a>
-                    @endforeach
-                </div>
-                <div class="contacts_text text">
-                    {{ $cnt->description }}
-                </div>
-            @endforeach
-            <div class="form-wrapper">
-                <div class="form_mail" data-aos="fade-up-right">
-                    <a class="form_mail-link">
-                        <img src="{{ asset('upload/' . $cnt->image) }}" alt="">
-                    </a>
-                </div>
-
-                <form class="form_bottom" id="contactForm" method="POST" data-aos="fade-up-left">
-                    @csrf
-                    <div class="footer-form_title">
-                        GET IN TOUCH
+    <!-- start Contact Us -->
+    <div class="contacts">
+        <div id="contacts" class="contacts_scroll"></div>
+        <div class="container">
+            <div class="contacts_wrapper">
+                @foreach ($contact as $cnt)
+                    <div class="contacts_title title">
+                        {{ $cnt->title }}
                     </div>
 
-                    <input type="text" id="name" name="name" class="form_inp-mail" placeholder="Name">
-                    <input type="text" id="phone_number" name="phone_number" class="form_inp-mail" maxlength="10"
-                        placeholder="Phone no">
-                    <input type="email" id="email" name="email" class="form_inp-mail" placeholder="Email">
-                    <textarea name="message" id="message" class="form_inp-text" placeholder="Message"></textarea>
-                    <div class="footer_btn-wrpper">
-                        {{-- <button class="footer_btn btn send_contact_button"  type="submit" name="contact" >
+                    <div class="item_messan-wrpper  ">
+                        @foreach ($footer_fifth as $fifth)
+                            <a href="{{ $fifth->link }}" class="item_messan-link media_round" target="_blank">
+                                <img src="{{ asset('upload/' . $fifth->image) }}" width="22" height="25"
+                                    alt="">
+                            </a>
+                        @endforeach
+                    </div>
+                    <div class="contacts_text text">
+                        {{ $cnt->description }}
+                    </div>
+                @endforeach
+                <div class="form-wrapper">
+                    <div class="form_mail" data-aos="fade-up-right">
+                        <a class="form_mail-link">
+                            <img src="{{ asset('upload/' . $cnt->image) }}" alt="">
+                        </a>
+                    </div>
+
+                    <form class="form_bottom" id="contactForm" method="POST" data-aos="fade-up-left">
+                        {{-- <div class="form_body"> --}}
+
+                            @csrf
+                            <div class="footer-form_title">
+                                GET IN TOUCH
+                            </div>
+
+                            <input type="text" id="name" name="name" class="form_inp-mail" placeholder="Name">
+                            <input type="text" id="phone_number" name="phone_number" class="form_inp-mail" maxlength="10"
+                                placeholder="Phone no">
+                            <input type="email" id="email" name="email" class="form_inp-mail" placeholder="Email">
+                            <textarea name="message" id="message" class="form_inp-text" placeholder="Message"></textarea>
+                            <div class="footer_btn-wrpper">
+                                {{-- <button class="footer_btn btn send_contact_button"  type="submit" name="contact" >
                                 Send Us
                             </button> --}}
-                        <input class=" contactus_button  project_btn" type="submit" name="contact" value="Send Us">
-                    </div>
-                </form>
+                                <input class=" contactus_button  project_btn" type="submit" name="contact" value="Send Us">
+                            </div>
+                        {{-- </div> --}}
+
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!-- End Contact Us-->
-
+    <!-- End Contact Us-->
 @endsection
 {{-- @include('user_footer') --}}
 <script>
