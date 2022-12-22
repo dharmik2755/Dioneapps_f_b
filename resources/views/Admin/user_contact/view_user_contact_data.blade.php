@@ -56,7 +56,7 @@
                                             <td>
                                                 {{-- delete link --}}
                                                 <a href="{{ url('/delete-user-contact-data/'. $dt->id) }}">
-                                                    <button class="btn btn-outline-danger">
+                                                    <button class="btn btn-outline-danger btn-sm">
                                                         <i class="fa-solid fa-trash"></i>
                                                     </button>
                                                 </a>

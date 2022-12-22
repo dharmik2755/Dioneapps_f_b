@@ -1,0 +1,61 @@
+.imac {
+    /* padding: 4% 6%;
+    margin: 0 auto; */
+    /* max-width: 100vw; */
+    /* max-height: 100vh; */
+  }
+  
+  .screen {
+    background: #000;
+    /* for aspect ratio */
+    position: relative;
+    width: 100%;
+    height: 75vh;
+  }
+  
+  .screen:before {
+    content: "";
+    display: block;
+    /* for aspect ratio ~3:5 */
+    padding-top: 60%;
+  }
+  
+  .viewport {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    background: #333;
+  }
+  
+  /*   Screenshot Hover Scroll Additions   */
+  
+  .imac .viewport {
+    transition: background-position 30s ease;
+    background-position: 0 0;
+    background-size: 100% auto;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .imac:hover .viewport {
+    background-position: 0 100%;
+  }
+  
+  .imac .viewport:after {
+    background: radial-gradient(circle at right bottom, transparent 75%, rgba(255, 255, 255, 0.05) 75%, transparent);
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+
+  @media screen and (max-width: 425px){
+    .screen {
+      height: 37vh;
+    }
+  }

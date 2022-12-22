@@ -17,7 +17,6 @@ use App\Http\Controllers\Admin\home_Controller;
 use App\Http\Controllers\Admin\development_Controller;
 use App\Http\Controllers\Admin\about_Controller;
 use App\Http\Controllers\Admin\stages_work;
-use App\Http\Controllers\Admin\counter_panel;
 use App\Http\Controllers\Admin\our_clients;
 use App\Http\Controllers\Admin\contact;
 use App\Http\Controllers\Admin\about_expert;
@@ -30,13 +29,13 @@ use App\Http\Controllers\Admin\services_offre_Controller;
 use App\Http\Controllers\Admin\career_page_perks;
 use App\Http\Controllers\Admin\career_page_title;
 use App\Http\Controllers\Admin\contact_info;
-use App\Http\Controllers\Admin\portfolio_award;
 use App\Http\Controllers\Admin\portfolio_latest_work;
 use App\Http\Controllers\Admin\footer_first_controller;
 use App\Http\Controllers\Admin\footer_forth_controller;
 use App\Http\Controllers\Admin\footer_fifth_controller;
 use App\Http\Controllers\Admin\specializeds_Controller;
 use App\Http\Controllers\Admin\we_expert_Controller;
+use App\Http\Controllers\Admin\Project_collage_Controller;
 use App\Http\Controllers\Admin\about_counter_Controller;
 use App\Http\Controllers\Admin\master\specializ_id_Controller;
 use App\Http\Controllers\Admin\development\app_develop_title_Controller;
@@ -45,22 +44,37 @@ use App\Http\Controllers\Admin\development\uiux_develop_title_Controller;
 use App\Http\Controllers\Admin\development\web_develop_title_Controller;
 use App\Http\Controllers\Admin\development\company_projects;
 use App\Http\Controllers\Admin\features_Controller;
+use App\Http\Controllers\Admin\portfolio_Controller;
+use App\Http\Controllers\Admin\team_management_Controller;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\DB;
 
-// User Side
+// for router through cache-data cleare
+Route::get('/optimize', function () {
+    // dD("Ss");
+    Artisan::call('cache:clear');
+    Artisan::call('view:clear');
+    Artisan::call('route:clear');
+    Artisan::call('migrate');
+    return "Done!";
+});
+
+// try {
+//     DB::connection()->getPdo();
+//     if(DB::connection()->getDatabaseName()){
+//         // echo "Yes! Successfully connected to the DB: " . DB::connection()->getDatabaseName();
+//     }else{
+//         die("Could not find the database. Please check your configuration.");
+//     }
+// } catch (\Exception $e) {
+//     die("Could not open connection to database server.  Please check your configuration.");
+// }
+
+
+// User Side--------------------------------------------------------------------------------------------
 Route::any('/', [home::class, 'home'])->name('home.page');
 Route::any('/about', [about_page::class, 'about'])->name('about.page');
-Route::any('/about2', [about_page::class, 'about2'])->name('about2.page');
 Route::any('/service', [service::class, 'service'])->name('service.page');
 Route::any('/portfolio', [portfolio::class, 'portfolio'])->name('portfolio.page');
 Route::any('/career', [career::class, 'career'])->name('career.page');
@@ -69,9 +83,12 @@ Route::any('/development/{id}', [development::class, 'development'])->name('deve
 // Route::any('/blog', [blog::class, 'blog'])->name('blog.page');
 // Route::any('/blog_single', [blog_single::class, 'blog_single'])->name('blog_single.page');
 
+
+
+
 // Admin Side-----------------------------------------------------------------------------------
 Route::group(['middleware' => "backend"], function () {
-    Route::any('/Admin-side', [home_Controller::class, 'login']);
+    Route::any('/admin', [home_Controller::class, 'login']);
     Route::any('/Logout', [home_Controller::class, 'logout']);
     Route::any('/dashboard', [home_Controller::class, 'dashboard'])->name('dashboard.page');
 
@@ -105,9 +122,7 @@ Route::group(['middleware' => "backend"], function () {
     Route::any('/delete-stages-of-work-data/{id}', [stages_work::class, 'destroy'])->name('stages.delete');
     Route::any('/stutus-stages-of-work-data', [stages_work::class, 'active_and_deactive']);
 
-    // stages of work
-    Route::any('/view-counter-data', [counter_panel::class, 'show'])->name('counter.view');
-    Route::any('/edit-counter-data/{id}', [counter_panel::class, 'edit'])->name('counter.edit');
+    
 
 
     // out clients
@@ -193,13 +208,6 @@ Route::group(['middleware' => "backend"], function () {
     Route::any('/edit-contact-information-data/{id}', [contact_info::class, 'edit'])->name('contact-information.edit');
     Route::any('/delete-contact-information-data/{id}', [contact_info::class, 'destroy'])->name('contact-information.delete');
 
-    // portfolio_awards
-    Route::any('/add-portfolio-awards-data', [portfolio_award::class, 'create'])->name('portfolio-awards.create');
-    Route::any('/view-portfolio-awards-data', [portfolio_award::class, 'show'])->name('portfolio-awards.view');
-    Route::any('/edit-portfolio-awards-data/{id}', [portfolio_award::class, 'edit'])->name('portfolio-awards.edit');
-    Route::any('/delete-portfolio-awards-data/{id}', [portfolio_award::class, 'destroy'])->name('portfolio-awards.delete');
-    Route::any('/stutus-portfolio-awards-data', [portfolio_award::class, 'active_and_deactive']);
-
     // portfolio Our Latest Creative Work
     Route::any('/add-portfolio-Latest-Work-data', [portfolio_latest_work::class, 'create'])->name('Latest-Work.create');
     Route::any('/view-portfolio-Latest-Work-data', [portfolio_latest_work::class, 'show'])->name('Latest-Work.view');
@@ -225,6 +233,13 @@ Route::group(['middleware' => "backend"], function () {
     Route::any('/edit-we-are-expert-data/{id}', [we_expert_Controller::class, 'edit'])->name('we-are-expert.edit');
     Route::any('/delete-we-are-expert-data/{id}', [we_expert_Controller::class, 'destroy'])->name('we-are-expert.delete');
     Route::any('/stutus-we-are-expert-data', [we_expert_Controller::class, 'active_and_deactive']);
+    
+    // about page in we are expert page title
+    Route::any('/add-project-collage-data', [Project_collage_Controller::class, 'create'])->name('project-collage.create');
+    Route::any('/view-project-collage-data', [Project_collage_Controller::class, 'show'])->name('project-collage.view');
+    Route::any('/edit-project-collage-data/{id}', [Project_collage_Controller::class, 'edit'])->name('project-collage.edit');
+    Route::any('/delete-project-collage-data/{id}', [Project_collage_Controller::class, 'destroy'])->name('project-collage.delete');
+    Route::any('/stutus-project-collage-data', [Project_collage_Controller::class, 'active_and_deactive']);
 
     // about page new counter 
     Route::any('/add-about-counter-data', [about_counter_Controller::class, 'create'])->name('about-counter.create');
@@ -274,8 +289,20 @@ Route::group(['middleware' => "backend"], function () {
     Route::any('/edit-company-projects-data/{id}', [company_projects::class, 'edit'])->name('company-projects.edit');
     Route::any('/delete-company-projects-data/{id}', [company_projects::class, 'destroy'])->name('company-projects.delete');
     Route::any('/stutus-company-projects-data', [company_projects::class, 'active_and_deactive']);
-
-
+    
+    // portfolio
+    Route::any('/add-portfolio-data', [portfolio_Controller::class, 'create'])->name('portfolio.create');
+    Route::any('/view-portfolio-data', [portfolio_Controller::class, 'show'])->name('portfolio.view');
+    Route::any('/edit-portfolio-data/{id}', [portfolio_Controller::class, 'edit'])->name('portfolio.edit');
+    Route::any('/delete-portfolio-data/{id}', [portfolio_Controller::class, 'destroy'])->name('portfolio.delete');
+    Route::any('/stutus-portfolio-data', [portfolio_Controller::class, 'active_and_deactive']);
+    
+    // team management
+    Route::any('/add-team-management-data', [team_management_Controller::class, 'create'])->name('team-management.create');
+    Route::any('/view-team-management-data', [team_management_Controller::class, 'show'])->name('team-management.view');
+    Route::any('/edit-team-management-data/{id}', [team_management_Controller::class, 'edit'])->name('team-management.edit');
+    Route::any('/delete-team-management-data/{id}', [team_management_Controller::class, 'destroy'])->name('team-management.delete');
+    Route::any('/stutus-team-management-data', [team_management_Controller::class, 'active_and_deactive']);
 
 
 
@@ -298,3 +325,5 @@ Route::group(['middleware' => "backend"], function () {
     Route::any('/delete-footer-fifth-data/{id}', [footer_fifth_controller::class, 'destroy'])->name('footer-fifth.delete');
     Route::any('/stutus-footer-fifth-data', [footer_fifth_controller::class, 'active_and_deactive']);
 });
+
+

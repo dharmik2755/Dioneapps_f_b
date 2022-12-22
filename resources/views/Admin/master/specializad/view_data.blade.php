@@ -67,14 +67,14 @@
                                                 <td>{{ $dt->development_name }}</td>
                                                 <td>
                                                     <input data-id="{{ $dt->id }}"
-                                                        class="toggle-class"type="checkbox" data-onstyle="success"
+                                                        class="toggle-class"type="checkbox" data-size="mini" data-onstyle="success"
                                                         data-offstyle="danger" data-toggle="toggle" data-on="Active"
                                                         data-off="InActive" {{ $dt->status ? 'checked' : '' }}>
                                                 </td>
                                                 <td>
                                                     {{-- delete link --}}
                                                     <a href="{{ url('/delete-specializ_id-data/' . $dt->id) }}">
-                                                        <button class="btn btn-outline-danger">
+                                                        <button class="btn btn-outline-danger btn-sm">
                                                             <i class="fa-solid fa-trash"></i>
                                                         </button>
                                                     </a>

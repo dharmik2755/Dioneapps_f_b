@@ -13,24 +13,38 @@ use Illuminate\Support\Facades\File;
 
 class home_Controller extends Controller
 {
+
+ 
+
     // login page
     public function login(Request $res)
     {
-            if (isset($res->login)) 
-            {
-                $username = $res->username;   
-                $password = $res->password;
-                $select_data = login::where('admin',$username)->where('password',$password);
-                
-                if ($select_data->count()==1) 
-                {
-                    $user_data = $select_data->first();
-                    Session::put('user_id',$user_data->id);
-    
-                    return redirect()->route('dashboard.page');
-                }
+        try {
+            DB::connection()->getPdo();
+            if(DB::connection()->getDatabaseName()){
+                // echo "Yes! Successfully connected to the DB: " . DB::connection()->getDatabaseName();
+            }else{
+                die("Could not find the database. Please check your configuration.");
             }
-            return view('Admin.login');
+        } catch (\Exception $e) {
+            die("Could not open connection to database server.  Please check your configuration.");
+        }
+
+        if (isset($res->login)) 
+        {
+            $username = $res->username;   
+            $password = $res->password;
+            $select_data = login::where('admin',$username)->where('password',$password);
+            
+            if ($select_data->count()==1) 
+            {
+                $user_data = $select_data->first();
+                Session::put('user_id',$user_data->id);
+
+                return redirect()->route('dashboard.page');
+            }
+        }
+        return view('Admin.login');
         
     }
 
@@ -54,7 +68,8 @@ class home_Controller extends Controller
         if (isset($res->save)) 
         {
             $title = $res->title;
-            $description = $res->description;            
+            $description = $res->description;
+            
             $image = $res->file('image');
             $image_name = rand(0,999999).$image->getClientOriginalName('image');
             $image->move('upload',$image_name);

@@ -48,7 +48,7 @@
                                                     src="{{ asset('upload/' . $dt->image) }}" alt="">
                                             </td>
                                             <td>
-                                                <input data-id="{{ $dt->id }}" class="toggle-class"
+                                                <input data-id="{{ $dt->id }}" data-size="mini" class="toggle-class"
                                                     type="checkbox" data-onstyle="success" data-offstyle="danger"
                                                     data-toggle="toggle" data-on="Active" data-off="InActive"
                                                     {{ $dt->status ? 'checked' : '' }}>
@@ -56,7 +56,7 @@
                                             <td>
                                                 {{-- edit link --}}
                                                 <a href="{{ url('/edit-specialized-data/' . $dt->id) }}">
-                                                    <button class="btn btn-outline-primary">
+                                                    <button class="btn btn-outline-primary btn-sm">
                                                         <i class="fa-solid fa-pen-to-square"></i>
                                                     </button>
                                                 </a>
@@ -64,7 +64,7 @@
                                             <td>
                                                 {{-- delete link --}}
                                                 <a href="{{ url('/delete-specialized-data/' . $dt->id) }}">
-                                                    <button class="btn btn-outline-danger">
+                                                    <button class="btn btn-outline-danger btn-sm">
                                                         <i class="fa-solid fa-trash"></i>
                                                     </button>
                                                 </a>

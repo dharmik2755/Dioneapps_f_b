@@ -1,4 +1,4 @@
-@foreach ($portfolio_latest_works as $item)
+{{-- @foreach ($portfolio_latest_works as $item)
 
     <div class="portfolio_page-item "
         style="background-image: url({{ asset('upload/'. $item->black_image) }});" data-aos="fade-up">
@@ -9,4 +9,4 @@
             </div>
         </div>
     </div>
-@endforeach
+@endforeach --}}

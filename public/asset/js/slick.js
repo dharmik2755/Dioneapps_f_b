@@ -2,7 +2,7 @@ $(document).ready(function() {
   $('.post-wrapper').slick({
     slidesToShow: 4,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 2000,
     nextArrow: $('.next'),
     prevArrow: $('.prev'),
@@ -158,7 +158,7 @@ $('.home_slider_main').slick({
   // slidesToScroll: 1,
   nextArrow: false,
   prevArrow: false,
-  // fade: true,
+  fade: true,
   cssEase: 'linear'
 });
 

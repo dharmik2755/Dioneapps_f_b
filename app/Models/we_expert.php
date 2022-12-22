@@ -12,5 +12,16 @@ class we_expert extends Model
     protected $primaryKey = 'id';
     public $incrementing = true;
     public $timestamps = true;
-    protected $fillable = ['title','description','image'];
+    protected $fillable = ['title','description','image1', 'image2' , 'image3'];
+
+
+    public function pcimage() {
+        return $this->belongsTo('App\Models\project_collage');
+    }
+
+
 }
+
+
+
+

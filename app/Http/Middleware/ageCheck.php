@@ -17,13 +17,13 @@ class ageCheck
     public function handle(Request $request, Closure $next)
     {
         $path = $request->path();
-        if ($path=="Admin-side" && Session::get('user_id')) 
+        if ($path=="admin" && Session::get('user_id')) 
         {
              return redirect('/dashboard');
         } 
-        else if($path!="Admin-side" && !Session::get('user_id'))
+        else if($path!="admin" && !Session::get('user_id'))
         {
-            return redirect('/Admin-side');
+            return redirect('/admin');
         }
 
         return $next($request);

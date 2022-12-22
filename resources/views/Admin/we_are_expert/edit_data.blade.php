@@ -35,12 +35,40 @@
                                         <div class="row">
                                             <label>File upload</label>
                                             <div class="col-6">
-                                                <input type="file" id="image"
+                                                <input type="file" id="image1"
                                                     class="form-control file-upload-info" style="width: 100%"
-                                                    name="image" placeholder="Upload Image"><br>
+                                                    name="image1" placeholder="Upload Image"><br>
                                             </div>
                                             <div class="col-6">
-                                                <img id="previewHolder" alt="Uploaded Image" src="{{ asset('upload/' . $dt->image) }}" width="200px"
+                                                <img id="previewHolder1" alt="Uploaded Image" src="{{ asset('upload/' . $dt->image1) }}" width="200px"
+                                                    height="200px" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label>File upload</label>
+                                            <div class="col-6">
+                                                <input type="file" id="image2"
+                                                    class="form-control file-upload-info" style="width: 100%"
+                                                    name="image2" placeholder="Upload Image"><br>
+                                            </div>
+                                            <div class="col-6">
+                                                <img id="previewHolder2" alt="Uploaded Image" src="{{ asset('upload/' . $dt->image2) }}" width="200px"
+                                                    height="200px" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label>File upload</label>
+                                            <div class="col-6">
+                                                <input type="file" id="image3"
+                                                    class="form-control file-upload-info" style="width: 100%"
+                                                    name="image3" placeholder="Upload Image"><br>
+                                            </div>
+                                            <div class="col-6">
+                                                <img id="previewHolder3" alt="Uploaded Image" src="{{ asset('upload/' . $dt->image3) }}" width="200px"
                                                     height="200px" />
                                             </div>
                                         </div>
@@ -70,20 +98,50 @@
             });
 
         // live show image start
-        function readURL(input) {
+        function readURL1(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
                 reader.onload = function(e) {
-                    $('#previewHolder').attr('src', e.target.result);
+                    $('#previewHolder1').attr('src', e.target.result);
                 }
                 reader.readAsDataURL(input.files[0]);
             } else {
                 alert('select a file to see preview');
-                $('#previewHolder').attr('src', '');
+                $('#previewHolder1').attr('src', '');
             }
         }
-        $("#image").change(function() {
-            readURL(this);
+        $("#image1").change(function() {
+            readURL1(this);
+        });
+        function readURL2(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#previewHolder2').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                alert('select a file to see preview');
+                $('#previewHolder2').attr('src', '');
+            }
+        }
+        $("#image2").change(function() {
+            readURL2(this);
+        });
+        function readURL3(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#previewHolder3').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                alert('select a file to see preview');
+                $('#previewHolder3').attr('src', '');
+            }
+        }
+        $("#image3").change(function() {
+            readURL3(this);
         });
         // end
 

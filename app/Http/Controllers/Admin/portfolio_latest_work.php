@@ -12,7 +12,7 @@ class portfolio_latest_work extends Controller
 {
     
     public function create (Request $res) {
-
+        $specializ_id = specializ_id::where('status',1)->get();
         if (isset($res->add)) {
             
             $special_id = $res->special_id;
@@ -36,7 +36,7 @@ class portfolio_latest_work extends Controller
             portfolio_latest_works::insert($data);
             return redirect()->route('Latest-Work.view');
         }
-        $specializ_id = specializ_id::where('status',1)->get();
+        
         return view('Admin.portfolio_our_latest_creative_work.create',compact('specializ_id'));
     }
 

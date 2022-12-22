@@ -8,7 +8,6 @@ use App\Models\home_slider;
 use App\Models\mobile;
 use App\Models\stages_of_work;
 use App\Models\about;
-use App\Models\counter;
 use App\Models\clients;
 use App\Models\contact_media_info;
 use App\Models\contacts;
@@ -17,6 +16,7 @@ use App\Models\footer_forth;
 use App\Models\footer_fifth;
 use App\Models\specialized;
 use App\Models\specializ_id;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class home extends Controller
@@ -24,9 +24,20 @@ class home extends Controller
     // home page
     public function home(Request $res)
     {
+
+        try {
+            DB::connection()->getPdo();
+            if(DB::connection()->getDatabaseName()){
+                // echo "Yes! Successfully connected to the DB: " . DB::connection()->getDatabaseName();
+            }else{
+                die("Could not find the database. Please check your configuration.");
+            }
+        } catch (\Exception $e) {
+            die("Could not open connection to database server.  Please check your configuration.");
+        }
+
         $home_slider_data = home_slider::where('status',1)->get();
         $data['home_slider'] = $home_slider_data;
-
 
         $developer_data = mobile::where('status',1)->get();
         $data['mobile_data'] = $developer_data;
@@ -36,9 +47,6 @@ class home extends Controller
         
         $about_data = about::where('status',1)->get();
         $data['about_data'] = $about_data;
-        
-        $counter_data = counter::get();
-        $data['counter'] = $counter_data;
         
         $clients = clients::where('status',1)->get();
         $data['clients'] = $clients;

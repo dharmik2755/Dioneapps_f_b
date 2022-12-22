@@ -5,12 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class counter extends Model
+class team_management extends Model
 {
     use HasFactory;
-    protected $table = 'counter';
+    protected $tabel = "team_managements";
     protected $primaryKey = 'id';
     public $incrementing = true;
     public $timestamps = true;
-    protected $fillable = ['clients' , 'projects' , 'employees' , 'branches'];
+    protected $fillable = [ 'team_member' ,'firstname' ,'lastname' ,'email' ,'number' ,'position' ,'education' ,'birthdate' ,'image' ,'status_id' ,'status' ];
+
+    
 }

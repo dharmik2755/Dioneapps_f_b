@@ -13,12 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('counter', function (Blueprint $table) {
+        Schema::create('project_collages', function (Blueprint $table) {
             $table->id();
-            $table->string('clients',50);
-            $table->string('projects',50);
-            $table->string('employees',50);
-            $table->string('branches',50);
+            $table->string('image');
+            $table->tinyInteger('status')->default('1');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('counter');
+        Schema::dropIfExists('project_collages');
     }
 };

@@ -46,7 +46,7 @@
                         <div class="form-group col-12 text-end ">
                             {{-- <a href="{{ route('stages.edit' , [ $dt->id]) }}" target="."> --}}
                             <a href="{{ url('/edit-counter-data/'. $dt->id) }}">
-                                <button type="button" class="btn btn-outline-primary">
+                                <button type="button" class="btn btn-outline-primary btn-sm">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 </button>
                             </a>

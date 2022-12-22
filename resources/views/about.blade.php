@@ -17,9 +17,11 @@
     </section>
     <!-- about us title End -->
 
-    @foreach ($we_expert as $we)
-        <section class="wrapper_about" style="background-image: url({{ asset('upload/' . $we->image) }});">
-            <div class="container">
+    {{-- @foreach ($we_expert as $we) --}}
+    {{-- <section class=" page_top wrapper_about" style="background-image: url({{ asset('upload/' . $we->image) }});"> --}}
+    <section class=" page_top wrapper_about">
+        <div class="container">
+            @foreach ($we_expert as $we)
                 <div class="about_first_box">
                     <div class="about_left_box" data-aos="fade-right">
                         <div class="about_left_box_t page_top-title">
@@ -30,11 +32,49 @@
                         </div>
                     </div>
                     <div class="about_right_box">
+                        <div class="up_side">
+                            <div class="up_side_left">
+                                <img src="{{ asset('upload/' . $we->image1) }}" alt="">
+                            </div>
+                            <div class="up_side_right">
+                                <img src="{{ asset('upload/' . $we->image2) }}" width="200" alt="">
+                            </div>
+                        </div>
+                        <div class="down_side">
+                            <div class="down_img">
+                                <img src="{{ asset('upload/' . $we->image3) }}" width="200" alt="">
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    @endforeach
+            @endforeach
+        </div>
+    </section>
+    {{-- @endforeach --}}
+
+    {{-- scroller image start --}}
+    {{-- <section class="wrapper_form"> --}}
+    <div class=" page_top imac">
+        <div class="screen">
+            @foreach ($we_expert as $pro)
+
+                <?php 
+                    // echo"<pre>";
+                    // print_r($pro);
+                    // die();
+
+                    dd($pro);
+                ?>
+
+                <div class="viewport" style="background-image:url({{ asset('upload/'.$pro->pcimage->image) }});">
+                </div>
+            @endforeach
+        </div>
+    </div>
+    {{-- </section> --}}
+    {{-- end --}}
+
+
 
     <!--  start about us information -->
     <section class="page_top" data-aos="fade-right">
@@ -123,124 +163,42 @@
             </div>
         </div>
     </section>
-    {{-- 
-<div class="page-wrapper">
-    <div class="employee title ">Meet our Team</div>
-    <div class="post-slider_one team_slider_height">
-        <div class="post-wrapper slick-slider">
-            <div class="post slick-slide">
-                <a href="#">
-                    <img src="http://localhost:8000/about_page/fa.jpg" alt="" class="employee_image">
-                </a>
-                <div class="post-info">
-                    <div class="employee_title">
-                        Monalika Agarwal
-                    </div>
-                    <div class="employee_description">
-                        <a href="#">Team Manager</a>
-                    </div>
-                </div>
-            </div>
-            <div class="post slick-slide">
-                <a href="#">
-                    <img src="http://localhost:8000/about_page/fa.jpg" alt="" class="employee_image">
-                </a>
-                <div class="post-info">
-                    <div class="employee_title">
-                        Monalika Agarwal
-                    </div>
-                    <div class="employee_description">
-                        <a href="#">Team Manager</a>
-                    </div>
-                </div>
-            </div>
-            <div class="post slick-slide">
-                <a href="#">
-                    <img src="http://localhost:8000/about_page/fa.jpg" alt="" class="employee_image">
-                </a>
-                <div class="post-info">
-                    <div class="employee_title">
-                        Monalika Agarwal
-                    </div>
-                    <div class="employee_description">
-                        <a href="#">Team Manager</a>
-                    </div>
-                </div>
-            </div>
-            <div class="post slick-slide">
-                <a href="#">
-                    <img src="http://localhost:8000/about_page/fa.jpg" alt="" class="employee_image">
-                </a>
-                <div class="post-info">
-                    <div class="employee_title">
-                        Monalika Agarwal
-                    </div>
-                    <div class="employee_description">
-                        <a href="#">Team Manager</a>
-                    </div>
-                </div>
-            </div>
-            <div class="post slick-slide">
-                <a href="#">
-                    <img src="http://localhost:8000/about_page/fa.jpg" alt="" class="employee_image">
-                </a>
-                <div class="post-info">
-                    <div class="employee_title">
-                        Monalika Agarwal
-                    </div>
-                    <div class="employee_description">
-                        <a href="#">Team Manager</a>
-                    </div>
+
+
+    {{-- meet our team --}}
+    <section class="page_top">
+        <div class="container ">
+            <div class="employee title">MEET The Management Team</div>
+            <div class="team_leader">
+                <div class="inner_width_leader">
+                    @foreach ($team_management_admin as $tma)
+                        <div class="pe">
+                            <img src="{{ asset('upload/'.$tma->image) }}" alt="employee">
+                            <div class="p-name">{{$tma->firstname}} {{$tma->lastname}}</div>
+                            <div class="p-des">{{$tma->position}}</div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
-    </div>
-</div> --}}
-
-
-    {{-- <section class="page_top" data-aos="fade-left">
-    <div class="container">
-        @foreach ($renowneds as $rws)
-            <div class="support_title title">
-                {{ $rws->title }}
-            </div>
-            <div class="support_text text">
-                {{ $rws->description }}
-            </div>
-            <div class="support_wrapper"> --}}
-    <?php
-                    // $GLOBALLY_sub_description = explode('|||',$rws->sub_description); 
-                    // $GLOBALLY = explode('|||',$rws->sub_title);
-                    //         for ($i=0; $i<count($GLOBALLY); $i++) 
-                            { ?>
-    {{-- <div class="support_item"> --}}
-    {{-- <a href="#" class="support_item-title support_item ">
-                    {{ $GLOBALLY[$i] }}
-                </a> --}}
-    {{-- <div class="support_item-text support_item">
-                    {{ $GLOBALLY_sub_description[$i] }}
-                </div> --}}
-    {{-- </div> --}}
-    <?php } ?>
-    <?php
-    // $GLOBALLY_sub_description = explode('|||',$rws->sub_description);
-    //     for ($i=0; $i<count($GLOBALLY_sub_description); $i++)
-    //     {
-    ?>
-    {{-- <div class="support_item">
-                <div class="support_item-text support_item">
-                {{$GLOBALLY_sub_description[$i]}}
+    </section>
+    <section class="page_top">
+        <div class="container ">
+            {{-- <div class="employee title">Meet our Team</div> --}}
+            <div class="team">
+                <div class="inner_width">
+                    @foreach ($team_management_team as $tmt)    
+                        <div class="pe">
+                            <img src="{{ asset('upload/'.$tmt->image) }}" alt="rafeh">
+                            <div class="p-name">{{$tmt->firstname}} {{$tmt->lastname}}</div>
+                            <div class="p-des">{{$tmt->position}}</div>
+                        </div>
+                    @endforeach
                 </div>
-                 </div> --}}
-    <?php
-    //    }
-    ?>
-    {{-- </div>
-        @endforeach
-    </div>
-</section> --}}
-    <!-- about us information end -->
-
+            </div>
+        </div>
+    </section>
+    {{-- end meet our team --}}
 
     <!-- counter penal -->
     {{-- <div id="projectFacts" class="sectionClass">
@@ -274,11 +232,11 @@
             @endforeach
         </div>
     </div>
-</div> --}}
+    </div> --}}
     <!-- end counter penal -->
 
 
-    <!-- start project Contact Us -->
+    <!-- start project Contact Us --> 
     <section class="wrapper_form-project">
         <div class="container">
             @foreach ($project_detail as $pd)
@@ -289,14 +247,9 @@
                     <div class="form_title project_description" id="">
                         {{ $pd->description }}
                     </div>
-                    {{-- <div>
-                        <a href="{{ route('contact.page') }}" class="page_top-btn-order btn-header project_btn">
-                            Contact Us
-                        </a>
-                    </div> --}}
-                    <div class="contact_button" >
+                    <div class="contact_button">
                         <a href="{{ route('contact.page') }}" class=" new_button2  project_btn">
-                         Contact Us
+                            Contact Us
                         </a>
                     </div>
                 </form>

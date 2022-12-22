@@ -1,4 +1,4 @@
-@include('Admin/header')
+@include('Admin.header')
 
 <div class="main-panel">
     <div class="content-wrapper">
@@ -49,12 +49,12 @@
                                                 <img height="200px" width="200px" src="{{ asset('upload/' . $dt->image) }}" alt="">
                                             </td>
                                             <td>
-                                                <input data-id="{{$dt->id}}" class="toggle-class"type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" {{$dt->status ? 'checked' : '' }}>
+                                                <input data-id="{{$dt->id}}" class="toggle-class" data-size="mini" type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" {{$dt->status ? 'checked' : '' }}>
                                              </td>
                                             <td>
                                                 {{-- edit link --}}
                                                 <a href="{{ url('/eidt-home-slider/' . $dt->id) }}">
-                                                    <button class="btn btn-outline-primary">
+                                                    <button class="btn btn-outline-primary btn-sm">
                                                         <i class="fa-solid fa-pen-to-square"></i>
                                                     </button>
                                                 </a>
@@ -62,7 +62,7 @@
                                             <td>
                                                 {{-- delete link --}}
                                                 <a href="{{ url('/delete-home-slider/'. $dt->id) }}">
-                                                    <button class="btn btn-outline-danger">
+                                                    <button class="btn btn-outline-danger btn-sm">
                                                         <i class="fa-solid fa-trash"></i>
                                                     </button>
                                                 </a>

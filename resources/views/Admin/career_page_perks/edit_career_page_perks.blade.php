@@ -32,7 +32,7 @@
                         <img src="{{asset('upload/'.$picture)}}" height="100" width="100"  alt=""><br>
                         <label for="lastname">Edit Image </label>
                         <input id="image" class="form-control" name="image[]" type="file" >
-          <?php $i++; } ?>
+                      <?php $i++; } ?>
                 </div>
                 <div class="form-group ">
                   <label for="firstname">Title</label>
@@ -42,19 +42,6 @@
                   <label for="lastname">Description</label>
                   <input id="description" class="form-control" name="description" type="text" placeholder="Description" value="{{$dt->description}}">
                 </div>
-                {{-- <div class="form-group "> --}}
-                  <?php 
-                        // $loop_sub_title = explode('|||', $dt->sub_title);
-                        // for ($i=0; $i<count($loop_sub_title); $i++) 
-                        // { 
-                          ?> 
-                          {{-- <label for="lastname">Sub Title</label>
-                          <input id="description" class="form-control" name="sub_title[]" type="text" placeholder="Enter Sub Title " value="{{$loop_sub_title[$i]}}"> --}}
-                  <?php 
-                        // } 
-                    ?>
-                {{-- </div> --}}
-                
                 <div class="form-group">
                   <label for="lastname">Sub Title</label>
                   <?php  $loop_sub_title = explode('|||', $dt->sub_title); 

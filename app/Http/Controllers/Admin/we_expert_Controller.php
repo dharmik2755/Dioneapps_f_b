@@ -14,13 +14,20 @@ class we_expert_Controller extends Controller
         if (isset($res->save)) {
             $title  = $res->title;
             $description = $res->description;
-            $image = $res->file('image');
-            $image_name = rand(0, 999999) . $image->getClientOriginalName('image');
-            $image->move('upload', $image_name);
 
-            $data = array('title' => $title, 'description' => $description, 'image' => $image_name);
+            $image1 = $res->file('image1');
+            $image_name1 = rand(0, 999999) . $image1->getClientOriginalName('image1');
+            $image1->move('upload', $image_name1);
 
+            $image2 = $res->file('image2');
+            $image_name2 = rand(0, 999999) . $image2->getClientOriginalName('image2');
+            $image2->move('upload', $image_name2);
+            
+            $image3 = $res->file('image3');
+            $image_name3 = rand(0, 999999) . $image3->getClientOriginalName('image3');
+            $image3->move('upload', $image_name3);
 
+            $data = array('title' => $title, 'description' => $description, 'image1' => $image_name1 , 'image2' => $image_name2 ,'image3' => $image_name3);
 
             we_expert::insert($data);
             return redirect()->route('we-are-expert.view');
@@ -38,30 +45,54 @@ class we_expert_Controller extends Controller
     {
         $we_expert = we_expert::where('id',$id)->get();
         $old_image = $we_expert->first();
-        $old_image_path = 'upload/'.$old_image->image;
+        $old_image_path1 = 'upload/'.$old_image->image1;
+        $old_image_path2 = 'upload/'.$old_image->image2;
+        $old_image_path3 = 'upload/'.$old_image->image3;
 
         if (isset($res->save)) {
 
             $title = $res->title;
             $description = $res->description;
-            $image = $res->file('image');
-            if ($image=="") {
-                $image_name = $old_image->image;
+
+            $image1 = $res->file('image1');
+            if ($image1=="") {
+                $image_name1 = $old_image->image1;
             } else {
-                $image_name = rand(0,999999).$image->getClientOriginalName('image');
-                $image->move('upload',$image_name);
-                if (File::exists($old_image_path)) 
+                $image_name1 = rand(0,999999).$image1->getClientOriginalName('image1');
+                $image1->move('upload',$image_name1);
+                if (File::exists($old_image_path1)) 
                 {
-                    File::delete($old_image_path);
+                    File::delete($old_image_path1);
                 }
             }
-            $data = array('title' => $title , 'description' => $description , 'image' => $image_name );
+            $image2 = $res->file('image2');
+            if ($image2=="") {
+                $image_name2 = $old_image->image2;
+            } else {
+                $image_name2 = rand(0,999999).$image2->getClientOriginalName('image2');
+                $image2->move('upload',$image_name2);
+                if (File::exists($old_image_path2)) 
+                {
+                    File::delete($old_image_path2);
+                }
+            }
+            $image3 = $res->file('image3');
+            if ($image3=="") {
+                $image_name3 = $old_image->image3;
+            } else {
+                $image_name3 = rand(0,999999).$image3->getClientOriginalName('image3');
+                $image3->move('upload',$image_name3);
+                if (File::exists($old_image_path3)) 
+                {
+                    File::delete($old_image_path3);
+                }
+            }
+
+            $data = array('title' => $title , 'description' => $description , 'image1' => $image_name1 , 'image2' => $image_name2 , 'image3' => $image_name3 );
 
             // echo '<per>';
             // print_r($data);
             // die();
-
-
             we_expert::where('id',$id)->update($data);
 
             return redirect()->route('we-are-expert.view');

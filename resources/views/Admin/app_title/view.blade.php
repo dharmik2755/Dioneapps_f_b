@@ -47,19 +47,19 @@
                                             <td>{{ $dt->android }}</td>
                                             <td>{{ $dt->android_des }}</td>
                                             <td>
-                                                <input data-id="{{$dt->id}}" class="toggle-class"type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" {{$dt->status ? 'checked' : '' }}>
+                                                <input data-id="{{$dt->id}}" class="toggle-class"type="checkbox" data-size="mini" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" {{$dt->status ? 'checked' : '' }}>
                                             </td>
                                             <td>
                                                 {{-- edit link --}}
                                                 <a href="{{ url('/edit-app-title-data/' . $dt->id) }}">
-                                                    <button class="btn btn-outline-primary">
+                                                    <button class="btn btn-outline-primary btn-sm">
                                                         <i class="fa-solid fa-pen-to-square"></i>
                                                     </button>
                                                 </a>
                                             </td>
                                             <td>
                                                 <a href="{{ url('/delete-app-title-data/'. $dt->id) }}">
-                                                    <button class="btn btn-outline-danger">
+                                                    <button class="btn btn-outline-danger btn-sm">
                                                         <i class="fa-solid fa-trash"></i>
                                                     </button>
                                                 </a>

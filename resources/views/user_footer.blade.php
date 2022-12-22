@@ -4,7 +4,9 @@
          <div class="container">
              <div class="footer_bottom-wrapper">
                  <!-- start footer DIONEAPPS -->
-                 <div class="footer_bottom-item" data-aos="fade-up">
+                 <div class="footer_bottom-item" <?php if ($_SERVER['REQUEST_URI'] != '/portfolio') {
+                     echo 'data-aos="fade-up"';
+                 } ?>>
                      @foreach ($footer_first as $ffuo)
                          <div class="bottom-item_title">
                              {{ $ffuo->title }}
@@ -17,14 +19,17 @@
                  <!-- end footer DIONEAPPS -->
 
                  <!-- start footer Our services -->
-                 <div class="footer_bottom-item item_none" data-aos="fade-up" data-aos-delay="200">
+                 <div class="footer_bottom-item item_none" <?php if ($_SERVER['REQUEST_URI'] != '/portfolio') {
+                     echo 'data-aos="fade-up" data-aos-delay="200"';
+                 } ?>>
                      <div class="bottom-item_title">
-                        OUR SERVICE
+                         OUR SERVICE
                      </div>
                      <ul class="bottom-item_list">
                          @foreach ($specializ_id as $sd)
                              <li>
-                                 <a class="footer_text text_transform" href="{{ url('/development/'.$sd->id) }}">{{ $sd->development_name }} </a>
+                                 <a class="footer_text text_transform"
+                                     href="{{ url('/development/' . $sd->id) }}">{{ $sd->development_name }} </a>
                              </li>
                          @endforeach
                      </ul>
@@ -38,7 +43,7 @@
                     </div>
                     <ul class="bottom-item_list">
                         <li>
-                            <a class="footer_text" href="{{url('/')}}">Home</a>
+                            <a class="footer_text" href="{{url('/portfolio')}}">Home</a>
                         </li>
                         <li>
                             <a class="footer_text" href="{{url('/about')}}">About Us</a>
@@ -73,20 +78,22 @@
                  <!-- End footer Do More With -->
 
                  <!-- start footer contact info -->
-                 <div class="footer_bottom-item" data-aos="fade-up">
+                 <div class="footer_bottom-item" <?php if ($_SERVER['REQUEST_URI'] != '/portfolio') {
+                     echo 'data-aos="fade-up"';
+                 } ?>>
                      <div class="bottom-item_title">
                          CONTACT INFO
                      </div>
                      @foreach ($footer_forth as $ffth)
                          <div class="bottom-item_subtitle">
-
-                             <a class="footer_text" href="{{ $ffth->link }}">{{ $ffth->description }}</a>
+                             <a class="footer_text" href="{{ $ffth->link }}"
+                                 target="_blank">{{ $ffth->description }}</a>
                          </div>
                      @endforeach
                      @foreach ($contact_media_info as $cmi)
                          <div class="bottom-item_subtitle">
                              <i class="{{ $cmi->code }}"></i>
-                             <a class="footer_text_2" href="{{ $cmi->title_link }}">
+                             <a class="footer_text_2" href="{{ $cmi->title_link }}" target="_blank">
                                  {{ $cmi->title }}
                              </a><br>
                          </div>
@@ -136,6 +143,10 @@
  {{-- for slider link script slick --}}
  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
  <script type="text/javascript" src="{{ asset('asset/js/slick.js') }}"></script>
+
+ {{-- swiper slider in about page CDN link --}}
+ <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+ 
  </body>
 
  </html>

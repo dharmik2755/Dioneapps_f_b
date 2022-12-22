@@ -26,7 +26,7 @@
         </div>
     </section><br><br><br>
 
-    {{-- description Application development --}}
+    {{-- start Application development --}}
     <section class="des_dev_top">
         <div class="container">
             @foreach ($app_develop_title as $adt)

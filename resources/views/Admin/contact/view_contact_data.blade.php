@@ -43,7 +43,7 @@
                                             <td>
                                                 {{-- edit link --}}
                                                 <a href="{{ url('/edit-our-contact-of-work-data/' . $dt->id) }}">
-                                                    <button class="btn btn-outline-primary">
+                                                    <button class="btn btn-outline-primary btn-sm">
                                                         <i class="fa-solid fa-pen-to-square"></i>
                                                     </button>
                                                 </a>

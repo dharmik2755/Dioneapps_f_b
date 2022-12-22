@@ -28,11 +28,8 @@ class development extends Controller
         $special_id =  request()->segment(2);
 
         $development_data = mobile::where('special_id', $id)->get();
-        $contact_media_info = contact_media_info::get();
         $project_detail = project_contact_Controllers::where('status', 1)->get();
-        $footer_first = footer_first::where('status', 1)->get();
-        $footer_forth = footer_forth::where('status', 1)->get();
-        $footer_fifth = footer_fifth::where('status', 1)->get();
+        
         $app_develop_title = app_develop_title::where([['status', 1], ['special_id', '=', $special_id]])->get();
         $web_develop_title = web_develop_title::where([['status', 1], ['special_id', '=', $special_id]])->get();
         $uiux_develop_title = uiux_develop_title::where([['status', 1], ['special_id', '=', $special_id]])->get();
@@ -41,8 +38,14 @@ class development extends Controller
         $specialized = specialized::where([['status', 1], ['special_id', '=', $special_id]])->get();
         $portfolio_latest_works = portfolio_latest_works::where([['status', 1], ['special_id', '=', $special_id]])->get();
         $company_project = company_project::where([['status', 1], ['special_id', '=', $special_id]])->get();
-        $specializ_id = specializ_id::where('status', 1)->get();
         $our_services = our_services::where('status', 1)->get();
+        
+        $footer_first = footer_first::where('status', 1)->get();
+        $specializ_id = specializ_id::where('status', 1)->get();
+        $footer_forth = footer_forth::where('status', 1)->get();
+        $contact_media_info = contact_media_info::get();
+        $footer_fifth = footer_fifth::where('status', 1)->get();
+
 
         return view('development', compact('development_data', 'contact_media_info', 'project_detail', 'footer_first', 'footer_forth', 'footer_fifth', 'app_develop_title', 'web_develop_title', 'uiux_develop_title', 'features_development', 'company_work_features', 'specialized', 'portfolio_latest_works', 'company_project', 'specializ_id', 'our_services'));
     }

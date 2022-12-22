@@ -14,6 +14,8 @@
 <!-- container-scroller -->
 <!-- plugins:js -->
 <script src="{{ asset('assets/vendors/js/vendor.bundle.base.js')}}"></script>
+<script src="{{ asset('assets/vendors/dropify/dropify.min.js')}}"></script>
+<script src="{{ asset('assets/js/dropify.js')}}"></script>
 <!-- endinject -->
 <!-- Plugin js for this page -->
 <script src="{{ asset('assets/vendors/select2/select2.min.js')}}"></script>

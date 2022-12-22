@@ -44,7 +44,7 @@
                                             <td>
                                                 {{-- edit link --}}
                                                 <a href="{{ url('/edit-contact-information-data/' . $dt->id) }}">
-                                                    <button class="btn btn-outline-primary">
+                                                    <button class="btn btn-outline-primary btn-sm">
                                                         <i class="fa-solid fa-pen-to-square"></i>
                                                     </button>
                                                 </a>
@@ -52,7 +52,7 @@
                                             <td>
                                                 {{-- delete link --}}
                                                 <a href="{{ url('/delete-contact-information-data/'. $dt->id) }}">
-                                                    <button class="btn btn-outline-danger">
+                                                    <button class="btn btn-outline-danger btn-sm">
                                                         <i class="fa-solid fa-trash"></i>
                                                     </button>
                                                 </a>

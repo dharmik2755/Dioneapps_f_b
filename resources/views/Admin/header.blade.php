@@ -16,6 +16,7 @@
 
     <!-- Plugin css for this page -->
     <link rel="stylesheet" href="{{ asset('assets/vendors/select2/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendors/dropify/dropify.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendors/select2-bootstrap-theme/select2-bootstrap.min.css') }}">
     <!-- End plugin css for this page -->
 
@@ -213,27 +214,35 @@
                                             <div class="collapse" id="development">
                                                 <ul class="nav flex-column sub-menu">
                                                     <li class="nav-item">
-                                                        <a class="nav-link" href="{{ route('app-title.view') }}"> App Title
+                                                        <a class="nav-link" href="{{ route('app-title.view') }}"> App
+                                                            Title
                                                         </a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a class="nav-link" href="{{ route('web-title.view') }}"> Web Title
+                                                        <a class="nav-link" href="{{ route('web-title.view') }}"> Web
+                                                            Title
                                                         </a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a class="nav-link" href="{{ route('uiux-title.view') }}"> UI-UX Title
+                                                        <a class="nav-link" href="{{ route('uiux-title.view') }}">
+                                                            UI-UX Title
                                                         </a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a class="nav-link" href="{{ route('features.view') }}">Features Development
+                                                        <a class="nav-link"
+                                                            href="{{ route('features.view') }}">Features Development
                                                         </a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a class="nav-link" href="{{ route('company-work-features.view') }}">Company Work in features
+                                                        <a class="nav-link"
+                                                            href="{{ route('company-work-features.view') }}">Company
+                                                            Work in features
                                                         </a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a class="nav-link" href="{{ route('company-projects.view') }}">Company projects
+                                                        <a class="nav-link"
+                                                            href="{{ route('company-projects.view') }}">Company
+                                                            projects
                                                         </a>
                                                     </li>
                                                 </ul>
@@ -247,12 +256,8 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('about.view') }}">About</a>
                                 </li>
-                                {{-- <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('counter.view') }}">Counter Panel</a>
-                                </li> --}}
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('specialized.view') }}">We are specialized
-                                        in</a>
+                                    <a class="nav-link" href="{{ route('specialized.view') }}">We are specialized in</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('clients.view') }}">Clients Info</a>
@@ -273,21 +278,22 @@
                                     <a class="nav-link" href="{{ route('we-are-expert.view') }}">We are expert</a>
                                 </li>
                                 <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('project-collage.view') }}">Projects collage</a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link" href="{{ route('about.expert.view') }}">About expert</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('about-counter.view') }}">About Counter
-                                        Panel</a>
+                                    <a class="nav-link" href="{{ route('about-counter.view') }}">About Counter Panel</a>
                                 </li>
-                                {{-- <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('counter.view') }}">Counter Panel</a>
-                                </li> --}}
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('renowned.view') }}">About Renowned</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('project.contact.view') }}">Project
-                                        Contact</a>
+                                    <a class="nav-link" href="{{ route('team-management.view') }}">Team Management</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('project.contact.view') }}">Project Contact</a>
                                 </li>
                             </ul>
                         </div>
@@ -327,7 +333,7 @@
                                         Work</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('portfolio-awards.view') }}">Awards</a>
+                                    <a class="nav-link" href="{{ route('portfolio.view') }}">portfolio</a>
                                 </li>
                             </ul>
                         </div>
@@ -378,17 +384,20 @@
                         <div class="collapse" id="e-commerce">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('footer-first.view') }}">Footer Company Info</a>
+                                    <a class="nav-link" href="{{ route('footer-first.view') }}">Footer Company
+                                        Info</a>
                                 </li>
                                 {{-- <li class="nav-item">
                                     <a class="nav-link" href="{{ route('footer-secound.view') }}">Footer Our
                                         Services</a>
                                 </li> --}}
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('footer-forth.view') }}">footer Contact Information</a>
+                                    <a class="nav-link" href="{{ route('footer-forth.view') }}">footer Contact
+                                        Information</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('footer-fifth.view') }}">Footer social media</a>
+                                    <a class="nav-link" href="{{ route('footer-fifth.view') }}">Footer social
+                                        media</a>
                                 </li>
                             </ul>
                         </div>
