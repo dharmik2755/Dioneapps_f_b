@@ -61,20 +61,20 @@
                                     <div class="port_button">
                                         <?php if($port->playstore_link) { ?>
                                             <a href="{{ $port->playstore_link }}" target="_blank">
-                                                <img src="{{ asset('upload/portfolio/playStore.png') }}" class="play-app-store"
+                                                <img src="{{ URL('upload/portfolio/playStore.png') }}" class="play-app-store"
                                                 alt="playStore link" />
                                             </a>
                                         <?php } ?>
                                         <?php if($port->appstore_link) { ?>
                                         <a href="{{ $port->appstore_link }}" target="_blank">
-                                            <img src="{{ asset('upload/portfolio/appStore.svg') }}"
+                                            <img src="{{ URL('upload/portfolio/appStore.svg') }}"
                                                 class="play-app-store"alt="appStore link" />
                                         </a>
                                         <?php } ?>
                                     </div>
                                 </div>
                                 <div class="port_right">
-                                    <img src="{{ asset('upload/' . $port->image) }}" loading="lazy" alt="project image" />
+                                    <img src="{{ URL('upload/' . $port->image) }}" loading="lazy" alt="project image" />
                                 </div>
                             </div>
                         </div>
@@ -95,14 +95,14 @@
                                     <div class="port_button">
                                         <?php if($port->web_link) { ?>
                                         <a href="{{ $port->web_link }}" target="_blank">
-                                            <img src="{{ asset('upload/portfolio/web.svg') }}" class="play-app-store"
+                                            <img src="{{ URL('upload/portfolio/web.svg') }}" class="play-app-store"
                                                 alt="web link">
                                         </a>
                                         <?php } ?>
                                     </div>
                                 </div>
                                 <div class="port_right">
-                                    <img src="{{ asset('upload/' . $port->image) }}" loading="lazy" alt="project image">
+                                    <img src="{{ URL('upload/' . $port->image) }}" loading="lazy" alt="project image">
                                 </div>
                             </div>
                         </div>
@@ -125,26 +125,26 @@
                                         $service_data = explode(',' , $port->graphic); 
                                         if (in_array("uiux", $service_data)) { ?>
                                             <div>
-                                                <img src="{{ asset('upload/portfolio/figma_logo.svg') }}" class="uiux_store"
+                                                <img src="{{ URL('upload/portfolio/figma_logo.svg') }}" class="uiux_store"
                                                     alt="uiux image">
                                             </div>
                                         <?php } 
                                         if (in_array('ai', $service_data)) { ?>
                                             <div>
-                                                <img src="{{ asset('upload/portfolio/ai.svg') }}" class="uiux_store"
+                                                <img src="{{ URL('upload/portfolio/ai.svg') }}" class="uiux_store"
                                                     alt="Illustrator image">
                                             </div>
                                         <?php } 
                                         if (in_array("ps",$service_data)) { ?>
                                             <div>
-                                                <img src="{{ asset('upload/portfolio/ps.svg') }}" class="uiux_store"
+                                                <img src="{{ URL('upload/portfolio/ps.svg') }}" class="uiux_store"
                                                     alt="Photoshop image">
                                             </div>
                                         <?php } ?>
                                     </div>
                                 </div>
                                 <div class="port_right">
-                                    <img src="{{ asset('upload/' . $port->image) }}" loading="lazy" alt="project image">
+                                    <img src="{{ URL('upload/' . $port->image) }}" loading="lazy" alt="project image">
                                 </div>
                             </div>
                         </div>

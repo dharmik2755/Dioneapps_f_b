@@ -91,7 +91,6 @@
                     maxlength: 500
                 },
                 image: 'required',
-
             },
             messages: {
                 title: {

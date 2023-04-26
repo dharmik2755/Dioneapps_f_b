@@ -56,7 +56,6 @@ Route::get('/optimize', function () {
     Artisan::call('cache:clear');
     Artisan::call('view:clear');
     Artisan::call('route:clear');
-    Artisan::call('migrate');
     return "Done!";
 });
 

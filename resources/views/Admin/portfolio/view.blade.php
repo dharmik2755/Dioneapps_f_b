@@ -59,7 +59,7 @@
                                                 </a>
                                             </td>
                                             <td style="max-width: 115px; ">
-                                                <img src="{{ asset('upload/' . $dt->image) }}"
+                                                <img src="{{ URL('upload/' . $dt->image) }}"
                                                     style="height:100px; width:100px" />
                                             </td>
                                             <td style="width: 7vw;">{{ $dt->title }}</td>

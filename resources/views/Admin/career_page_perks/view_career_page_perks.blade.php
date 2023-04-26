@@ -49,7 +49,7 @@
                                               $i=0; 
                                                foreach (explode('|||', $dt->image) as $picture) 
                                                 {  ?>
-                                                      <img src="{{ asset('upload/'.$picture) }}" style="height:60px; width:60px"/>
+                                                      <img src="{{ URL('upload/'.$picture) }}" style="height:60px; width:60px"/>
                                             <?php $i++; } ?>
                                             </td>    
                                             <td style="max-width: 100px">

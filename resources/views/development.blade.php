@@ -15,11 +15,11 @@
                         </div>
                     </div>
                     <div class="right_development" data-aos="fade-left">
-                        <img src="{{ asset('all_img/Rectangle_16.svg') }}" alt="development image"
+                        <img src="{{ url('all_img/Rectangle_16.svg') }}" alt="development image"
                             class="development_image1">
-                        <img src="{{ asset('all_img/Rectangle_15.svg') }}" alt="development image"
+                        <img src="{{ url('all_img/Rectangle_15.svg') }}" alt="development image"
                             class="development_image2">
-                        <img src="{{ asset('upload/' . $data->image2) }}" alt="development-image">
+                        <img src="{{ URL('upload/' . $data->image2) }}" alt="development-image">
                     </div>
                 </div>
             @endforeach
@@ -103,7 +103,7 @@
             @foreach ($features_development as $fd)
                 <div class="page_top-wrapper about_wrapper features_box">
                     <div class="page_top-right about_right">
-                        <img src="{{ asset('upload/' . $fd->image) }}" class="page_top-title about_img features_img"
+                        <img src="{{ URL('upload/' . $fd->image) }}" class="page_top-title about_img features_img"
                             alt="features image">
                     </div>
                     <div class="page_top-left  about_top features_right">
@@ -129,7 +129,7 @@
     {{-- end --}}
 
     <div class="line_img">
-        <img src="{{ asset('all_img/Line Design 1.svg') }}" alt="line design" class="line_inner_img1">
+        <img src="{{ url('all_img/Line Design 1.svg') }}" alt="line design" class="line_inner_img1">
     </div>
 
     {{-- start web development describe --}}
@@ -154,7 +154,7 @@
                     </div>
                     <div class="web_right" data-aos="fade-left">
                         <div class="web_right_inner">
-                            <img src="{{ asset('upload/' . $cwf->image) }}" alt="CUSTOM WEBSITE DEVELOPMENT"
+                            <img src="{{ URL('upload/' . $cwf->image) }}" alt="CUSTOM WEBSITE DEVELOPMENT"
                                 class="web_right_img">
                         </div>
                     </div>
@@ -167,7 +167,7 @@
                 <div class="web_box_web">
                     <div class="web_right_part" data-aos="fade-right">
                         <div class="web_right_inner">
-                            <img src="{{ asset('upload/' . $cwf->image) }}" alt="BANCKEND & APIs Image"
+                            <img src="{{ URL('upload/' . $cwf->image) }}" alt="BANCKEND & APIs Image"
                                 class="web_right_img">
                         </div>
                     </div>
@@ -193,7 +193,7 @@
     <?php $id = request()->segment(2);
     if ($id != 4) { ?>
     <div class="line_img">
-        <img src="{{ asset('all_img/Line Design 1.svg') }}" alt="line design" class="line_inner_img2">
+        <img src="{{ url('all_img/Line Design 1.svg') }}" alt="line design" class="line_inner_img2">
     </div>
     <?php }    ?>
 
@@ -228,7 +228,7 @@
                             $a=0; 
                             foreach (explode(',', $cp->image) as $picture) 
                             {  ?>
-                            <a href="{{ asset('upload/' . $picture) }}" style="<?php if ($a != 0) {
+                            <a href="{{ URL('upload/' . $picture) }}" style="<?php if ($a != 0) {
                                 echo 'display: none';
                             } ?>"
                                 data-lightbox='mygallery[$a]' class="button_dev develop_btn">
@@ -244,10 +244,10 @@
                             $c=0; 
                             foreach (explode(',', $cp->image) as $picture) 
                             {  ?>
-                        <a href="{{ asset('upload/' . $picture) }}" data-lightbox='mygallery[$b]'>
+                        <a href="{{ URL('upload/' . $picture) }}" data-lightbox='mygallery[$b]'>
                             <img style="<?php if ($c != 0) {
                                 echo 'display: none';
-                            } ?>" src="{{ asset('upload/' . $picture) }}" alt="">
+                            } ?>" src="{{ URL('upload/' . $picture) }}" alt="">
                         </a>
                         <?php
                             $c++;
@@ -267,10 +267,10 @@
                             $d=0; 
                             foreach (explode(',', $cp->image) as $picture) 
                             {  ?>
-                        <a href="{{ asset('upload/' . $picture) }}" data-lightbox='mygallery[$d]'>
+                        <a href="{{ URL('upload/' . $picture) }}" data-lightbox='mygallery[$d]'>
                             <img style="<?php if ($d != 0) {
                                 echo 'display: none';
-                            } ?>" src="{{ asset('upload/' . $picture) }}" alt="">
+                            } ?>" src="{{ URL('upload/' . $picture) }}" alt="">
                         </a>
                         <?php
                             $d++;
@@ -294,7 +294,7 @@
                             $e=0; 
                             foreach (explode(',', $cp->image) as $picture) 
                             {  ?>
-                        <a href="{{ asset('upload/' . $picture) }}" style="<?php if ($e != 0) {
+                        <a href="{{ URL('upload/' . $picture) }}" style="<?php if ($e != 0) {
                             echo 'display: none';
                         } ?>"
                             data-lightbox='mygallery[$e]' class="button_dev develop_btn">
@@ -335,7 +335,7 @@
                         </div>
                     </div>
                     <div>
-                        <a href="{{ asset('all_img/Imac@2x.png') }}" data-lightbox='mygallery'
+                        <a href="{{ url('all_img/Imac@2x.png') }}" data-lightbox='mygallery'
                             class="button_dev develop_btn">
                             View Project
                         </a>
@@ -343,7 +343,7 @@
                 </div>
                 <div class="develop_img" data-aos="fade-left" data-aos-delay="500">
                     <a>
-                        <img src="{{ asset('all_img/Imac@2x.png') }}" alt="">
+                        <img src="{{ url('all_img/Imac@2x.png') }}" alt="">
                     </a>
                 </div>
             </div>
@@ -366,7 +366,7 @@
                     @foreach ($portfolio_latest_works as $plw)
                         <div class="post">
                             <a href="#">
-                                <img src="{{ asset('upload/' . $plw->color_image) }}" alt="project image"
+                                <img src="{{ URL('upload/' . $plw->color_image) }}" alt="project image"
                                     class="projects_image">
                             </a>
                         </div>
@@ -385,7 +385,7 @@
                 <div class="title">Languages We Work On for Applicatons</div>
                 <div class="development_use">
                     @foreach ($specialized as $sd)
-                        <img src="{{ asset('upload/' . $sd->image) }}" alt="Languages image" class="development_img">
+                        <img src="{{ URL('upload/' . $sd->image) }}" alt="Languages image" class="development_img">
                     @endforeach
                 </div>
             </div>
@@ -400,7 +400,7 @@
             <div class="services_use">
                 @foreach ($our_services as $our)
                     <div class="services_box">
-                        <img src="{{ asset('upload/'.$our->image) }}" height="100" width="100"
+                        <img src="{{ URL('upload/'.$our->image) }}" height="100" width="100"
                             alt="SERVICES image" class="develop_service">
                         <div class="servise_des">{{$our->title}}</div>
                     </div>

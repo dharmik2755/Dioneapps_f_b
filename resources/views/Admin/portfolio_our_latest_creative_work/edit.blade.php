@@ -48,7 +48,7 @@
                                                     name="color_image" placeholder="Upload Image"><br>
                                             </div>
                                             <div class="col-6">
-                                                <img id="previewHolder" src="{{ asset('upload/' . $dt->color_image) }}"
+                                                <img id="previewHolder" src="{{ URL('upload/' . $dt->color_image) }}"
                                                     alt="Uploaded Image" width="200px" height="200px" />
                                             </div>
                                         </div>
@@ -62,7 +62,7 @@
                                                     name="black_image" placeholder="Upload Image"><br>
                                             </div>
                                             <div class="col-6">
-                                                <img id="previewHolder2" src="{{ asset('upload/' . $dt->black_image) }}"
+                                                <img id="previewHolder2" src="{{ URL('upload/' . $dt->black_image) }}"
                                                     alt="Uploaded Image" width="200px" height="200px" />
                                             </div>
                                         </div>

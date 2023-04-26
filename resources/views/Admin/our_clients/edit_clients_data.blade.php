@@ -41,7 +41,7 @@
                 </div>
                 {{-- <div class="form-group ">
                   <label for="firstname">image</label>
-                  <img src="{{asset('upload/'.$dt->image)}}" height="200" width="200" alt="">
+                  <img src="{{URL('upload/'.$dt->image)}}" height="200" width="200" alt="">
                 </div> --}}
                 <div class="form-group">
                   <div class="row">
@@ -51,7 +51,7 @@
                               style="width: 100%" name="image" placeholder="Upload Image" multiple><br>
                       </div>
                       <div class="col-6">
-                          <img id="previewHolder" alt="Uploaded Image" src="{{asset('upload/'.$dt->image)}}" width="200px"
+                          <img id="previewHolder" alt="Uploaded Image" src="{{URL('upload/'.$dt->image)}}" width="200px"
                               height="200px" />
                       </div>
                   </div>

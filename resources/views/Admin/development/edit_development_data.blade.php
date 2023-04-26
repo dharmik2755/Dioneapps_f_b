@@ -54,7 +54,7 @@
                                                     name="image1" placeholder="Upload Image"><br>
                                             </div>
                                             <div class="col-6">
-                                                <img id="previewHolder1" alt="Uploaded Image" src="{{ asset('upload/' . $dt->image1) }}" width="200px"
+                                                <img id="previewHolder1" alt="Uploaded Image" src="{{ URL('upload/' . $dt->image1) }}" width="200px"
                                                     height="200px" />
                                             </div>
                                         </div>
@@ -68,7 +68,7 @@
                                                     class="form-control file-upload-info" style="width: 100%" name="image2" placeholder="Upload Image"><br>
                                             </div>
                                             <div class="col-6">
-                                                <img id="previewHolder2" alt="Uploaded Image" src="{{ asset('upload/' . $dt->image2) }}" width="200px"
+                                                <img id="previewHolder2" alt="Uploaded Image" src="{{ URL('upload/' . $dt->image2) }}" width="200px"
                                                     height="200px" />
                                             </div>
                                         </div>

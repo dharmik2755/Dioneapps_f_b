@@ -40,7 +40,7 @@
                                                     class="form-control file-upload-info" style="width: 100%" name="image" placeholder="Upload Image" multiple><br>
                                             </div>
                                             <div class="col-6">
-                                                <img id="previewHolder" src="{{ asset('upload/' . $dt->image) }}"
+                                                <img id="previewHolder" src="{{ URL('upload/' . $dt->image) }}"
                                                     alt="Uploaded Image" width="200px" height="200px" />
                                             </div>
                                         </div>

@@ -4,7 +4,7 @@
 @section('main-section')
     {{-- @foreach ($home_slider as $hs2)
     <div class="rellax" data-rellax-speed="-5" data-rellax-percentage="0.3"
-        style="background-image: url({{ asset('upload/' . $hs2->image) }});transform : none "> </div>
+        style="background-image: url({{ URL('upload/' . $hs2->image) }});transform : none "> </div>
 @endforeach --}}
     <!-- start slider -->
     {{-- <div class="header_main">
@@ -43,13 +43,12 @@
                                 <div class="slider_description">
                                     <p>{{ $hs->description }}</p>
                                 </div>
-                                <a href="#" class="header_main-btn btn">
+                                <a href="{{route('about.page')}}" class="header_main-btn btn">
                                     Learn More
                                 </a>
                             </div>
                             <div class="page_top-right slider_right">
-                                <img src="{{ asset('upload/' . $hs->image) }}" class="page_top-title slider_img "
-                                    alt="">
+                                <img src="{{ URL('upload/' . $hs->image) }}" class="page_top-title slider_img" alt="slider image">
                             </div>
                         </div>
                     @endforeach
@@ -93,7 +92,7 @@
                         </a>
                     </div>
                     <div class="brif_img_size" data-aos="fade-left" data-aos-delay="500">
-                        <img src="{{ asset('upload/' . $md->image1) }}" alt="">
+                        <img src="{{ URL('upload/' . $md->image1) }}" alt="">
                     </div>
                 </div>
             </div>
@@ -121,7 +120,7 @@
                         </a>
                     </div>
                     <div class="brif_img_size-left" data-aos="fade-right" data-aos-delay="500">
-                        <img src="{{ asset('upload/' . $md->image1) }}" alt="">
+                        <img src="{{ URL('upload/' . $md->image1) }}" alt="">
                     </div>
                 </div>
             </div>
@@ -204,7 +203,7 @@
                         </a>
                     </div>
                     <div class="brif_img" data-aos="fade-left" data-aos-delay="500">
-                        <img src="{{ asset('upload/' . $ad->image) }}" alt="">
+                        <img src="{{ URL('upload/' . $ad->image) }}" alt="">
                     </div>
                 @endforeach
             </div>
@@ -446,14 +445,14 @@
             <div class="slide_infinite-track">
                 @foreach ($specialized as $special)
                     <div class="slide_infinite">
-                        <img src="{{ asset('upload/' . $special->image) }}" height="100" width="150" alt="">
+                        <img src="{{ URL('upload/' . $special->image) }}" height="100" width="150" alt="">
                     </div>
                 @endforeach
                 {{-- </div>
         <div class="slide_infinite-track"> --}}
                 @foreach ($specialized as $special)
                     <div class="slide_infinite">
-                        <img src="{{ asset('upload/' . $special->image) }}" height="100" width="150" alt="">
+                        <img src="{{ URL('upload/' . $special->image) }}" height="100" width="150" alt="">
                     </div>
                 @endforeach
             </div>
@@ -475,7 +474,7 @@
                         <div class="slider_item slider_item-left">
                             <div class="slider_item-top">
                                 <div class="slider_item-img client_position">
-                                    <img src="{{ asset('upload/' . $cs->image) }}" alt="">
+                                    <img src="{{ URL('upload/' . $cs->image) }}" alt="">
                                 </div>
                                 <div class="slider_item-fio client_left">
                                     <div class="slider_item-name ">

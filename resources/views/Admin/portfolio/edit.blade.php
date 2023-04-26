@@ -110,7 +110,7 @@
                                         <div class="col-lg-6 grid-margin">
                                             <label for="Old Image"></label>
                                             <div class="card-body">
-                                                <img src="{{ asset('upload/' . $dt->image) }}" width="300" alt=""> 
+                                                <img src="{{ URL('upload/' . $dt->image) }}" width="300" alt=""> 
                                             </div>
                                         </div>
                                         <div class="col-lg-6 grid-margin">

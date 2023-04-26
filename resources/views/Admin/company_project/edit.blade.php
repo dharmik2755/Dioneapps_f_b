@@ -50,7 +50,7 @@
                                             placeholder="Description" value="{{ $dt->description }}">
                                     </div>
                                     {{-- <div class="form-group">
-                                        <img src="{{ asset('upload/' . $dt->image) }}" alt="company projects">
+                                        <img src="{{ URL('upload/' . $dt->image) }}" alt="company projects">
                                     </div>
                                     <div class="form-group">
                                         <div class="row">
@@ -72,7 +72,7 @@
                                         foreach (explode(',', $dt->image) as $picture) 
                                         {  ?>
                                             <label for="lastname">Edit Image </label><br>
-                                            <img src="{{asset('upload/'.$picture)}}" height="100" width="100"  alt=""><br>
+                                            <img src="{{URL('upload/'.$picture)}}" height="100" width="100"  alt=""><br>
                                             <input id="image" class="form-control" name="image[]" type="file" >
                                         <?php $i++; } ?>
                                   </div>

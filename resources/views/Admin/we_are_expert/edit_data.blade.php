@@ -40,7 +40,7 @@
                                                     name="image1" placeholder="Upload Image"><br>
                                             </div>
                                             <div class="col-6">
-                                                <img id="previewHolder1" alt="Uploaded Image" src="{{ asset('upload/' . $dt->image1) }}" width="200px"
+                                                <img id="previewHolder1" alt="Uploaded Image" src="{{ URL('upload/' . $dt->image1) }}" width="200px"
                                                     height="200px" />
                                             </div>
                                         </div>
@@ -54,7 +54,7 @@
                                                     name="image2" placeholder="Upload Image"><br>
                                             </div>
                                             <div class="col-6">
-                                                <img id="previewHolder2" alt="Uploaded Image" src="{{ asset('upload/' . $dt->image2) }}" width="200px"
+                                                <img id="previewHolder2" alt="Uploaded Image" src="{{ URL('upload/' . $dt->image2) }}" width="200px"
                                                     height="200px" />
                                             </div>
                                         </div>
@@ -68,7 +68,7 @@
                                                     name="image3" placeholder="Upload Image"><br>
                                             </div>
                                             <div class="col-6">
-                                                <img id="previewHolder3" alt="Uploaded Image" src="{{ asset('upload/' . $dt->image3) }}" width="200px"
+                                                <img id="previewHolder3" alt="Uploaded Image" src="{{ URL('upload/' . $dt->image3) }}" width="200px"
                                                     height="200px" />
                                             </div>
                                         </div>

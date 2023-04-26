@@ -17,7 +17,6 @@ use App\Models\footer_fifth;
 use App\Models\specialized;
 use App\Models\specializ_id;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Session;
 
 class home extends Controller
 {

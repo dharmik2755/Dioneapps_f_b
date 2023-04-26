@@ -22,6 +22,20 @@
                             @csrf
                             <fieldset>
                                 <div class="form-group">
+                                    <div class="row">
+                                        <label>Select new Image</label>
+                                        <div class="col-4">
+                                            <img id="previewHolder" src="{{ URL('upload/' . $dt->image) }}"
+                                                alt="Uploaded Image" width="200px" height="200px" />
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="file" id="image"
+                                                class="form-control file-upload-info" style="width: 100%"
+                                                name="image" placeholder="Upload Image"><br>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label for="team member type">Team Member Type</label>
                                     <select class="js-example-basic-single" style="width:100%" id="team_member" name="team_member" >
                                     <option value="" selected disabled> -- Please select services -- </option>
@@ -66,21 +80,6 @@
                                     <label for="index">Index</label>
                                     <input id="index"  class="form-control" name="index" type="text" placeholder="Enter index" 
                                     value="{{$dt->index}}">
-                                </div>
-                                
-                                <div class="form-group">
-                                    <div class="row">
-                                        <label>Select new Image</label>
-                                        <div class="col-6">
-                                            <input type="file" id="image"
-                                                class="form-control file-upload-info" style="width: 100%"
-                                                name="image" placeholder="Upload Image"><br>
-                                        </div>
-                                        <div class="col-6">
-                                            <img id="previewHolder" src="{{ asset('upload/' . $dt->image) }}"
-                                                alt="Uploaded Image" width="200px" height="200px" />
-                                        </div>
-                                    </div>
                                 </div>
                                 <div class="text-start">
                                     <input class="btn btn-primary" type="submit" name="edit" value="Update">

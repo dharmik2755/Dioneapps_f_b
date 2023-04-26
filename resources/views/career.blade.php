@@ -69,7 +69,7 @@
                     ?>
                     <div class="support_item career_width" data-aos="fade-down">
                         <div class="support_item img service_round">
-                            <img src="{{ asset('upload/' . $picture[$i]) }}" alt="service" width="70"  >
+                            <img src="{{ URL('upload/' . $picture[$i]) }}" alt="service" width="70"  >
                         </div>
                         <a href="#" class="support_item-title">
                             {{ $GLOBALLY[$i] }}

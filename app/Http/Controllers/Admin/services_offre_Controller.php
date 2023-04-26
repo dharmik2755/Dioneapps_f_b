@@ -53,7 +53,7 @@ class services_offre_Controller extends Controller
         $old_image_path = 'upload/'.$old_image->image;
 
         if (isset($res->edit)) 
-        {
+        {   
             
             $title = $res->title;
             $description = $res->description;

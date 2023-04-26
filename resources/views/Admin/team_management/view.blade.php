@@ -66,7 +66,7 @@
                                                 </a>
                                             </td>
                                             <td>
-                                                <img height="200px" width="200px" src="{{ asset('upload/' . $dt->image) }}" alt="">
+                                                <img height="200px" width="200px" src="{{ url('upload/' . $dt->image) }}" alt="{{$dt->image}}">
                                             </td>
                                             <td>{{ $dt->index }}</td>
                                             <td>{{ $dt->team_member }}</td>

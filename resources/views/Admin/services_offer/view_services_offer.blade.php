@@ -51,7 +51,7 @@
                                             </td>
                                             <td>{{ $dt->sub_description }}</td>
                                             <td>
-                                                <img height="200px" width="200px" src="{{ asset('upload/' . $dt->image) }}"
+                                                <img height="200px" width="200px" src="{{ URL('upload/' . $dt->image) }}"
                                                     alt="">
                                             </td>
                                             <td>

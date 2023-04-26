@@ -29,7 +29,7 @@
                        $i=0; 
                       foreach (explode('|||', $dt->image) as $picture) 
                       {  ?>
-                        <img src="{{asset('upload/'.$picture)}}" height="100" width="100"  alt=""><br>
+                        <img src="{{URL('upload/'.$picture)}}" height="100" width="100"  alt=""><br>
                         <label for="lastname">Edit Image </label>
                         <input id="image" class="form-control" name="image[]" type="file" >
                       <?php $i++; } ?>

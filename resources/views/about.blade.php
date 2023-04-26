@@ -18,7 +18,7 @@
     <!-- about us title End -->
 
     {{-- @foreach ($we_expert as $we) --}}
-    {{-- <section class=" page_top wrapper_about" style="background-image: url({{ asset('upload/' . $we->image) }});"> --}}
+    {{-- <section class=" page_top wrapper_about" style="background-image: url({{ URL('upload/' . $we->image) }});"> --}}
     <section class=" page_top wrapper_about">
         <div class="container">
             @foreach ($we_expert as $we)
@@ -34,15 +34,15 @@
                     <div class="about_right_box">
                         <div class="up_side">
                             <div class="up_side_left">
-                                <img src="{{ asset('upload/' . $we->image1) }}" alt="">
+                                <img src="{{ URL('upload/' . $we->image1) }}" alt="">
                             </div>
                             <div class="up_side_right">
-                                <img src="{{ asset('upload/' . $we->image2) }}" width="200" alt="">
+                                <img src="{{ URL('upload/' . $we->image2) }}" width="200" alt="">
                             </div>
                         </div>
                         <div class="down_side">
                             <div class="down_img">
-                                <img src="{{ asset('upload/' . $we->image3) }}" width="200" alt="">
+                                <img src="{{ URL('upload/' . $we->image3) }}" width="200" alt="">
                             </div>
                         </div>
                     </div>
@@ -56,25 +56,14 @@
     {{-- <section class="wrapper_form"> --}}
     <div class=" page_top imac">
         <div class="screen">
-            @foreach ($we_expert as $pro)
-
-                <?php 
-                    // echo"<pre>";
-                    // print_r($pro);
-                    // die();
-
-                    dd($pro);
-                ?>
-
-                <div class="viewport" style="background-image:url({{ asset('upload/'.$pro->pcimage->image) }});">
+            @foreach ($project_collage as $pro)
+                <div class="viewport" style="background-image:url({{ URL('upload/'.$pro->image) }});">
                 </div>
             @endforeach
         </div>
     </div>
     {{-- </section> --}}
     {{-- end --}}
-
-
 
     <!--  start about us information -->
     <section class="page_top" data-aos="fade-right">
@@ -173,7 +162,7 @@
                 <div class="inner_width_leader">
                     @foreach ($team_management_admin as $tma)
                         <div class="pe">
-                            <img src="{{ asset('upload/'.$tma->image) }}" alt="employee">
+                            <img src="{{ URL('upload/'.$tma->image) }}" alt="{{$tma->firstname}}{{$tma->position}}">
                             <div class="p-name">{{$tma->firstname}} {{$tma->lastname}}</div>
                             <div class="p-des">{{$tma->position}}</div>
                         </div>
@@ -189,7 +178,7 @@
                 <div class="inner_width">
                     @foreach ($team_management_team as $tmt)    
                         <div class="pe">
-                            <img src="{{ asset('upload/'.$tmt->image) }}" alt="rafeh">
+                            <img src="{{ URL('upload/'.$tmt->image) }}" alt="{{$tmt->firstname}}{{$tmt->position}}">
                             <div class="p-name">{{$tmt->firstname}} {{$tmt->lastname}}</div>
                             <div class="p-des">{{$tmt->position}}</div>
                         </div>

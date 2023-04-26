@@ -8,8 +8,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use App\Models\home_slider;
 use App\Models\login;
-use Illuminate\Support\Facades\File; 
-
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Hash;
 
 class home_Controller extends Controller
 {
@@ -33,13 +33,15 @@ class home_Controller extends Controller
         if (isset($res->login)) 
         {
             $username = $res->username;   
+            // $password =  Hash::make($res->password);
             $password = $res->password;
-            $select_data = login::where('admin',$username)->where('password',$password);
-            
-            if ($select_data->count()==1) 
+            $select_data = login::where('admin',$username)->first();
+            // dd($select_data);
+            if (Hash::check($password, $select_data->password)) 
             {
-                $user_data = $select_data->first();
-                Session::put('user_id',$user_data->id);
+                // $user_data = $select_data->first();
+                Session::put('user_id',$select_data->id);
+                // dd(Session::get('user_id'));
 
                 return redirect()->route('dashboard.page');
             }
@@ -59,7 +61,7 @@ class home_Controller extends Controller
     {
         $res->Session()->forget('user_id');
 
-        return redirect('/Admin-side');
+        return redirect('/admin');
     }
 
     // Home slider page insert data -------------------------------------------------
@@ -69,7 +71,6 @@ class home_Controller extends Controller
         {
             $title = $res->title;
             $description = $res->description;
-            
             $image = $res->file('image');
             $image_name = rand(0,999999).$image->getClientOriginalName('image');
             $image->move('upload',$image_name);

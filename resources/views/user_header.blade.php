@@ -1,26 +1,37 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P0J7Q536GM"></script>
+    <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-P0J7Q536GM');
+    </script>
+    <meta name="keywords" content="Mobile Application and Best Web development Company in India, Apps and Web Design Company in India, Web and app Service"/>
+    <meta name="description" content="Dioneapps, a leading Mobile & Web Development Company in India and can effortlessly turn a project idea into reality with our superior custom development services.">
+    
+    <!-- End Google tag (gtag.js) -->
+    <link rel="canonical" href="https://www.dioneapps.com/" />
 
-    <link rel="canonical" href="https://www.dioneapps.com/"/>
-
-    <title>DioneApps – IT company</title>
+    <title>DioneApps – Pvt. Ltd IT company</title>
     <!-- link css -->
     {{-- <link
         href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;0,800;1,900&display=swap"
         rel="stylesheet"> --}}
     {{-- <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,500&display=swap" rel="stylesheet"> --}}
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,500&display=swap" rel="stylesheet"> --}}
+        
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
-    <link href="{{ asset('asset/css/aos.css') }}" rel="stylesheet">
-    <link href="{{ asset('asset/css/counterpanel.css') }}" rel="stylesheet">
-    <link href="{{ asset('asset/css/style.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('assets/images/logo.png') }}" rel="shortcut icon" type="images/ico.ico">
+    {{-- <link href="{{ url('asset/css/aos.css') }}" rel="stylesheet"> --}}
+    <link href="{{ url('asset/css/counterpanel.css') }}" rel="stylesheet">
+    <link href="{{ url('asset/css/style.min.css') }}" rel="stylesheet" />
+    <link href="{{ url('assets/images/logo.png') }}" rel="shortcut icon" type="images/ico.ico">
 
     {{-- ajax data insert --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -30,24 +41,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 
     {{-- light box css and js file link --}}
-    <link rel="stylesheet" href="{{ asset('asset/css/lightbox.min.css') }}">
-    <script src="{{ asset('asset/js/lightbox-plus-jquery.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ url('asset/css/lightbox.min.css') }}">
+    <script src="{{ url('asset/js/lightbox-plus-jquery.min.js') }}"></script>
 
     {{-- scroller in about page css file link --}}
-    <link rel="stylesheet" href="{{ asset('asset/css/about_scroller.css') }}">
-    
+    <link rel="stylesheet" href="{{ url('asset/css/about_scroller.css') }}">
+
 </head>
 
 <body>
     <div class="lines">
-
         <div class="header_top sticky">
             <div class="container header_container">
                 <div class="header_top-wrapper">
                     <div class="header_logo">
                         <a href="{{ url('/') }}">
-                            {{-- <img src="{{ asset('asset/images/Logo.svg') }}" alt="Dioneapp Logo"> --}}
-                            <img src="{{ asset('asset/images/final-logo.svg') }}" alt="Dioneapp Logo">
+                            <img src="{{ url('asset/images/final-logo.svg') }}" alt="Dioneapp Logo">
                         </a>
                     </div>
                     <div class="menu_burger">

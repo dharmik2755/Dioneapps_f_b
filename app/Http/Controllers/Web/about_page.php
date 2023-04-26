@@ -23,7 +23,7 @@ class about_page extends Controller
 {
     public function about(Request $res)
     {
-        $we_expert = we_expert::with('pcimage:image')->get();
+        $we_expert = we_expert::where('status',1)->get();
         $project_collage = project_collage::where('status', 1)->get();
         $about_counter = about_counter::where('status',1)->get();
         $renowned = about_experts::where('status', 1)->get();

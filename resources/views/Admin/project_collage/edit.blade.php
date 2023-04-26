@@ -31,7 +31,7 @@
                                                     name="image" placeholder="Upload Image"><br>
                                             </div>
                                             <div class="col-6">
-                                                <img id="previewHolder" src="{{ asset('upload/' . $dt->image) }}"
+                                                <img id="previewHolder" src="{{ URL('upload/' . $dt->image) }}"
                                                     alt="Uploaded Image" width="200px" height="200px" />
                                             </div>
                                         </div>

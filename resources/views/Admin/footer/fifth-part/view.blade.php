@@ -38,7 +38,7 @@
                                             <td>{{ $dt->id }}</td>
                                             <td style="max-width: 500px;" >{{ $dt->link }}</td>
                                             <td >
-                                                <img src="{{asset('upload/'.$dt->image)}}" height="100" width="100" alt="">    
+                                                <img src="{{URL('upload/'.$dt->image)}}" height="100" width="100" alt="">    
                                             </td>
                                             <td>
                                                 <input data-id="{{$dt->id}}"  class="toggle-class" data-size="mini"  type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" {{$dt->status ? 'checked' : '' }}>

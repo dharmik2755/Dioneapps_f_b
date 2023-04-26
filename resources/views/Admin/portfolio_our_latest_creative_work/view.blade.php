@@ -53,10 +53,10 @@
                                             </td>
                                             <td>{{ $dt->title }}</td>
                                             <td>
-                                                <img height="200px" width="200px" src="{{ asset('upload/' . $dt->color_image) }}" alt="">
+                                                <img height="200px" width="200px" src="{{ URL('upload/' . $dt->color_image) }}" alt="">
                                             </td>
                                             <td>
-                                                <img height="200px" width="200px" src="{{ asset('upload/' . $dt->black_image) }}" alt="">
+                                                <img height="200px" width="200px" src="{{ URL('upload/' . $dt->black_image) }}" alt="">
                                             </td>
                                             <td>
                                                 <input data-id="{{$dt->id}}" class="toggle-class" data-size="mini" type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" {{$dt->status ? 'checked' : '' }}>

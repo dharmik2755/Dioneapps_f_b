@@ -26,7 +26,7 @@
             <div class="services_item item_dev">
                 <div class="services_item-wrapper">
                     <a href="{{ route('blog_single.page') }}">
-                        <img src="{{asset('upload/51942813.png')}}" class="services_item img_size" alt="Blog image" height="175px" width="320px">
+                        <img src="{{URL('upload/51942813.png')}}" class="services_item img_size" alt="Blog image" height="175px" width="320px">
                     </a>
                     <i class="fas fa-calendar blog_caln" >
                         06, Jul 2022
@@ -55,7 +55,7 @@
             <div class="services_item item_dev">
                 <div class="services_item-wrapper">
                     <a href="{{ route('blog_single.page') }}">
-                        <img src="{{asset('upload/79956910.png')}}" class="services_item img_size" alt="Blog image" height="175px" width="320px">
+                        <img src="{{URL('upload/79956910.png')}}" class="services_item img_size" alt="Blog image" height="175px" width="320px">
                     </a>
                     <i class="fas fa-calendar blog_caln" >
                         06, Jul 2022
@@ -84,7 +84,7 @@
             <div class="services_item item_dev">
                 <div class="services_item-wrapper">
                     <a href="{{ route('blog_single.page') }}">
-                        <img src="{{asset('upload/79956910.png')}}" class="services_item img_size" alt="Blog image" height="175px" width="320px">
+                        <img src="{{URL('upload/79956910.png')}}" class="services_item img_size" alt="Blog image" height="175px" width="320px">
                     </a>
                     <i class="fas fa-calendar blog_caln" >
                         06, Jul 2022
@@ -110,7 +110,7 @@
             </div>
             <div class="services_item item_dev">
                 <div class="services_item-wrapper">
-                    <img src="{{asset('upload/80105914.png')}}" class="services_item img_size" alt="Blog image" height="175px" width="320px">
+                    <img src="{{URL('upload/80105914.png')}}" class="services_item img_size" alt="Blog image" height="175px" width="320px">
                     <i class="fas fa-calendar blog_caln" >
                         06, Jul 2022
                     </i>
@@ -132,7 +132,7 @@
             </div>
             <div class="services_item item_dev">
                 <div class="services_item-wrapper">
-                    <img src="{{asset('upload/54950003.png')}}" class="services_item img_size" alt="Blog image" height="175px" width="320px">
+                    <img src="{{URL('upload/54950003.png')}}" class="services_item img_size" alt="Blog image" height="175px" width="320px">
                     <i class="fas fa-calendar blog_caln" >
                         06, Jul 2022
                     </i>
@@ -154,7 +154,7 @@
             </div>
             <div class="services_item item_dev">
                 <div class="services_item-wrapper">
-                    <img src="{{asset('upload/63395009.png')}}" class="services_item img_size" alt="Blog image" height="175px" width="320px">
+                    <img src="{{URL('upload/63395009.png')}}" class="services_item img_size" alt="Blog image" height="175px" width="320px">
                     <i class="fas fa-calendar blog_caln" >
                         06, Jul 2022
                     </i>

@@ -70,7 +70,7 @@
                     <div class="item_messan-wrpper">
                         @foreach ($footer_fifth as $fifth)    
                                 <a href="{{$fifth->link}}" class="item_messan-link" target="_blank" >
-                                    <img src="{{asset('upload/'.$fifth->image)}}" width="18" height="25" alt="">
+                                    <img src="{{URL('upload/'.$fifth->image)}}" width="18" height="25" alt="">
                                 </a>
                         @endforeach
                     </div>
@@ -103,10 +103,10 @@
                      {{-- <div class="item_messan-title footer_title">
                             Social media:
                         </div> --}}
-                     <div class="item_messan-wrpper  ">
+                     <div class="item_messan-wrpper service_icone_set ">
                          @foreach ($footer_fifth as $fifth)
                              <a href="{{ $fifth->link }}" class="item_messan-link" target="_blank">
-                                 <img src="{{ asset('upload/' . $fifth->image) }}" width="22" height="25"
+                                 <img src="{{ URL('upload/' . $fifth->image) }}" width="22" height="25"
                                      alt="">
                              </a>
                          @endforeach
@@ -130,10 +130,15 @@
  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
  <!-- Link counter js file -->
- <script type="text/javascript" src="{{ asset('asset/js/html.js') }}"></script>
+ <script type="text/javascript" src="{{ url('asset/js/html.js') }}"></script>
 
+ {{-- <script type="text/javascript" src="{{ url('public/asset/js/rellax.min.js') }}"></script>
+ <script type="text/javascript" src="{{ url('public/asset/js/aos.js') }}"></script>
+ <script type="text/javascript" src="{{ url('public/asset/js/libs.min.js') }}"></script>
+ <script type="text/javascript" src="{{ url('public/asset/js/main.js') }}"></script> --}}
+ 
  <script type="text/javascript" src="https://smav.com.ua/js/rellax.min.js"></script>
- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ <script  type="text/javascript" src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
  <script type="text/javascript" src="https://smav.com.ua/js/libs.min.js"></script>
  <script type="text/javascript" src="https://smav.com.ua/js/main.js"></script>
 
@@ -142,11 +147,11 @@
 
  {{-- for slider link script slick --}}
  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
- <script type="text/javascript" src="{{ asset('asset/js/slick.js') }}"></script>
+ <script type="text/javascript" src="{{ url('asset/js/slick.js') }}"></script>
 
  {{-- swiper slider in about page CDN link --}}
  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
- 
+
  </body>
 
  </html>

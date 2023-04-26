@@ -50,7 +50,7 @@
                                                 @endforeach
                                             </td>
                                             <td>
-                                                <img src="{{ asset('upload/' . $dt->image) }}" alt="features image"
+                                                <img src="{{ URL('upload/' . $dt->image) }}" alt="features image"
                                                     height="200" width="200">
                                             </td>
                                             <td>{{ $dt->title }}</td>

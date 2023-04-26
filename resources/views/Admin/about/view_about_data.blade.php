@@ -46,7 +46,7 @@
                                             <td>{{ $dt->description }}</td>
                                             <td>
                                                 <img height="200px" width="200px"
-                                                    src="{{ asset('upload/' . $dt->image) }}" alt="">
+                                                    src="{{ URL('upload/' . $dt->image) }}" alt="">
                                             </td>
                                             <td>
                                                 <input data-id="{{ $dt->id }}" class="toggle-class"

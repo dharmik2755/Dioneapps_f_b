@@ -9,25 +9,25 @@
     <title>DioneApps - Admin</title>
 
     <!-- plugins:css -->
-    <link rel="stylesheet" href="{{ asset('assets/vendors/simple-line-icons/css/simple-line-icons.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/vendors/flag-icon-css/css/flag-icon.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/vendors/css/vendor.bundle.base.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/vendors/simple-line-icons/css/simple-line-icons.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/vendors/flag-icon-css/css/flag-icon.min.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/vendors/css/vendor.bundle.base.css') }}">
     <!-- endinject -->
 
     <!-- Plugin css for this page -->
-    <link rel="stylesheet" href="{{ asset('assets/vendors/select2/select2.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/vendors/dropify/dropify.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/vendors/select2-bootstrap-theme/select2-bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/vendors/select2/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/vendors/dropify/dropify.min.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/vendors/select2-bootstrap-theme/select2-bootstrap.min.css') }}">
     <!-- End plugin css for this page -->
 
     <!-- inject:css -->
     <!-- endinject -->
 
     <!-- Layout styles -->
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/style.css') }}">
 
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="{{ asset('assets/images/logo.png') }}" />
+    <link rel="shortcut icon" href="{{ url('assets/images/logo.png') }}" />
 
     {{-- font Awesome --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
@@ -43,11 +43,11 @@
         <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
                 <a class="navbar-brand brand-logo" href="{{ route('dashboard.page') }}">
-                    <img src="{{ asset('assets/images/logo-light.svg') }}" alt="logo-light" class="logo-light">
-                    <img src="{{ asset('assets/images/header_logo.png') }}" alt="logo" class="logo-dark" />
+                    <img src="{{ url('assets/images/logo-light.svg') }}" alt="logo-light" class="logo-light">
+                    <img src="{{ url('assets/images/header_logo.png') }}" alt="logo" class="logo-dark" />
                 </a>
                 <a class="navbar-brand brand-logo-mini" href="index.html"><img
-                        src="{{ asset('assets/images/header_logo.png') }}" width="50%" alt="logo" /></a>
+                        src="{{ url('assets/images/header_logo.png') }}" width="50%" alt="logo" /></a>
                 <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
                     <span class="icon-menu"></span>
                 </button>
@@ -76,7 +76,7 @@
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item preview-item">
                                 <div class="preview-thumbnail">
-                                    <img src="{{ asset('assets/images/face10.jpg') }}" alt="image"
+                                    <img src="{{ url('assets/images/face10.jpg') }}" alt="image"
                                         class="img-sm profile-pic">
                                 </div>
                                 <div class="preview-item-content flex-grow py-2">
@@ -86,7 +86,7 @@
                             </a>
                             <a class="dropdown-item preview-item">
                                 <div class="preview-thumbnail">
-                                    <img src="{{ asset('assets/images/face12.jpg') }}" alt="image"
+                                    <img src="{{ url('assets/images/face12.jpg') }}" alt="image"
                                         class="img-sm profile-pic">
                                 </div>
                                 <div class="preview-item-content flex-grow py-2">
@@ -96,7 +96,7 @@
                             </a>
                             <a class="dropdown-item preview-item">
                                 <div class="preview-thumbnail">
-                                    <img src="{{ asset('assets/images/face1.jpg') }}" alt="image"
+                                    <img src="{{ url('assets/images/face1.jpg') }}" alt="image"
                                         class="img-sm profile-pic">
                                 </div>
                                 <div class="preview-item-content flex-grow py-2">
@@ -109,11 +109,11 @@
                     <li class="nav-item dropdown d-none d-xl-inline-flex user-dropdown">
                         <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            <img class="img-xs rounded-circle ms-2" src="{{ asset('assets/images/Admin.png') }}"
+                            <img class="img-xs rounded-circle ms-2" src="{{ url('assets/images/Admin.png') }}"
                                 alt="Profile image"> <span class="font-weight-normal"> Jaydeep Godhani </span></a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                             <div class="dropdown-header text-center">
-                                <img class="img-md rounded-circle" src="{{ asset('assets/images/Admin.png') }}"
+                                <img class="img-md rounded-circle" src="{{ url('assets/images/Admin.png') }}"
                                     alt="Profile image">
                                 <p class="mb-1 mt-3">Jaydeep Godhani</p>
                                 <p class="font-weight-light text-muted mb-0">jaydeep@gmail.com</p>
@@ -165,12 +165,12 @@
                 <ul class="nav">
                     <li class="nav-item navbar-brand-mini-wrapper">
                         <a class="nav-link navbar-brand brand-logo-mini" href="#">
-                            <img src="{{ asset('assets/images/logo.png') }}" width="72%" alt="logo" /></a>
+                            <img src="{{ url('assets/images/logo.png') }}" width="72%" alt="logo" /></a>
                     </li>
                     <li class="nav-item nav-profile">
                         <a href="#" class="nav-link">
                             <div class="profile-image">
-                                <img class="img-xs rounded-circle" src="{{ asset('assets/images/Admin.png') }}"
+                                <img class="img-xs rounded-circle" src="{{ url('assets/images/Admin.png') }}"
                                     alt="profile image">
                                 <div class="dot-indicator bg-success"></div>
                             </div>
